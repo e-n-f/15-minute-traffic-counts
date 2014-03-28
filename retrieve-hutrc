@@ -1,0 +1,15 @@
+#!/bin/sh
+
+(
+	tidy tmc_archive
+	tidy 6
+) | sed 's/&amp;/%26/g' |
+grep 'http.*tree' |
+sed 's/.*http:/http:/g' |
+sed 's/".*//' | sort | uniq |
+while read i
+do
+	path=$(echo "$i" | sed 's/http:\/\///')
+	mkdir -p $(dirname "$path")
+	curl -o "$path" "$i"
+done
