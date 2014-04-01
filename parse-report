@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+while (<>) {
+	chomp;
+	push @lines, $_;
+}
+
+for ($i = 0; $i <= $#lines; $i++) {
+	$_ = $lines[$i];
+
+	if (/<td class="label_access_ctr"><strong>([^<]*)/) {
+		push @id, $1;
+	} elsif (/<td class="label_access_ctr">([^<]*)/) {
+		push @val, $1;
+	}
+}
+
+for ($i = 0; $i <= $#id; $i++) {
+	print "$id[$i] -> $val[$i]\n";
+}
