@@ -39,6 +39,18 @@ for ($i = 0; $i <= $#lines; $i++) {
 
 	while (s/<td class="sm_cell" nowrap>([^<]*)//) {
 		$time[$row] = $1;
+
+		if ($time[$row] =~ /^(\d+):(\d+) (.)M/) {
+			$hour = $1;
+			$min = $2;
+			if ($3 eq 'P' && $hour != 12) {
+				$hour += 12;
+			}
+
+			$when = $hour * 60 + $min;
+			$when2 = $when + 15;
+			$time[$row] = sprintf("%02d:%02d - %02d:%02d", $when / 60, $when % 60, $when2 / 60, $when2 % 60);
+		}
 	}
 	while (s/<td class="sm_cell">([^<]*)//) {
 		# print "col $col\n";
