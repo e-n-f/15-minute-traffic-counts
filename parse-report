@@ -15,6 +15,61 @@ for ($i = 0; $i <= $#lines; $i++) {
 	}
 }
 
+for ($i = 0; $i <= $#lines; $i++) {
+	$_ = $lines[$i];
+
+	if (/<div class="sm_text">([^<]*)/) {
+		$direction = $1;
+		@cols = ();
+		$row = 0;
+		$col = 0;
+	}
+
+	if (/<td class="sm_table_hdr" width="30" valign="bottom">([^<]*)/) {
+		push @cols, $1;
+
+		# print "col $1\n";
+	}
+
+	while (s/<td class="sm_cell" nowrap>([^<]*)//) {
+		$time[$row] = $1;
+	}
+	while (s/<td class="sm_cell">([^<]*)//) {
+		# print "col $col\n";
+		# print "count[$row]{$direction}{$cols[$col]} = $1;\n";
+
+		$count[$row]{$direction}{$cols[$col++]} = $1;
+
+	}
+	if (/<tr>.*<\/tr/) {
+		$row++;
+		$col = 0;
+	}
+
+	last if /TRUCKS/;
+}
+
+print "time ";
+for $direction ("SB", "WB", "NB", "EB") {
+	for $turn ("Right", "Thru", "Left") {
+		print "$direction-$turn ";
+	}
+}
+
+print "\n";
+
+for ($i = 0; $i <= $#count; $i++) {
+	print "$time[$i] ";
+	for $direction ("SB", "WB", "NB", "EB") {
+		for $turn ("Right", "Thru", "Left") {
+			# print "count[$row]{$direction}{$turn} ";
+			print "$count[$i]{$direction}{$turn} ";
+		}
+	}
+
+	print "\n";
+}
+
 for ($i = 0; $i <= $#id; $i++) {
 	print "$id[$i] -> $val[$i]\n";
 }
