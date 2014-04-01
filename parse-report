@@ -37,7 +37,7 @@ for ($i = 0; $i <= $#lines; $i++) {
 		# print "col $1\n";
 	}
 
-	while (s/<td class="sm_cell" nowrap>([^<]*)//) {
+	while (s/<td class="sm_cell" [^>]*nowrap>([^<]*)//) {
 		$time[$row] = $1;
 
 		if ($time[$row] =~ /^(\d+):(\d+) (.)M/) {
@@ -52,7 +52,7 @@ for ($i = 0; $i <= $#lines; $i++) {
 			$time[$row] = sprintf("%02d:%02d - %02d:%02d", $when / 60, $when % 60, $when2 / 60, $when2 % 60);
 		}
 	}
-	while (s/<td class="sm_cell">([^<]*)//) {
+	while (s/<td class="sm_cell"[^>]*>([^<]*)//) {
 		# print "col $col\n";
 		# print "count[$row]{$direction}{$cols[$col]} = $1;\n";
 
