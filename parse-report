@@ -11,7 +11,12 @@ for ($i = 0; $i <= $#lines; $i++) {
 	if (/<td class="label_access_ctr"><strong>([^<]*)/) {
 		push @id, $1;
 	} elsif (/<td class="label_access_ctr">([^<]*)/) {
-		push @val, $1;
+		$n = $1;
+		$n =~ s/&nbsp;/ /g;
+		$n =~ s/ *$//;
+
+		push @val, $n;
+		$val{$id[$#val]} = $n;
 	}
 }
 
@@ -49,27 +54,58 @@ for ($i = 0; $i <= $#lines; $i++) {
 	last if /TRUCKS/;
 }
 
-print "time ";
+print "id,name,id,date,time,";
 for $direction ("SB", "WB", "NB", "EB") {
 	for $turn ("Right", "Thru", "Left") {
-		print "$direction-$turn ";
+		print "$direction-$turn,";
+	}
+}
+for $direction ("SB", "WB", "NB", "EB") {
+	for $turn ("Ped") {
+		print "$direction-$turn,";
 	}
 }
 
+print ",,,"; # should be bike counts
 print "\n";
 
 for ($i = 0; $i <= $#count; $i++) {
-	print "$time[$i] ";
+	$any = 0;
 	for $direction ("SB", "WB", "NB", "EB") {
 		for $turn ("Right", "Thru", "Left") {
-			# print "count[$row]{$direction}{$turn} ";
-			print "$count[$i]{$direction}{$turn} ";
+			$any = 1 if $count[$i]{$direction}{$turn} > 0;
+		}
+	}
+	for $direction ("SB", "WB", "NB", "EB") {
+		$any = 1 if $count[$i]{$direction}{'Ped'} > 0;
+	}
+	next unless $any;
+
+	print "$val{'INT ID'},";
+	print "$val{'ROAD 1'}";
+
+	for $x ('ROAD 2', 'ROAD 3', 'ROAD 4', 'COMMUNITY') {
+		if ($val{$x} ne "") {
+			print " / $val{$x}";
 		}
 	}
 
-	print "\n";
-}
+	print ",";
+	print "$val{'INT ID'},";
+	print "$val{'TMC DATE'},";
 
-for ($i = 0; $i <= $#id; $i++) {
-	print "$id[$i] -> $val[$i]\n";
+	print "$time[$i],";
+	for $direction ("SB", "WB", "NB", "EB") {
+		for $turn ("Right", "Thru", "Left") {
+			# print "count[$row]{$direction}{$turn} ";
+			print "$count[$i]{$direction}{$turn},";
+		}
+	}
+
+	for $direction ("SB", "WB", "NB", "EB") {
+		print "$count[$i]{$direction}{'Ped'},";
+	}
+
+	print ",,,"; # missing bike counts
+	print "\n";
 }
