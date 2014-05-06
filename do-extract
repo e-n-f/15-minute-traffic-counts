@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for i in buffalo dc minneapolis phoenix virginia-beach
+do
+	echo $i
+	find $i/report -name '*.html' -print | sort | xargs -L1 ./ms2soft/parse-report > counts-$i.csv
+done
