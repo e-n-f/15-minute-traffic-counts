@@ -1,0 +1,722 @@
+
+
+<!-- INSERT THE PHV FUNCTION -->
+
+
+<html>
+<head>
+<title>Traffic Count Database System (TCDS)</title>
+<link rel="stylesheet" href="assets/style_sheets/nn.css" type="text/css">
+<link rel="stylesheet" href="styles_tmc.css" type="text/css">
+<script type="text/javascript" src="/tcds/js/global.js"></script>
+<script language="JavaScript">
+function MC_Refresh(curDate) {
+  window.location.href="tmcdata.asp?offset=&dir=&id=249&a=40&date=" + curDate;
+}
+function MC_PeakHour(corridor) {
+  
+    //ask if want corridor or intersection calculation
+  //  if(confirm("Would you like the Peak Hour data to be calculated for the corridor or just this intersection?\n(OK = Corridor, Cancel = Intersection)")) {
+      //calc for corridor
+      calc = "corridor";
+      corr = "MN-2";
+      corr1 = "";
+      corr2 = "";
+
+      window.location.href="peakhour.asp?offset=&dir=&id=249&a=40&date=&calc=" + calc + "&corridor=" + corr;
+
+    //} else {
+      //calc for intersection
+      calc = "intersection";
+      window.location.href="peakhour.asp?offset=&dir=&id=249&a=40&date=&calc=" + calc + "&corridor=" + corr + "&corr1=" + corr1 + "&corr2=" + corr2;
+
+    //}
+  
+}
+
+function ConfirmDelete(intid, this_date) {
+  if (confirm("Are you sure you wish to delete this TMC?\n    Date : " + this_date))
+    location.href = "frm_tmcdelete.asp?offset=&a=40&intid=" + intid + "&date=" + this_date;
+}
+
+function ConfirmDeleteNote(local_id, note_id) {
+  if (confirm("Are you sure you wish to delete this Note?"))
+    location.href = "frm_notedelete.asp?offset=&local_id=" + local_id + "&apt=tmc2&note_id=" + note_id + "&a=40" + "&date=";
+}
+
+function Collapse(table) {
+  document.all[table].style.display = "none";
+  document.all["c_" + table].style.display = "none";
+  document.all["e_" + table].style.display = "";
+}
+
+function Expand(table) {
+  document.all[table].style.display = "";
+  document.all["e_" + table].style.display = "none";
+  document.all["c_" + table].style.display = "";
+}
+
+  function ShowHelp(this_div, is_display) {
+    document.getElementById("HELP_TMC").style.display = "none";
+    help = document.getElementById("HELP_" + this_div);
+    if (is_display) {
+      help.style.display = "";
+    }
+  }
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td valign="top" width="550">
+
+<form name="frm" method="post" action="">
+
+<table cellspacing="0" cellpadding="5" width="550">
+  <tr>
+    <td valign="top">
+<!-- INSERT BANNER HEADER TABLE CONTAINED IN banner.asp -->
+<script type="text/javascript" src="/tcds/js/help.js"></script>
+<script type="text/javascript" src="/tcds/js/global.js"></script>
+<script type="text/javascript" src="/tcds/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/tcds/js/jquery-qHelp.js"></script>
+<link type="text/css" href="/tcds/css/jquery-qHelp.css" rel="stylesheet" />
+
+<style type="text/css">
+    DIV.banner_icon {float: right; font-size: 9px; text-align: center; margin: 0 2px 0 0;}
+    .rptHead {
+        background: -moz-linear-gradient(center top , #003366 0%, #336699 100%) repeat scroll 0 0;
+        background-color: #003366;
+        color: #FFFF66;
+        font-size: 10pt;
+        font-weight: bold;
+        margin: 10px 0;
+        padding: 3px;
+    }
+</style>
+<style type="text/css" media="print">
+    .noPrint {display:none;}
+    .rptHead {
+        background: none;
+        border-bottom: 3px solid;
+        color: #000000;
+        font-size: 20pt;
+        font-weight: bold;
+        margin: 20px 0 10px;
+        padding: 3px;
+    }
+</style>
+<!-- TCDS BANNER HEADER TABLE -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
+	<tr>
+    <td rowspan="2" height="35" align="left" valign="top"><a href="http://www.ci.minneapolis.mn.us" target="_agency_home"><img src="assets/images/logo-Minneapolis.gif" border="0" alt="Minneapolis Homepage"></a></td>
+    <td valign="top" align="left">
+<h1 style="font-size:13px;" class="title"></h1>
+    </td>
+    <td valign="middle" align="right" width="55%" nowrap>
+<div class="banner_icon"><a href="http://www.ms2soft.com" target="MS2"><img src="images/ms2_logo.gif" border="0" alt="Click for technical assistance" hspace="2" width="70" height="34"></a></div>
+
+        <!-- These are the links on the banner page. Some Agencies are unique.-->
+     
+        <div class="banner_icon noPrint"><a href="javascript:jsHelp()"><img src="images/_b_help.gif" border="0" alt="TCDS Help" hspace="2" width="25" height="25"><br>Help</a></b></div>
+        <div class="banner_icon noPrint"><a href="javascript:window.external.addFavorite('http://minneapolis.ms2soft.com/tcds/default.asp?loc=Minneapolis','Traffic Count Database System (TCDS) - Minneapolis');"><img src="images/_b_bookmark.gif" border="0" hspace="2" alt="Add to Favorites"><br>Bookmark</a></div>
+        <div class="banner_icon noPrint"><a href="javascript:location.reload()"><img src="images/_i_refresh.gif" border="0" alt="Refresh View" hspace="2" width="21" height="25"><br>Refresh</a></div>
+  
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="font-size:12px" align="right" valign="middle">
+<h1 style="font-size:14px;" class="title">&nbsp;Transportation Data Management System</h1>
+<!-- <img src="assets/images/logo-tcds.gif"> -->
+    </td>
+	</tr>
+</table>
+<!-- END TCDS BANNER HEADER TABLE -->
+
+
+<!-- BUTTON NAVIGATION TABLE -->
+<table class="nav2tbl" background="images/_n_bg.gif" border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td><img src="images/_n_div.gif">&nbsp;</td>
+    <td valign="middle" width="99%" nowrap>
+<a class="nav2" href="search_tmc.asp">Search</a> |
+
+<a class="nav2" href="tdetail_tmc.asp?offset=&a=40">Back</a> |
+
+<a class="nav2" href="rpt_tmc-cars.asp?date=4/30/2013&id=249&a=40" target="_new">Cars</a> |
+
+<a class="nav2" href="rpt_tmc-trucks.asp?date=4/30/2013&id=249&a=40" target="_new">Trucks</a> |
+<a class="nav2" href="rpt_tmc-cars_and_trucks.asp?date=4/30/2013&id=249&a=40" target="_new">Cars&amp;Trucks</a> |
+
+<a class="nav2" href="rpt_tmc-cars-trucks.asp?date=4/30/2013&id=249&a=40" target="_new">Cars+Trucks</a> |
+
+    <td>&nbsp;<img src="images/_n_div.gif"></td>
+  </tr>
+</table>
+
+<!-- END BUTTON NAVIGATION TABLE -->
+
+    </td>
+  </tr>
+</table>
+
+<!--  TABLE TO HOLD LEFT SEARCH INFO  -->
+<table cellspacing="0" cellpadding="5" width="550">
+  <tr>
+    <td valign="top">
+
+<b><font color="black">Calculate Peak Hour for:</font></b><br>
+
+<!--
+
+-->
+<input type="radio" name="rdoCalc" onClick="window.location.href='admin/SessionTransfer.asp?dir=2aspx&url=../phf_new2.aspx?user_id=,intid=249,a=40,calc=intersection'"> Intersection
+<!--
+<input type="radio" name="rdoCalc" onClick="window.location.href='phf_new2.aspx?user_id=&intid=249&a=40&calc=intersection'"> Intersection
+<input type="radio" name="rdoCalc" onClick="window.location.href='peakhour.asp?offset=&dir=&id=249&a=40&date=&calc=intersection'"> Intersection
+-->
+
+    <input type="radio" name="rdoCalc" onClick="window.location.href='phf_new.aspx?user_id=&intid=249&a=40&calc=corridor'"> Corridor: MN-2
+<!--
+    <input type="radio" name="rdoCalc" onClick="window.location.href='peakhour.asp?offset=&dir=&id=249&a=40&date=&calc=corridor&corridor=MN-2'"> Corridor: MN-2
+-->
+
+<br />
+<br />
+
+<h3>Turning Movement Count Data - 249</h3>
+
+<!--Begin Table to hold Signal Data and TMC Data-->
+<table cellpadding="5" cellspacing="0" border="0" width="500">
+  <tr>
+    <td valign="top">
+  <!--Begin Table to hold Signal Data-->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tr>
+    <th valign="top" nowrap>Location ID:&nbsp;</th>
+    <td colspan="2" valign="top">TM-0249&nbsp;</td>
+  </tr>
+
+  <tr>
+    <th valign="top" nowrap>Int ID:&nbsp;</th>
+    <td colspan="1" valign="top">249&nbsp;</td>
+  </tr>
+
+	<tr>    
+    <th width="15%" valign="top" nowrap>Community:&nbsp;</th>
+    <td width="35%" valign="top" nowrap>University of Minnesota&nbsp;</td>
+		<th width="15%" valign="top" nowrap>Corridor:&nbsp;</th>
+    <td width="35%" valign="top" nowrap>MN-2&nbsp;</td>		
+  </tr>	
+  <tr>
+    <th valign="top" nowrap>Road 1:&nbsp;</th>
+    <td valign="top" nowrap>University Av SE&nbsp;</td>
+    <th valign="top" nowrap>Road 3:&nbsp;</th>
+    <td valign="top" nowrap> &nbsp;</td>
+  </tr>  
+	<tr>
+    <th valign="top" nowrap>Road 2:&nbsp;</th>
+    <td valign="top" nowrap>15th Av SE&nbsp;</td>
+    <th valign="top" nowrap>Road 4:&nbsp;</th>
+    <td valign="top" nowrap>&nbsp;</td>
+  </tr>
+ <tr>
+
+
+ </tr>
+</table>
+  <!--End table to hold signal data-->
+    </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+  <!--Begin table to hold TMC Data-->
+<div align="center" class="sm_text">TMC Data</div>
+<hr>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="sm_table_hdr_bottom_only">Display</td>
+    <td class="sm_table_hdr_bottom_only">Date</td>
+    <td class="sm_table_hdr_bottom_only">PHV</td>
+    <td class="sm_table_hdr_bottom_only">Peak Hour</td>
+    <td class="sm_table_hdr_bottom_only">Duration</td>
+    <td class="sm_table_hdr_bottom_only">TMC Owner</td>
+
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+
+<tr>
+<td class='sm_cell_no_top'><input type='radio' name='display' onClick=MC_Refresh('4/30/2013') checked>
+</td>
+<td class="sm_cell_rt_btm_lines">Tuesday, April 30, 2013</td>
+<td class="sm_cell_rt_btm_lines">1656
+</td>
+<td class="sm_cell_rt_btm_lines">7:15 AM
+</td>
+<td class="sm_cell_rt_btm_lines">12:00 AM - 12:00 AM
+</td>
+<td class="sm_cell_rt_btm_lines">minneapolis
+</td>
+
+
+<td>
+
+</td>
+
+</tr>
+
+<tr>
+<td class='sm_cell_no_top'><input type='radio' name='display' onClick=MC_Refresh('3/9/2006')>
+</td>
+<td class="sm_cell_rt_btm_lines">Thursday, March 09, 2006</td>
+<td class="sm_cell_rt_btm_lines">2039
+</td>
+<td class="sm_cell_rt_btm_lines">9:00 AM
+</td>
+<td class="sm_cell_rt_btm_lines">6:45 AM - 6:45 PM
+</td>
+<td class="sm_cell_rt_btm_lines">minneapolis
+</td>
+
+
+<td>
+
+</td>
+
+</tr>
+
+<tr>
+<td class='sm_cell_no_top'><input type='radio' name='display' onClick=MC_Refresh('4/1/1998')>
+</td>
+<td class="sm_cell_rt_btm_lines">Wednesday, April 01, 1998</td>
+<td class="sm_cell_rt_btm_lines">2355
+</td>
+<td class="sm_cell_rt_btm_lines">5:00 PM
+</td>
+<td class="sm_cell_rt_btm_lines">6:30 AM - 6:30 PM
+</td>
+<td class="sm_cell_rt_btm_lines">minneapolis
+</td>
+
+
+<td>
+
+</td>
+
+</tr>
+
+  </table>
+    <!--End table to hold TMC Data-->
+    </td>
+  </tr>
+</table>
+<!--End table to hold signal and TMC Data-->
+
+<br />
+
+
+
+<table class="view" width="100%" border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <th class="hdr" colspan="4" background="images/_d_bg.gif" align="center">
+<img id="c_notes" vspace="3" style="cursor:hand" src="images/_collapse.gif" align="right" alt="Collapse" onclick="Collapse('notes')" alt="" />
+<img id="e_notes" vspace="3" style="cursor:hand;display:none" src="images/_expand.gif" align="right" alt="Expand" onclick="Expand('notes')" alt="" />
+Notes
+    </th>
+  </tr>
+  <tbody id="notes">
+  <tr>
+    <th width="8%" >&nbsp;</th>
+    <th style="text-align:center" width="77%" >Note</th>
+    <th style="text-align:center" width="15%" >Date</th>
+  </tr>
+
+  <tr>
+    <td align="center" valign="top">
+
+    </td>
+    <td></td>
+    <td align="center" valign="top"></td>
+  </tr>
+  </tbody>
+</table>
+<br />
+
+<!--Table containing tabs and all info-->
+<table width="500" border="2" cellpadding="0" cellspacing="0" bordercolor="#D6D3CE">
+  <tr>
+    <td>
+      <table height="22" cellpadding="0" cellspacing="0">
+        <tr>
+<td width='42' height='22' background='assets/images/tab-on.gif'><div align='center'><b>NB</b></div></td><td width='42' height='22' background='assets/images/tab-off.gif'><div align='center'><a class='sm_tab' href='tmcdata.asp?corridor=&offset=&dir=EB&id=249&a=40&date=4/30/2013'>EB</a></div></td><td width='42' height='22' background='assets/images/tab-off.gif'><div align='center'><a class='sm_tab' href='tmcdata.asp?corridor=&offset=&dir=SB&id=249&a=40&date=4/30/2013'>SB</a></div></td><td width='42' height='22' background='assets/images/tab-off.gif'><div align='center'><a class='sm_tab' href='tmcdata.asp?corridor=&offset=&dir=WB&id=249&a=40&date=4/30/2013'>WB</a></div></td>
+
+          <td align="right" valign="top" width="495" background="assets/images/tmc-tab-spacer.gif">
+<input type="button" value="Glossary" class="button_sml" onclick="ShowHelp('TMC',true)">
+          </td>
+        </tr>
+      </table>
+<!-- End Table containing tab navigation-->
+
+<!--Table containing Cars and Trucks tables-->
+
+<!--Cars Table-->
+<div style="float:left;padding:2px;">
+            <table border="1" cellpadding="10" cellspacing="0" bgcolor="#FFFFFF">
+              <tr>
+                <td>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="sm_text">Cars</td>
+
+  </tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="sm_table_hdr_bottom_only" nowrap width="53">Start Time</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Left</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Thru</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Right</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Ped</td>
+    <td class="sm_table_hdr" width="30">Total</td>
+  </tr>
+<tr><td class='sm_cell_no_top' nowrap>0:00 13</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_no_line'>4</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>0:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>20</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>0:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_no_line'>4</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>0:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>15</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>3</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:30 AM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>3</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_no_line'>0</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>3</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>3</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_no_line'>4</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>1</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>3</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_no_line'>7</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_no_line'>9</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_no_line'>24</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>20</td><td class='sm_cell_no_line'>12</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>15</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>50</td><td class='sm_cell_no_line'>21</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:15 AM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>26</td><td class='sm_cell_no_line'>17</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_rt_btm_lines'>27</td><td class='sm_cell_no_line'>19</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:45 AM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>45</td><td class='sm_cell_no_line'>18</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>25</td><td class='sm_cell_no_line'>11</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>21</td><td class='sm_cell_no_line'>20</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>30</td><td class='sm_cell_no_line'>16</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>11</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>25</td><td class='sm_cell_no_line'>14</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:00 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>39</td><td class='sm_cell_no_line'>21</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_no_line'>14</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_no_line'>11</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>66</td><td class='sm_cell_no_line'>16</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:00 AM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>146</td><td class='sm_cell_no_line'>26</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:15 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>15</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_rt_btm_lines'>54</td><td class='sm_cell_no_line'>25</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:30 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>37</td><td class='sm_cell_no_line'>16</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:45 AM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>117</td><td class='sm_cell_no_line'>9</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>12:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>9</td><td class='sm_cell_rt_btm_lines'>85</td><td class='sm_cell_no_line'>21</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>12:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>92</td><td class='sm_cell_no_line'>17</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>12:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>125</td><td class='sm_cell_no_line'>25</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>12:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>9</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>93</td><td class='sm_cell_no_line'>12</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>44</td><td class='sm_cell_no_line'>18</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_rt_btm_lines'>31</td><td class='sm_cell_no_line'>23</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>14</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>36</td><td class='sm_cell_no_line'>20</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>1:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>22</td><td class='sm_cell_no_line'>20</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>74</td><td class='sm_cell_no_line'>20</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_rt_btm_lines'>169</td><td class='sm_cell_no_line'>23</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>14</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>27</td><td class='sm_cell_no_line'>18</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>2:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>15</td><td class='sm_cell_no_line'>17</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>17</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>20</td><td class='sm_cell_no_line'>19</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>48</td><td class='sm_cell_no_line'>14</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>27</td><td class='sm_cell_no_line'>23</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>3:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>25</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_rt_btm_lines'>42</td><td class='sm_cell_no_line'>32</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>29</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>45</td><td class='sm_cell_no_line'>37</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:15 PM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>74</td><td class='sm_cell_no_line'>22</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>25</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>52</td><td class='sm_cell_no_line'>31</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>4:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>29</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>20</td><td class='sm_cell_no_line'>33</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>21</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_no_line'>24</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>25</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>36</td><td class='sm_cell_no_line'>29</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>18</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>20</td><td class='sm_cell_no_line'>21</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>5:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>22</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_no_line'>27</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>27</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_no_line'>32</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>17</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>40</td><td class='sm_cell_no_line'>21</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>46</td><td class='sm_cell_no_line'>13</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>6:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>9</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>13</td><td class='sm_cell_no_line'>14</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>9</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_no_line'>13</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>11</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>15</td><td class='sm_cell_no_line'>16</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>19</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>32</td><td class='sm_cell_no_line'>21</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>7:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>10</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>33</td><td class='sm_cell_no_line'>12</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:00 PM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>8</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>33</td><td class='sm_cell_no_line'>14</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:15 PM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>14</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>11</td><td class='sm_cell_no_line'>20</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>26</td><td class='sm_cell_no_line'>11</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>8:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>12</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>52</td><td class='sm_cell_no_line'>15</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>7</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>56</td><td class='sm_cell_no_line'>10</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>9</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>20</td><td class='sm_cell_no_line'>10</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:30 PM</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>11</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>14</td><td class='sm_cell_no_line'>16</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>9:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>37</td><td class='sm_cell_no_line'>4</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_no_line'>8</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>5</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>24</td><td class='sm_cell_no_line'>5</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>15</td><td class='sm_cell_no_line'>4</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>10:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>6</td><td class='sm_cell_rt_btm_lines'>3</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_no_line'>9</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:00 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>24</td><td class='sm_cell_no_line'>5</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:15 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>16</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:30 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>2</td><td class='sm_cell_rt_btm_lines'>4</td><td class='sm_cell_no_line'>2</td></tr>
+<tr><td class='sm_cell_no_top' nowrap>11:45 PM</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_rt_btm_lines'>0</td><td class='sm_cell_rt_btm_lines'>1</td><td class='sm_cell_no_line'>1</td></tr>
+
+  <tr>
+    <td class="sm_cell_no_line">Total</td>
+    <td class="sm_cell_no_line">8</td>
+    <td class="sm_cell_no_line">888</td>
+    <td class="sm_cell_no_line">309</td>
+    <td class="sm_cell_no_line">2640</td>
+    <td class="sm_cell_no_line">
+1205
+    </td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">App %</td>
+    <td class="sm_cell_no_line">
+0.66
+    </td>
+    <td class="sm_cell_no_line">
+73.69
+    </td>
+    <td class="sm_cell_no_line">
+25.64
+    </td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">Total %</td>
+    <td class="sm_cell_no_line">
+0.05
+    </td>
+    <td class="sm_cell_no_line">
+5.22
+    </td>
+    <td class="sm_cell_no_line">
+1.82
+    </td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">
+7.08
+    </td>
+  </tr>
+</table>
+                </td>
+              </tr>
+            </table>
+</div>
+<!--End Cars Table-->
+
+<!--Trucks Table-->
+
+<div style="float:left;padding:2px;">
+            <table border="1" cellpadding="10" cellspacing="0" bgcolor="#FFFFFF">
+              <tr>
+                <td>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="sm_text">Trucks</td>
+
+  </tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="sm_table_hdr_bottom_only" nowrap width="53">Start Time</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Left</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Thru</td>
+    <td class="sm_table_hdr_bottom_only" width="30">Right</td>
+    <td class="sm_table_hdr" width="30">Total</td>
+  </tr>
+<tr>  <td class='sm_cell_no_top' nowrap>0:00 13  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>0:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>0:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>0:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>0</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_rt_btm_lines'>6</td>  <td class='sm_cell_no_line'>10</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>10</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>8</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>6</td>  <td class='sm_cell_no_line'>9</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:00 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>6</td>  <td class='sm_cell_rt_btm_lines'>6</td>  <td class='sm_cell_no_line'>12</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:15 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:30 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:45 AM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>12:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>12:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>8</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>12:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>12:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>8</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>1:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>9</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>2:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>6</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>9</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>3:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>9</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>8</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>5</td>  <td class='sm_cell_no_line'>8</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>4:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>6</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>8</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>7</td>  <td class='sm_cell_rt_btm_lines'>4</td>  <td class='sm_cell_no_line'>11</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>5:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>6</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_no_line'>7</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>3</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>5</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>6:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>7:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>8:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_no_line'>4</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>2</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>3</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>9:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>10:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:00 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:15 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:30 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_no_line'>2</td></tr>
+<tr>  <td class='sm_cell_no_top' nowrap>11:45 PM  </td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_rt_btm_lines'>1</td>  <td class='sm_cell_rt_btm_lines'>0</td>  <td class='sm_cell_no_line'>1</td></tr>
+
+  <tr>
+    <td class="sm_cell_no_line">Total</td>
+    <td class="sm_cell_no_line">1</td>
+    <td class="sm_cell_no_line">203</td>
+    <td class="sm_cell_no_line">212</td>
+    <td class="sm_cell_no_line">
+416
+    </td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">App %</td>
+    <td class="sm_cell_no_line">
+0.24
+    </td>
+    <td class="sm_cell_no_line">
+48.80
+    </td>
+    <td class="sm_cell_no_line">
+50.96
+    </td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">Total %</td>
+    <td class="sm_cell_no_line">
+0.05
+    </td>
+    <td class="sm_cell_no_line">
+10.61
+    </td>
+    <td class="sm_cell_no_line">
+11.08
+    </td>
+    <td class="sm_cell_no_line">
+21.73
+    </td>
+  </tr>
+</table>
+                </td>
+              </tr>
+            </table>
+</div>
+
+<!--End Trucks Table-->
+
+<!--Bikes Table-->
+
+<!--End Bikes Table-->
+
+<!--End Table containing bikes and spacer tables-->
+    </td>
+  </tr>
+</table>
+
+</form>
+    </td>
+  </tr>
+</table>
+<!--  END TABLE TO HOLD LEFT SEARCH INFO -->
+
+<div id="HELP_TMC" style="position:absolute;top:150px;left:50px;width:350px;background-color:white;padding:3px;border:2px solid black;display:none;">
+<div align="center"><b>TMC Glossary</b></div>
+<ul>
+<li>App% - Percentage of approach total in relation to intersection total</li>
+<li>Total% - Percentage of specific movement total in relation to intersection total</li>
+<li>HV% - Percentage of heavy vehicle total in a specific movement</li>
+<li>PHF - Peak Hour Factor</li>
+</ul>
+<div align="center"><input type="button" class="button" value="close" onclick="ShowHelp('TMC',false)"></div>
+</div>
+
+</body>
+</html>

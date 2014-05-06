@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+mkdir "index";
+mkdir "report";
+
+for ($i = 1; $i < 552; $i++) {
+	print "\n$i\n";
+
+
+	system "curl -o 'index/$i.html' 'http://vbgov.ms2soft.com/tcds/tmcdata.asp?offset=&id=$i&a=72' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://vbgov.ms2soft.com/tcds/tdetail_tmc.asp?offset=142&sort_fld=INTID&sort_dir=ASC' -H 'Cookie: ASPSESSIONIDCAAACSTD=DBBOPCECNEHAPDMNIGKBEJIO; ASPSESSIONIDCCBCDSTD=LGMFADECHBMNCDIFDEFCCHCK; ASP.NET_SessionId=yrzsro33gtzrkgmgv0t1ifen; __utma=233346690.1708018771.1395988809.1396036089.1396120149.4; __utmc=233346690; __utmz=233346690.1395988809.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ASPSESSIONIDCCABATTC=HLJJPOADKDKHBIEOBEEJNOMK; __utma=1.1266673645.1396029817.1396029817.1396120857.2; __utmb=1.19.10.1396120857; __utmc=1; __utmz=1.1396120857.2.2.utmcsr=vbgov.com|utmccn=(referral)|utmcmd=referral|utmcct=/government/departments/public-works/traffic/Pages/traffic-count-data.aspx' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' --compressed";
+
+
+	open(IN, "index/$i.html");
+	while (<IN>) {
+		if (/href="(rpt_tmc-cars_and_trucks.asp?[^"]*)"/) {
+			$url = $1;
+
+			system "curl -o 'report/$i.html' 'http://vbgov.ms2soft.com/tcds/$url' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://vbgov.ms2soft.com/tcds/tmcdata.asp?offset=142&id=396&a=72' -H 'Cookie: ASPSESSIONIDCAAACSTD=DBBOPCECNEHAPDMNIGKBEJIO; ASPSESSIONIDCCBCDSTD=LGMFADECHBMNCDIFDEFCCHCK; ASP.NET_SessionId=yrzsro33gtzrkgmgv0t1ifen; __utma=233346690.1708018771.1395988809.1396036089.1396120149.4; __utmc=233346690; __utmz=233346690.1395988809.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ASPSESSIONIDCCABATTC=HLJJPOADKDKHBIEOBEEJNOMK; __utma=1.1266673645.1396029817.1396029817.1396120857.2; __utmb=1.21.10.1396120857; __utmc=1; __utmz=1.1396120857.2.2.utmcsr=vbgov.com|utmccn=(referral)|utmcmd=referral|utmcct=/government/departments/public-works/traffic/Pages/traffic-count-data.aspx' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' --compressed";
+
+
+		}
+	}
+}

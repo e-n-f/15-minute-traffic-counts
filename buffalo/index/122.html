@@ -1,0 +1,113 @@
+
+<html>
+<head>
+<title>Error</title>
+<link rel="stylesheet" href="/tcds/assets/style_sheets/nn.css" type="text/css">
+<script type="text/javascript" src="/tcds/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="/tcds/js/global.js"></script>
+<style>
+.errorHead {
+    border: solid 1px #000066;
+    padding: 2px;
+    margin: 0px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #CC0000;
+    font-weight: bold;
+}
+.errorMsg {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="/tcds/js/help.js"></script>
+<script type="text/javascript" src="/tcds/js/global.js"></script>
+<script type="text/javascript" src="/tcds/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/tcds/js/jquery-qHelp.js"></script>
+<link type="text/css" href="/tcds/css/jquery-qHelp.css" rel="stylesheet" />
+
+<style type="text/css">
+    DIV.banner_icon {float: right; font-size: 9px; text-align: center; margin: 0 2px 0 0;}
+    .rptHead {
+        background: -moz-linear-gradient(center top , #003366 0%, #336699 100%) repeat scroll 0 0;
+        background-color: #003366;
+        color: #FFFF66;
+        font-size: 10pt;
+        font-weight: bold;
+        margin: 10px 0;
+        padding: 3px;
+    }
+</style>
+<style type="text/css" media="print">
+    .noPrint {display:none;}
+    .rptHead {
+        background: none;
+        border-bottom: 3px solid;
+        color: #000000;
+        font-size: 20pt;
+        font-weight: bold;
+        margin: 20px 0 10px;
+        padding: 3px;
+    }
+</style>
+<!-- TCDS BANNER HEADER TABLE -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
+	<tr>
+    <td rowspan="2" height="35" align="left" valign="top"></td>
+    <td valign="top" align="left">
+<h1 style="font-size:13px;" class="title"></h1>
+    </td>
+    <td valign="middle" align="right" width="55%" nowrap>
+<div class="banner_icon"><a href="http://www.ms2soft.com" target="MS2"><img src="images/ms2_logo.gif" border="0" alt="Click for technical assistance" hspace="2" width="70" height="34"></a></div>
+
+        <!-- These are the links on the banner page. Some Agencies are unique.-->
+     
+        <div class="banner_icon noPrint"><a href="nethelp/QRG-TCDS.pdf" target="TCDS Walkthrough"><img src="images/start_here.png" border="0" alt="TCDS Help" hspace="2" width="25" height="25"><br>Start Here</a></div>
+        <div class="banner_icon noPrint"><a href="javascript:jsHelp()"><img src="images/_b_help.gif" border="0" alt="TCDS Help" hspace="2" width="25" height="25"><br>Help</a></b></div>
+        <div class="banner_icon noPrint"><a href="javascript:window.external.addFavorite('http://gbnrtc.ms2soft.com/tcds/default.asp?loc=Gbnrtc','Traffic Count Database System (TCDS) - Gbnrtc');"><img src="images/_b_bookmark.gif" border="0" hspace="2" alt="Add to Favorites"><br>Bookmark</a></div>
+        <div class="banner_icon noPrint"><a href="javascript:location.reload()"><img src="images/_i_refresh.gif" border="0" alt="Refresh View" hspace="2" width="21" height="25"><br>Refresh</a></div>
+          
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="font-size:12px" align="right" valign="middle">
+<h1 style="font-size:14px;" class="title">&nbsp;Transportation Data Management System</h1>
+<!-- <img src="assets/images/logo-tcds.gif"> -->
+    </td>
+	</tr>
+</table>
+<!-- END TCDS BANNER HEADER TABLE -->
+
+<br />
+
+<div class="errorHead">An error has occurred</div>
+<div class="errorMsg">
+
+<script language='javascript' type='text/javascript'>
+function sendData() { 
+$.post('/TCDS/scripts/ErrorMail.aspx', { 
+ UserIP: '199.188.195.20', 
+ AgencyID: '221', 
+ UserID: '', 
+ SrvName: 'gbnrtc.ms2soft.com', 
+ Referer: '', 
+ IISErrorNo: '', 
+ COMErrorNo: '-2147352567 (0x80020009)', 
+ ErrorSrc: '', 
+ FileName: '/tcds/tmcdata.asp', 
+ LineNo: '549', 
+ BriefDesc: '', 
+ FullDesc: '' 
+}); 
+}
+sendData();
+</script>
+Please contact us at <A HREF='mailto:support@ms2soft.com'>support@ms2soft.com</A> or 734.995.0200 if the problem persists.</br></br>If you received this error while importing a file, please email the file to <A HREF='mailto:wjt@ms2soft.com'>wjt@ms2soft.com</A> so we can investigate what caused the error.
+
+</div>
+</body>
+</html>

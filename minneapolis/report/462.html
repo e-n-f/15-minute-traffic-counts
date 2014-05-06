@@ -1,0 +1,944 @@
+
+<html>
+<head>
+<title>Transportation Data Management System</title>
+<link rel="stylesheet" href="assets/style_sheets/nn.css" type="text/css">
+<style type="text/css">
+<!--
+@import url(assets/style_sheets/w3csheet.css);
+body {  background-color: #FFFFFF}
+-->
+</style>
+<link rel="stylesheet" href="assets/style_sheets/w3csheet.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table width="514" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="78" height="50" valign="top"><img src="assets/images/logo-Minneapolis.gif"></td>
+    <td valign="bottom" colspan="9"><h3>Turning Movement Count Report - Cars &amp; Trucks</h3></td>
+    <td width="1"></td>
+    <td width="9"></td>
+  </tr>
+</table>
+
+<hr size="3" noshade width="640" align="left">
+
+<table width="640" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+
+    <td class="label_access_ctr"><strong>LOC ID</strong></td>
+
+    <td class="label_access_ctr"><strong>INT ID</strong></td>
+    <td class="label_access_ctr"><strong>ROAD 1</strong></td>
+    <td class="label_access_ctr"><strong>ROAD 2</strong></td>
+		<td class="label_access_ctr"><strong>ROAD 3</strong></td>
+    <td class="label_access_ctr"><strong>ROAD 4</strong></td>
+    <td class="label_access_ctr"><strong>COMMUNITY</strong></td>
+    <td class="label_access_ctr"><strong>TMC DATE</strong></td>
+  </tr>
+  <tr>
+
+    <td class="label_access_ctr">TM-0462</td>
+
+    <td class="label_access_ctr">462</td>
+    <td class="label_access_ctr">Hennepin Av S&nbsp;</td>
+    <td class="label_access_ctr">24th St W&nbsp;</td>
+		<td class="label_access_ctr">Emerson Av S&nbsp;</td>
+    <td class="label_access_ctr">&nbsp;</td>
+    <td class="label_access_ctr">Lowry Hill East&nbsp;</td>
+    <td class="label_access_ctr">9/21/2011</td>
+  </tr>
+</table>
+
+<hr size="1" noshade width="640" align="left">
+
+<b>CARS</b>
+<table border="0" cellpadding="2" cellspacing="0" width="514">
+  <tr>
+
+    <td valign="top">
+<div class="sm_text">NB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="sm_table_hdr" nowrap valign="bottom">Start<br>Time</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Ped</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr>  <td class="sm_cell" nowrap>6:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">189</td><td class="sm_cell">5</td><td class="sm_cell">0</td><td class="sm_cell_no_line">194</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">250</td><td class="sm_cell">2</td><td class="sm_cell">2</td><td class="sm_cell_no_line">252</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:30 AM</td><td class="sm_cell">1</td><td class="sm_cell">221</td><td class="sm_cell">13</td><td class="sm_cell">2</td><td class="sm_cell_no_line">235</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:45 AM</td><td class="sm_cell">3</td><td class="sm_cell">235</td><td class="sm_cell">20</td><td class="sm_cell">4</td><td class="sm_cell_no_line">258</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">267</td><td class="sm_cell">14</td><td class="sm_cell">2</td><td class="sm_cell_no_line">281</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:15 AM</td><td class="sm_cell">2</td><td class="sm_cell">253</td><td class="sm_cell">11</td><td class="sm_cell">3</td><td class="sm_cell_no_line">266</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">255</td><td class="sm_cell">13</td><td class="sm_cell">2</td><td class="sm_cell_no_line">268</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:45 AM</td><td class="sm_cell">2</td><td class="sm_cell">209</td><td class="sm_cell">10</td><td class="sm_cell">2</td><td class="sm_cell_no_line">221</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:30 AM</td><td class="sm_cell">2</td><td class="sm_cell">167</td><td class="sm_cell">14</td><td class="sm_cell">2</td><td class="sm_cell_no_line">183</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:45 AM</td><td class="sm_cell">3</td><td class="sm_cell">155</td><td class="sm_cell">14</td><td class="sm_cell">0</td><td class="sm_cell_no_line">172</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:00 PM</td><td class="sm_cell">5</td><td class="sm_cell">165</td><td class="sm_cell">17</td><td class="sm_cell">17</td><td class="sm_cell_no_line">187</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:15 PM</td><td class="sm_cell">5</td><td class="sm_cell">175</td><td class="sm_cell">9</td><td class="sm_cell">5</td><td class="sm_cell_no_line">189</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:30 PM</td><td class="sm_cell">3</td><td class="sm_cell">170</td><td class="sm_cell">15</td><td class="sm_cell">9</td><td class="sm_cell_no_line">188</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:45 PM</td><td class="sm_cell">1</td><td class="sm_cell">171</td><td class="sm_cell">11</td><td class="sm_cell">2</td><td class="sm_cell_no_line">183</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:00 PM</td><td class="sm_cell">1</td><td class="sm_cell">172</td><td class="sm_cell">12</td><td class="sm_cell">13</td><td class="sm_cell_no_line">185</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:15 PM</td><td class="sm_cell">4</td><td class="sm_cell">165</td><td class="sm_cell">14</td><td class="sm_cell">13</td><td class="sm_cell_no_line">183</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">229</td><td class="sm_cell">9</td><td class="sm_cell">12</td><td class="sm_cell_no_line">238</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:45 PM</td><td class="sm_cell">2</td><td class="sm_cell">211</td><td class="sm_cell">13</td><td class="sm_cell">7</td><td class="sm_cell_no_line">226</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:00 PM</td><td class="sm_cell">1</td><td class="sm_cell">219</td><td class="sm_cell">15</td><td class="sm_cell">18</td><td class="sm_cell_no_line">235</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">230</td><td class="sm_cell">11</td><td class="sm_cell">17</td><td class="sm_cell_no_line">241</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:30 PM</td><td class="sm_cell">2</td><td class="sm_cell">221</td><td class="sm_cell">16</td><td class="sm_cell">14</td><td class="sm_cell_no_line">239</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">201</td><td class="sm_cell">19</td><td class="sm_cell">18</td><td class="sm_cell_no_line">220</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:00 PM</td><td class="sm_cell">4</td><td class="sm_cell">224</td><td class="sm_cell">12</td><td class="sm_cell">29</td><td class="sm_cell_no_line">240</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:15 PM</td><td class="sm_cell">4</td><td class="sm_cell">214</td><td class="sm_cell">15</td><td class="sm_cell">14</td><td class="sm_cell_no_line">233</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    <td class="sm_cell_no_line">Total</td>
+    <td class="sm_cell_no_line">45</td>
+    <td class="sm_cell_no_line">4968</td>
+    <td class="sm_cell_no_line">304</td>
+    
+    <td class="sm_cell_no_line">207</td>
+    <td class="sm_cell_no_line">5317</td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">App %</td>
+    <td class="sm_cell_no_line">
+0.8
+    </td>
+    <td class="sm_cell_no_line">
+93.4
+    </td>
+    <td class="sm_cell_no_line">
+5.7
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">Total %</td>
+    <td class="sm_cell_no_line">
+0.4
+    </td>
+    <td class="sm_cell_no_line">
+42.1
+    </td>
+    <td class="sm_cell_no_line">
+2.6
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">
+45.0
+  </td>
+</table>
+    </td>
+
+    <td valign="top">
+<div class="sm_text">EB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Ped</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">5</td><td class="sm_cell">5</td><td class="sm_cell">8</td><td class="sm_cell">3</td><td class="sm_cell_no_line">18</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">4</td><td class="sm_cell">7</td><td class="sm_cell">2</td><td class="sm_cell_no_line">17</td></tr>
+  <tr><td class="sm_cell">11</td><td class="sm_cell">14</td><td class="sm_cell">14</td><td class="sm_cell">0</td><td class="sm_cell_no_line">39</td></tr>
+  <tr><td class="sm_cell">11</td><td class="sm_cell">18</td><td class="sm_cell">9</td><td class="sm_cell">2</td><td class="sm_cell_no_line">38</td></tr>
+  <tr><td class="sm_cell">8</td><td class="sm_cell">15</td><td class="sm_cell">3</td><td class="sm_cell">1</td><td class="sm_cell_no_line">26</td></tr>
+  <tr><td class="sm_cell">8</td><td class="sm_cell">16</td><td class="sm_cell">6</td><td class="sm_cell">3</td><td class="sm_cell_no_line">30</td></tr>
+  <tr><td class="sm_cell">13</td><td class="sm_cell">16</td><td class="sm_cell">8</td><td class="sm_cell">0</td><td class="sm_cell_no_line">37</td></tr>
+  <tr><td class="sm_cell">13</td><td class="sm_cell">7</td><td class="sm_cell">9</td><td class="sm_cell">2</td><td class="sm_cell_no_line">29</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">8</td><td class="sm_cell">16</td><td class="sm_cell">3</td><td class="sm_cell_no_line">33</td></tr>
+  <tr><td class="sm_cell">12</td><td class="sm_cell">6</td><td class="sm_cell">8</td><td class="sm_cell">3</td><td class="sm_cell_no_line">26</td></tr>
+  <tr><td class="sm_cell">11</td><td class="sm_cell">5</td><td class="sm_cell">14</td><td class="sm_cell">6</td><td class="sm_cell_no_line">30</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">14</td><td class="sm_cell">15</td><td class="sm_cell">3</td><td class="sm_cell_no_line">35</td></tr>
+  <tr><td class="sm_cell">10</td><td class="sm_cell">20</td><td class="sm_cell">23</td><td class="sm_cell">4</td><td class="sm_cell_no_line">53</td></tr>
+  <tr><td class="sm_cell">12</td><td class="sm_cell">7</td><td class="sm_cell">21</td><td class="sm_cell">2</td><td class="sm_cell_no_line">40</td></tr>
+  <tr><td class="sm_cell">13</td><td class="sm_cell">12</td><td class="sm_cell">12</td><td class="sm_cell">6</td><td class="sm_cell_no_line">37</td></tr>
+  <tr><td class="sm_cell">11</td><td class="sm_cell">14</td><td class="sm_cell">10</td><td class="sm_cell">6</td><td class="sm_cell_no_line">35</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">25</td><td class="sm_cell">19</td><td class="sm_cell">5</td><td class="sm_cell_no_line">50</td></tr>
+  <tr><td class="sm_cell">12</td><td class="sm_cell">20</td><td class="sm_cell">12</td><td class="sm_cell">6</td><td class="sm_cell_no_line">44</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">19</td><td class="sm_cell">19</td><td class="sm_cell">8</td><td class="sm_cell_no_line">47</td></tr>
+  <tr><td class="sm_cell">12</td><td class="sm_cell">22</td><td class="sm_cell">18</td><td class="sm_cell">7</td><td class="sm_cell_no_line">52</td></tr>
+  <tr><td class="sm_cell">8</td><td class="sm_cell">20</td><td class="sm_cell">19</td><td class="sm_cell">16</td><td class="sm_cell_no_line">47</td></tr>
+  <tr><td class="sm_cell">7</td><td class="sm_cell">29</td><td class="sm_cell">27</td><td class="sm_cell">23</td><td class="sm_cell_no_line">63</td></tr>
+  <tr><td class="sm_cell">15</td><td class="sm_cell">27</td><td class="sm_cell">17</td><td class="sm_cell">15</td><td class="sm_cell_no_line">59</td></tr>
+  <tr><td class="sm_cell">8</td><td class="sm_cell">16</td><td class="sm_cell">15</td><td class="sm_cell">10</td><td class="sm_cell_no_line">39</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    
+    <td class="sm_cell_no_line">236</td>
+    <td class="sm_cell_no_line">359</td>
+    <td class="sm_cell_no_line">329</td>
+    
+    <td class="sm_cell_no_line">136</td>
+    <td class="sm_cell_no_line">924</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+25.5
+    </td>
+    <td class="sm_cell_no_line">
+38.9
+    </td>
+    <td class="sm_cell_no_line">
+35.6
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+2.0
+    </td>
+    <td class="sm_cell_no_line">
+3.0
+    </td>
+    <td class="sm_cell_no_line">
+2.8
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">
+7.8
+  </td>
+</table>
+    </td>
+
+    <td valign="top">
+<div class="sm_text">SB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Ped</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">79</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">80</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">120</td><td class="sm_cell">6</td><td class="sm_cell">0</td><td class="sm_cell_no_line">127</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">127</td><td class="sm_cell">3</td><td class="sm_cell">1</td><td class="sm_cell_no_line">130</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">131</td><td class="sm_cell">4</td><td class="sm_cell">0</td><td class="sm_cell_no_line">137</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">139</td><td class="sm_cell">9</td><td class="sm_cell">1</td><td class="sm_cell_no_line">148</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">100</td><td class="sm_cell">4</td><td class="sm_cell">1</td><td class="sm_cell_no_line">104</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">155</td><td class="sm_cell">8</td><td class="sm_cell">5</td><td class="sm_cell_no_line">163</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">151</td><td class="sm_cell">10</td><td class="sm_cell">1</td><td class="sm_cell_no_line">161</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">194</td><td class="sm_cell">8</td><td class="sm_cell">3</td><td class="sm_cell_no_line">208</td></tr>
+  <tr><td class="sm_cell">18</td><td class="sm_cell">232</td><td class="sm_cell">11</td><td class="sm_cell">4</td><td class="sm_cell_no_line">261</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">189</td><td class="sm_cell">2</td><td class="sm_cell">3</td><td class="sm_cell_no_line">200</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">212</td><td class="sm_cell">12</td><td class="sm_cell">5</td><td class="sm_cell_no_line">230</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">209</td><td class="sm_cell">6</td><td class="sm_cell">2</td><td class="sm_cell_no_line">221</td></tr>
+  <tr><td class="sm_cell">4</td><td class="sm_cell">221</td><td class="sm_cell">2</td><td class="sm_cell">5</td><td class="sm_cell_no_line">227</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">197</td><td class="sm_cell">6</td><td class="sm_cell">6</td><td class="sm_cell_no_line">209</td></tr>
+  <tr><td class="sm_cell">5</td><td class="sm_cell">163</td><td class="sm_cell">6</td><td class="sm_cell">8</td><td class="sm_cell_no_line">174</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">253</td><td class="sm_cell">17</td><td class="sm_cell">14</td><td class="sm_cell_no_line">270</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">290</td><td class="sm_cell">12</td><td class="sm_cell">12</td><td class="sm_cell_no_line">303</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">251</td><td class="sm_cell">5</td><td class="sm_cell">11</td><td class="sm_cell_no_line">257</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">315</td><td class="sm_cell">1</td><td class="sm_cell">11</td><td class="sm_cell_no_line">317</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">245</td><td class="sm_cell">5</td><td class="sm_cell">8</td><td class="sm_cell_no_line">251</td></tr>
+  <tr><td class="sm_cell">3</td><td class="sm_cell">310</td><td class="sm_cell">9</td><td class="sm_cell">20</td><td class="sm_cell_no_line">322</td></tr>
+  <tr><td class="sm_cell">8</td><td class="sm_cell">250</td><td class="sm_cell">7</td><td class="sm_cell">21</td><td class="sm_cell_no_line">265</td></tr>
+  <tr><td class="sm_cell">12</td><td class="sm_cell">291</td><td class="sm_cell">7</td><td class="sm_cell">15</td><td class="sm_cell_no_line">310</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    
+    <td class="sm_cell_no_line">90</td>
+    <td class="sm_cell_no_line">4824</td>
+    <td class="sm_cell_no_line">161</td>
+    
+    <td class="sm_cell_no_line">157</td>
+    <td class="sm_cell_no_line">5075</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+1.8
+    </td>
+    <td class="sm_cell_no_line">
+95.1
+    </td>
+    <td class="sm_cell_no_line">
+3.2
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+0.8
+    </td>
+    <td class="sm_cell_no_line">
+40.9
+    </td>
+    <td class="sm_cell_no_line">
+1.4
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">
+43.0
+  </td>
+</table>
+    </td>
+
+    <td valign="top">
+<div class="sm_text">WB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Ped</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">3</td><td class="sm_cell">4</td><td class="sm_cell">2</td><td class="sm_cell">7</td><td class="sm_cell_no_line">9</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">10</td><td class="sm_cell">6</td><td class="sm_cell">15</td><td class="sm_cell_no_line">25</td></tr>
+  <tr><td class="sm_cell">3</td><td class="sm_cell">8</td><td class="sm_cell">3</td><td class="sm_cell">10</td><td class="sm_cell_no_line">14</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">3</td><td class="sm_cell">2</td><td class="sm_cell">6</td><td class="sm_cell_no_line">14</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">8</td><td class="sm_cell">2</td><td class="sm_cell">4</td><td class="sm_cell_no_line">16</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">8</td><td class="sm_cell">1</td><td class="sm_cell">11</td><td class="sm_cell_no_line">18</td></tr>
+  <tr><td class="sm_cell">6</td><td class="sm_cell">7</td><td class="sm_cell">2</td><td class="sm_cell">8</td><td class="sm_cell_no_line">15</td></tr>
+  <tr><td class="sm_cell">5</td><td class="sm_cell">8</td><td class="sm_cell">3</td><td class="sm_cell">1</td><td class="sm_cell_no_line">16</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">7</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">14</td><td class="sm_cell_no_line">8</td></tr>
+  <tr><td class="sm_cell">10</td><td class="sm_cell">6</td><td class="sm_cell">3</td><td class="sm_cell">8</td><td class="sm_cell_no_line">19</td></tr>
+  <tr><td class="sm_cell">9</td><td class="sm_cell">5</td><td class="sm_cell">3</td><td class="sm_cell">3</td><td class="sm_cell_no_line">17</td></tr>
+  <tr><td class="sm_cell">18</td><td class="sm_cell">7</td><td class="sm_cell">2</td><td class="sm_cell">7</td><td class="sm_cell_no_line">27</td></tr>
+  <tr><td class="sm_cell">11</td><td class="sm_cell">5</td><td class="sm_cell">3</td><td class="sm_cell">5</td><td class="sm_cell_no_line">19</td></tr>
+  <tr><td class="sm_cell">15</td><td class="sm_cell">8</td><td class="sm_cell">4</td><td class="sm_cell">8</td><td class="sm_cell_no_line">27</td></tr>
+  <tr><td class="sm_cell">15</td><td class="sm_cell">2</td><td class="sm_cell">2</td><td class="sm_cell">9</td><td class="sm_cell_no_line">19</td></tr>
+  <tr><td class="sm_cell">7</td><td class="sm_cell">7</td><td class="sm_cell">1</td><td class="sm_cell">9</td><td class="sm_cell_no_line">15</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">11</td><td class="sm_cell">7</td><td class="sm_cell">1</td><td class="sm_cell">12</td><td class="sm_cell_no_line">19</td></tr>
+  <tr><td class="sm_cell">14</td><td class="sm_cell">12</td><td class="sm_cell">2</td><td class="sm_cell">9</td><td class="sm_cell_no_line">28</td></tr>
+  <tr><td class="sm_cell">13</td><td class="sm_cell">12</td><td class="sm_cell">3</td><td class="sm_cell">8</td><td class="sm_cell_no_line">28</td></tr>
+  <tr><td class="sm_cell">13</td><td class="sm_cell">10</td><td class="sm_cell">4</td><td class="sm_cell">13</td><td class="sm_cell_no_line">27</td></tr>
+  <tr><td class="sm_cell">18</td><td class="sm_cell">14</td><td class="sm_cell">5</td><td class="sm_cell">13</td><td class="sm_cell_no_line">37</td></tr>
+  <tr><td class="sm_cell">14</td><td class="sm_cell">14</td><td class="sm_cell">4</td><td class="sm_cell">12</td><td class="sm_cell_no_line">32</td></tr>
+  <tr><td class="sm_cell">7</td><td class="sm_cell">9</td><td class="sm_cell">6</td><td class="sm_cell">20</td><td class="sm_cell_no_line">22</td></tr>
+  <tr><td class="sm_cell">10</td><td class="sm_cell">4</td><td class="sm_cell">6</td><td class="sm_cell">9</td><td class="sm_cell_no_line">20</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    
+    <td class="sm_cell_no_line">242</td>
+    <td class="sm_cell_no_line">179</td>
+    <td class="sm_cell_no_line">70</td>
+    
+    <td class="sm_cell_no_line">221</td>
+    <td class="sm_cell_no_line">491</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+49.3
+    </td>
+    <td class="sm_cell_no_line">
+36.5
+    </td>
+    <td class="sm_cell_no_line">
+14.3
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+2.0
+    </td>
+    <td class="sm_cell_no_line">
+1.5
+    </td>
+    <td class="sm_cell_no_line">
+0.6
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+    <td class="sm_cell_no_line">
+4.2
+  </td>
+</table>
+    </td>
+
+
+  <td valign="top">
+<div class="sm_text">&nbsp;</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="sm_table_hdr" valign="bottom">Interval<br>Total</td>
+  </tr>
+<tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">301</td></tr><tr><td class="sm_cell">421</td></tr><tr><td class="sm_cell">418</td></tr><tr><td class="sm_cell">447</td></tr><tr><td class="sm_cell">471</td></tr><tr><td class="sm_cell">418</td></tr><tr><td class="sm_cell">483</td></tr><tr><td class="sm_cell">427</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">432</td></tr><tr><td class="sm_cell">478</td></tr><tr><td class="sm_cell">434</td></tr><tr><td class="sm_cell">481</td></tr><tr><td class="sm_cell">481</td></tr><tr><td class="sm_cell">477</td></tr><tr><td class="sm_cell">450</td></tr><tr><td class="sm_cell">407</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">577</td></tr><tr><td class="sm_cell">601</td></tr><tr><td class="sm_cell">567</td></tr><tr><td class="sm_cell">637</td></tr><tr><td class="sm_cell">574</td></tr><tr><td class="sm_cell">637</td></tr><tr><td class="sm_cell">586</td></tr><tr><td class="sm_cell">602</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr>
+  <tr><td class="sm_cell_no_line">11807</td></tr>
+</table>
+    </td>
+  </tr>
+</table>
+
+<hr size="1" noshade width="640" align="left">
+
+<b>TRUCKS</b>
+<table border="0" cellpadding="2" cellspacing="0" width="514">
+  <tr>
+
+    <td valign="top">
+<div class="sm_text">NB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="sm_table_hdr" nowrap valign="bottom">Start<br>Time</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr>  <td class="sm_cell" nowrap>6:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">4</td><td class="sm_cell">2</td><td class="sm_cell_no_line">6</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">10</td><td class="sm_cell">3</td><td class="sm_cell_no_line">13</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">4</td><td class="sm_cell">1</td><td class="sm_cell_no_line">5</td></tr>
+  <tr>  <td class="sm_cell" nowrap>7:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">12</td><td class="sm_cell">3</td><td class="sm_cell_no_line">15</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">11</td><td class="sm_cell">3</td><td class="sm_cell_no_line">14</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">11</td><td class="sm_cell">1</td><td class="sm_cell_no_line">12</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">13</td><td class="sm_cell">2</td><td class="sm_cell_no_line">15</td></tr>
+  <tr>  <td class="sm_cell" nowrap>8:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">15</td><td class="sm_cell">1</td><td class="sm_cell_no_line">16</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>9:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:30 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>10:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:00 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:15 AM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:30 AM</td><td class="sm_cell">1</td><td class="sm_cell">7</td><td class="sm_cell">2</td><td class="sm_cell_no_line">10</td></tr>
+  <tr>  <td class="sm_cell" nowrap>11:45 AM</td><td class="sm_cell">0</td><td class="sm_cell">11</td><td class="sm_cell">2</td><td class="sm_cell_no_line">13</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">9</td><td class="sm_cell">3</td><td class="sm_cell_no_line">12</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">8</td><td class="sm_cell">2</td><td class="sm_cell_no_line">10</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">8</td><td class="sm_cell">2</td><td class="sm_cell_no_line">10</td></tr>
+  <tr>  <td class="sm_cell" nowrap>12:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">13</td><td class="sm_cell">4</td><td class="sm_cell_no_line">17</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">18</td><td class="sm_cell">1</td><td class="sm_cell_no_line">19</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:15 PM</td><td class="sm_cell">1</td><td class="sm_cell">14</td><td class="sm_cell">1</td><td class="sm_cell_no_line">16</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>1:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>2:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>3:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">11</td><td class="sm_cell">3</td><td class="sm_cell_no_line">14</td></tr>
+  <tr>  <td class="sm_cell" nowrap>4:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">13</td><td class="sm_cell">1</td><td class="sm_cell_no_line">14</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">4</td><td class="sm_cell">1</td><td class="sm_cell_no_line">5</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">1</td><td class="sm_cell_no_line">6</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">1</td><td class="sm_cell_no_line">6</td></tr>
+  <tr>  <td class="sm_cell" nowrap>5:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">7</td><td class="sm_cell">1</td><td class="sm_cell_no_line">8</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:00 PM</td><td class="sm_cell">0</td><td class="sm_cell">7</td><td class="sm_cell">1</td><td class="sm_cell_no_line">8</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:15 PM</td><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">1</td><td class="sm_cell_no_line">6</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:30 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr>  <td class="sm_cell" nowrap>6:45 PM</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    <td class="sm_cell_no_line">Total</td>
+    <td class="sm_cell_no_line">2</td>
+    <td class="sm_cell_no_line">225</td>
+    <td class="sm_cell_no_line">43</td>
+    
+    <td class="sm_cell_no_line">270</td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">App %</td>
+    <td class="sm_cell_no_line">
+0.7
+    </td>
+    <td class="sm_cell_no_line">
+83.3
+    </td>
+    <td class="sm_cell_no_line">
+15.9
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="sm_cell_no_line">Total %</td>
+    <td class="sm_cell_no_line">
+0.4
+    </td>
+    <td class="sm_cell_no_line">
+40.9
+    </td>
+    <td class="sm_cell_no_line">
+7.8
+    </td>
+
+    <td class="sm_cell_no_line">
+49.1
+  </td>
+</table>
+    </td>
+
+    <td valign="top">
+<div class="sm_text">EB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">3</td><td class="sm_cell_no_line">3</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">2</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    
+    <td class="sm_cell_no_line">2</td>
+    <td class="sm_cell_no_line">6</td>
+    <td class="sm_cell_no_line">9</td>
+    
+    <td class="sm_cell_no_line">17</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+11.8
+    </td>
+    <td class="sm_cell_no_line">
+35.3
+    </td>
+    <td class="sm_cell_no_line">
+52.9
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+0.4
+    </td>
+    <td class="sm_cell_no_line">
+1.1
+    </td>
+    <td class="sm_cell_no_line">
+1.6
+    </td>
+
+    <td class="sm_cell_no_line">
+3.1
+  </td>
+</table>
+    </td>
+
+    <td valign="top">
+<div class="sm_text">SB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">16</td><td class="sm_cell">0</td><td class="sm_cell_no_line">16</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">14</td><td class="sm_cell">0</td><td class="sm_cell_no_line">14</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">12</td><td class="sm_cell">2</td><td class="sm_cell_no_line">15</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">11</td><td class="sm_cell">0</td><td class="sm_cell_no_line">11</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">11</td><td class="sm_cell">0</td><td class="sm_cell_no_line">11</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">8</td><td class="sm_cell">0</td><td class="sm_cell_no_line">8</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">14</td><td class="sm_cell">1</td><td class="sm_cell_no_line">15</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">14</td><td class="sm_cell">0</td><td class="sm_cell_no_line">14</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">8</td><td class="sm_cell">1</td><td class="sm_cell_no_line">9</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">13</td><td class="sm_cell">0</td><td class="sm_cell_no_line">13</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">9</td><td class="sm_cell">0</td><td class="sm_cell_no_line">9</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">6</td><td class="sm_cell">0</td><td class="sm_cell_no_line">6</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">8</td><td class="sm_cell">0</td><td class="sm_cell_no_line">8</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">10</td><td class="sm_cell">0</td><td class="sm_cell_no_line">10</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">9</td><td class="sm_cell">0</td><td class="sm_cell_no_line">9</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">0</td><td class="sm_cell_no_line">5</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">0</td><td class="sm_cell_no_line">5</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">6</td><td class="sm_cell">0</td><td class="sm_cell_no_line">6</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">3</td><td class="sm_cell">0</td><td class="sm_cell_no_line">3</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">6</td><td class="sm_cell">0</td><td class="sm_cell_no_line">6</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">8</td><td class="sm_cell">0</td><td class="sm_cell_no_line">9</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">6</td><td class="sm_cell">0</td><td class="sm_cell_no_line">6</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">0</td><td class="sm_cell_no_line">5</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">5</td><td class="sm_cell">0</td><td class="sm_cell_no_line">5</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    
+    <td class="sm_cell_no_line">2</td>
+    <td class="sm_cell_no_line">212</td>
+    <td class="sm_cell_no_line">4</td>
+    
+    <td class="sm_cell_no_line">218</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+0.9
+    </td>
+    <td class="sm_cell_no_line">
+97.2
+    </td>
+    <td class="sm_cell_no_line">
+1.8
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+0.4
+    </td>
+    <td class="sm_cell_no_line">
+38.5
+    </td>
+    <td class="sm_cell_no_line">
+0.7
+    </td>
+
+    <td class="sm_cell_no_line">
+39.6
+  </td>
+</table>
+    </td>
+
+    <td valign="top">
+<div class="sm_text">WB</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">Left</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Thru</td>
+    <td class="sm_table_hdr" width="30" valign="bottom">Right</td>
+    
+    <td class="sm_table_hdr" width="30" valign="bottom">App<br>Total</td>
+  </tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">1</td><td class="sm_cell">2</td><td class="sm_cell_no_line">3</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">1</td><td class="sm_cell">1</td><td class="sm_cell_no_line">4</td></tr>
+  <tr><td class="sm_cell">3</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">3</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">3</td><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell_no_line">4</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">2</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">2</td></tr>
+  <tr><td class="sm_cell">3</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">3</td></tr>
+  <tr><td class="sm_cell">1</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">1</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+  <tr><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell">0</td><td class="sm_cell_no_line">0</td></tr>
+
+  <tr>
+    
+    <td class="sm_cell_no_line">36</td>
+    <td class="sm_cell_no_line">6</td>
+    <td class="sm_cell_no_line">3</td>
+    
+    <td class="sm_cell_no_line">45</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+80.0
+    </td>
+    <td class="sm_cell_no_line">
+13.3
+    </td>
+    <td class="sm_cell_no_line">
+6.7
+    </td>
+
+    <td class="sm_cell_no_line">&nbsp;</td>
+  </tr>
+  <tr>
+    
+    <td class="sm_cell_no_line">
+6.5
+    </td>
+    <td class="sm_cell_no_line">
+1.1
+    </td>
+    <td class="sm_cell_no_line">
+0.5
+    </td>
+
+    <td class="sm_cell_no_line">
+8.2
+  </td>
+</table>
+    </td>
+
+
+  <td valign="top">
+<div class="sm_text">&nbsp;</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="sm_table_hdr" valign="bottom">Interval<br>Total</td>
+  </tr>
+<tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">25</td></tr><tr><td class="sm_cell">30</td></tr><tr><td class="sm_cell">24</td></tr><tr><td class="sm_cell">29</td></tr><tr><td class="sm_cell">28</td></tr><tr><td class="sm_cell">25</td></tr><tr><td class="sm_cell">34</td></tr><tr><td class="sm_cell">33</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">19</td></tr><tr><td class="sm_cell">30</td></tr><tr><td class="sm_cell">23</td></tr><tr><td class="sm_cell">17</td></tr><tr><td class="sm_cell">20</td></tr><tr><td class="sm_cell">28</td></tr><tr><td class="sm_cell">30</td></tr><tr><td class="sm_cell">24</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">21</td></tr><tr><td class="sm_cell">22</td></tr><tr><td class="sm_cell">10</td></tr><tr><td class="sm_cell">16</td></tr><tr><td class="sm_cell">17</td></tr><tr><td class="sm_cell">17</td></tr><tr><td class="sm_cell">16</td></tr><tr><td class="sm_cell">12</td></tr><tr><td class="sm_cell">0</td></tr><tr><td class="sm_cell">0</td></tr>
+  <tr><td class="sm_cell_no_line">550</td></tr>
+</table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
