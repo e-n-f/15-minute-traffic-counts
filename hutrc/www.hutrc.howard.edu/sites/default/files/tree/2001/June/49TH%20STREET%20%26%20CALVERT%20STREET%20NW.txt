@@ -1,0 +1,131 @@
+                 A                  B                    C            D     E    I      L        M           N         O    P   S      T        X          Y         Z   BS BT      BX       CA
+
+         1                6/18/2001                                           49TH         STREET,              NW        &   CALVERT                 STREET
+         2               VEHICLE AND PEDESTRIAN COUNT             NW
+         3               DISTRICT OF COLUMBIA                               [X1]   49TH STREET NW                           [X2]  49TH STREET NW                          [W1]   CALVERT STREET NW
+         4               DEPARTMENT OF PUBLIC WORKS                         Moving north      [S LEG]                Peds Moving south        [N LEG]              Peds Moving northwest         [SE LEG
+         5               BUREAU OF TRAFFIC SERVICES                         Counted By      SHORTER     COUNTER-            Counted By      SHORTER   COUNTER-            Counted By     SHORTER
+         6               c_bcc__c.xrb 11/12/97 c___c__c.xrb 07/19/01           Thru Right     TOTAL     FLOW           A       Left   Thru    TOTAL   FLOW           C       Left  Right   TOTAL
+         7                  moving to> leg &      LOS:am/pm         NHS?         N     SE                    S                  SE     S                   N                  S      N
+
+         8  CHKD BY                       DAY -   MONDAY              7:00         3                  3          4                       4          4          3
+         9  __________              WEATHER CLEAR  -                  7:15         6      1           7          5       1        2      4          6          7                1      1          2
+        10                        POSTED BY S     - TAGGS             7:30         8                  8          9                3      9        12         11                        3          3
+        11               INTERSECTION ID               10490240       7:45        13      1          14        10        1        2      9        11         18        1        1      5          6
+        12               CONTROLLED BY                            Hr Tot          30      2          32        28        2        7     26        33         39        1        2      9        11
+        13               STOP SIGN ON CALVERT STREET 8:00                         7       1           8        13                 1      7         8         12                 6      5        11
+        14  49TH ST 1 REG LANE NB NPAT                                8:15       15                  15         7                 2      6         8         17                 1      2         3
+        15  1 REG LANE SB NPAT                                        8:30       12                  12         6        1        2      6         8         15                        3         3
+        16  CALVERT ST 1 REG LANE/1 PARKING LANE 8:45                            13       1          14        13                 2     12        14         14                 1      1         2
+        17  NO RESTRICTIONS POSTED NWB                            Hr Tot         47       2          49        39        1        7     31        38         58                 8     11        19
+        18                                                            9:00       12       2          14         6                 2      6         8         15                        3         3
+        19                                                            9:15        6                   6        12                 4     12        16          7                        1         1
+        20                                                            9:30        8       1           9         9                 2      7         9         10                 2      2         4
+        21                                                            9:45        5       1           6         9                 2      9        11          8                        3         3
+        22                                                        Hr Tot         31       4          35        36                10     34        44         40                 2      9        11
+        23                                                           10:00        5       1           6        10                 3      9        12          9                 1      4         5
+        24                                                           10:15        3       2           5         7                 2      7         9          6                        3         3
+        25                                                           10:30        5       1           6        13                 5     10        15          9                 3      4         7
+        26                                                           10:45        5       2           7        11        2        1      6         7          9                 5      4         9
+        27                                                        Hr Tot         18       6          24        41        2       11     32        43         33                 9     15        24
+        28                                                           11:00        2       2           4         8                 1      6         7          7                 2      5         7
+        29                                                           11:15        3       2           5         6        2        2      6         8          5                        2         2
+        30                                                           11:30        5       2           7        12                 1     10        11          7                 2      2         4
+        31                                                           11:45       10       1          11        16                 2     13        15         15                 3      5         8
+        32                                                        Hr Tot         20       7          27        42        2        6     35        41         34                 7     14        21
+        33                                                           12:00       13       2          15        11        2        4      8        12         16                 3      3         6
+        34                                                           12:15        4       2           6        12        1        2     10        12          6                 2      2         4
+        35                                                           12:30       10       2          12        13        1        2     10        12         15                 3      5         8
+        36                                                           12:45       10       1          11        11        2        6     11        17         16                        6         6
+        37                                                        Hr Tot         37       7          44        47        6       14     39        53         53                 8     16        24
+        38               PEDESTRIANS (10hr)                    36      2:00       6                   6         5                        3         3          9        1        2      3         5
+        39               10-HR FACTORS            (default=.6)         2:15       4                   4        11                 3     10        13          6                 1      2         3
+        40                                   X = 0.60                  2:30       7       1           8        18        1        1     15        16         10                 3      3         6
+        41                                   Y = 0.60                  2:45      10       1          11        16                 1     12        13         12        1        4      2         6
+        42                                   Z=   0.60            Hr Tot         27       2          29        50        1        5     40        45         37        2       10     10        20
+        43                                   W = 0.60                  3:00       6       2           8        14                 3     11        14          8                 3      2         5
+        44               PEAK HOURS SUMMARY:                           3:15       5       1           6        13        1        2      9        11          6                 4      1         5
+        45               AM PkHr. (starting)             7:45 AM       3:30       2       2           4        15        1        3     12        15          3                 3      1         4
+        46                        AM PkHr Vol =         107            3:45       7       1           8        10                 6      8        14         11                 2      4         6
+        47                    AM PkHr Factor =          .79       Hr Tot         20       6          26        52        2       14     40        54         28                12      8        20
+        48                             AM LOS =                        4:00       9       2          11        11        2        4      7        11         11                 4      2         6
+        49                             AM V/C =                        4:15       9       1          10        14        2        1     13        14         13                 1      4         5
+        50                   AM PkHr % OF24 =           6.2%           4:30      11       1          12        11        2        6     11        17         13                        2         2
+        51               PM PkHr (starting)              5:00 PM       4:45      10                  10        13        1        4     13        17         12                        2         2
+        52                        PM PkHr Vol =         156       Hr Tot         39       4          43        49        7       15     44        59         49                 5     10        15
+        53                    PM PkHr Factor =          .89           5:00        4      3            7        10                 7     10        17          8                        4         4
+        54                             PM LOS =                       5:15       19      1           20        15        1        3     11        14         22                 4      3         7
+        55                             PM V/C =                       5:30       16      3           19        15        2        5     13        18         21                 2      5         7
+        56                  PM PkHr % OF 24 =           9.0%          5:45       12      4           16        15        2        5     13        18         19        1        2      7         9
+        57               file name           DISK xx#             Hr Tot         51     11           62        55        5       20     47        67         70        1        8     19        27
+        58               49CALNW.L6I              10 HOUR TOTAL                 320     51        371        439        28      109    368      477        441         4       71    121      192
+        59               zone(s)                  A. M. PEAK HOUR                47      2           49          36      2         7    28        35           62      1         8    15        23
+        60               5573                     P. M. PEAK HOUR                51     11           62          55      5       20     47        67           70      1         8    19        27
+        61                 --- ---                24 Hr (estimate)              533     85        618        732        47      182    613      795        735         7      118    202      320
+        62               LEG     I.D.   [#]                        HPMS#                  10490239                                       10490241                                      12002489
+                 CB       CC CO      CP         CS       CT
+
+         1
+         2
+VERT STREET
+         3         NW
+thwest   4[SE LEG]       Peds
+         5   COUNTER-                        TOTALS
+         6   FLOW           D        [X]        [W]     Peds
+         7       SE
+         8                               7
+         9            3                 13          2        1
+         10           3                 20          3
+         11           3       1         25          6        3
+         12          9        1         65         11        4
+        13           2                   16        11
+        14           2                   23         3
+        15           2                   20         3        1
+        16           3                   28         2
+        17           9                  87         19        1
+        18          4                   22          3
+        19          4                   22          1
+        20          3                   18          4
+        21          3                   17          3
+        22         14                   79         11
+        23          4                   18          5
+        24          4                   14          3
+        25          6                   21          7
+        26          3        1          14          9        3
+        27         17        1          67         24        3
+        28          3                   11          7
+        29          4                   13          2        2
+        30          3                   18          4
+        31          3                   26          8
+        32         13                   68         21        2
+        33          6                   27          6        2
+        34          4                   18          4        1
+        35          4                   24          8        1
+        36          7                   28          6        2
+        37         21                   97         24        6
+        38                               9          5        1
+        39           3                  17          3
+        40           2       1          24          6        2
+        41           2                  24          6        1
+        42           7       1          74         20        4
+        43          5                   22          5
+        44          3                   17          5        1
+        45          5                   19          4        1
+        46          7                   22          6
+        47         20                   80         20        2
+        48          6                   22          6        2
+        49          2                   24          5        2
+        50          7                   29          2        2
+        51          4        1          27          2        2
+        52         19        1         102         15        8
+        53         10                   24          4
+        54          4                   34          7        1
+        55          8                   37          7        2
+        56          9                   34          9        3
+        57         31                  129         27        6
+        58       160         4        848        192        36
+        59            9      1          84         23        4
+        60           31                129         27        6
+        61       267         7      1413        320         60
+12002489 62
+

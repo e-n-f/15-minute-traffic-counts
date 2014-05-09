@@ -1,0 +1,115 @@
+                                                                                               7/15/2009                                 3RD      STREET,          NW     &   BATES         STREET
+                                                                                              VEHICLE AND PEDESTRIAN COUNT     NW
+                                                                                              DISTRICT OF COLUMBIA                     [X] 3RD STREET NW                   [X] 3RD STREET NW                 [Z] BATES STREET NW
+                                                                                              DISTRICT DEPT OF TRANSPORTATION          Moving north [S LEG]        Peds    Moving south [N LEG]       Peds   Moving west      G
+                                                                                                                                                                                                                          [E LE]      Peds
+                                                                                              INFRASTRUCTURE PROJECT MGMT ADMIN        Counted By MS      COUNTER-         Counted By MS    COUNTER-         Counted By SHO RTER                       TOTALS
+                                                                                              c___c_c_.xrb 12/04 c_c_c_a_.xrb 6/2008      Thru   TOTAL    FL
+                                                                                                                                                           O W        A       Thru   TOTAL  FLOW         C       Left   Right  TOTAL     D       [X]     [Z]    Peds
+                                                                                                 moving to> leg & LOS:am/pm     NHS?        N                S                 S                N                 S      N
+
+                                                                           CHKD                             DAY-  W ED            7:00        8         8      18        2       13      13       12       7        5       4       9      4        21       9     13
+                                                                                        16- Jul        W EAT
+                                                                                                           HE R-  C LE
+                                                                                                                     AR           7:15        3         3       9        1        8       8        8       1        1       5       6      2        11       6      4
+                                                                                                     PO STED BY - STAGGS          7:30        4         4      17        4       14      14        8       1        3       4       7      1        18       7      6
+                                                                                              INTERSECTION ID         10030155    7:45        6         6      16        4       14      14       11       3        2       5       7      1        20       7      8
+                                                                                              C ONTROLLEDB Y                   Hr Tot        21        21      60       11       49      49       39      12       11      18      29      8        70      29     31
+                                                                                              ALL WAY ST
+                                                                                                       O P SIG
+                                                                                                             N                    8:00        7        7       17      13        12      12       7        2        5               5      4        19       5     19
+                                                                                                                                  8:15       10       10       26       5        22      22      15        1        4      5        9      2        32       9      8
+                                                                                                                                  8:30        5        5       19       6        16      16      10        1        3      5        8      1        21       8      8
+                                                                                                                                  8:45        7        7       33       2        25      25       8                 8      1        9      1        32       9      3
+
+
+
+
+                                                                                        E T
+                                                                                       1
+                                                                               8
+
+                                                                                    49
+                                                                                                                               Hr Tot        29       29       95      26        75      75      40        4       20     11       31      8       104      31     38
+
+
+
+
+                                                                            43
+                                                                                    R E
+                                                                                                                                  9:00       12       12       17                12      12      18        1        5      6       11      1        24      11      2
+                                                                                                      N
+
+
+
+
+                                                                                S T
+                                                                                                                                  9:15       14       14       23       4        18      18      17                 5      3        8      1        32       8      5
+                                                                                                                                  9:30       11       11       12       2        10      10      14        1        2      3        5               21       5      3
+                                                                                                                                  9:45       15       15       18       3        14      14      19        1        4      4        8      1        29       8      5
+                                                                                D
+                                                                                                      259                      Hr Tot        52       52       70       9        54      54      68        3       16     16       32      3       106      32     15
+                                                                                                BATES STREET
+
+
+
+                                                                                      A
+                                                                                                                                 10:00        9        9       12       2         9       9      10        1        3      1        4               18       4      3
+                                                                                C                                                10:15        8        8       11       3         6       6       9                 5      1        6               14       6      3
+                                                                                                                                 10:30        5        5        7       1         6       6       6        1        1      1        2      2        11       2      4
+                                                                                                                                 10:45        5        5        4       2         3       3       7                 1      2        3                8       3      2
+                                                                                                                               Hr Tot        27       27       34       8        24      24      32        2       10      5       15      2        51      15     12
+                                                                                                                                 11:00        6        6        5       4         4       4      12                 1      6        7               10       7      4
+                                                                                6
+
+                                                                                        0
+                                                                             55
+
+                                                                                     35
+
+                                                                                                                                 11:15        5        5        4       4         3       3       7                 1      2        3                8       3      4
+                                                                                                                                 11:30        2        2       10       1         9       9       4                 1      2        3               11       3      1
+                                                                                                                                 11:45        5        5        8       3         5       5       9                 3      4        7               10       7      3
+                                                                                 3R  D
+
+
+
+
+                                                                                                                               Hr Tot        18       18       27      12        21      21      32                 6     14       20               39      20     12
+                                                                                                                                 12:00        7        7       13       6         8       8       8        1        5      1        6      1        15       6      8
+                                                                                                                                 12:15       13       13        8       7         5       5      17                 3      4        7               18       7      7
+                                                                                                                                 12:30       11       11        9       7         7       7      15        2        2      4        6               18       6      9
+                                                                                                                                 12:45       13       13        9       1         6       6      17        4        3      4        7               19       7      5
+                                                                                                                               Hr Tot        44       44       39      21        26      26      57        7       13     13       26      1        70      26     29
+                                                                                              PEDESTRIANS (10hr)           307     2:00       7        7       13       1        11      11       8                 2      1        3               18       3      1
+                                                                                              10- HR FA
+                                                                                                      C O
+                                                                                                        T RS      (default=.6)     2:15       7        7       15      16        12      12      10        1        3      3        6               19       6     17
+                                                                                                              X=  0.60             2:30      11       11       13       8        12      12      16        5        1      5        6      3        23       6     16
+                                                                                                              Y=  0.60             2:45       9        9       14       6        11      11      12                 3      3        6      1        20       6      7
+                                                                                                              Z=  0.60         Hr Tot        34       34       55      31        46      46      46        6        9     12       21      4        80      21     41
+                                                                                                              W= 0.60              3:00      10       10       18      12        16      16      14        1        2      4        6      1        26       6     14
+                                                                                              PEAK HOUR S SUMMARY:                 3:15      13       13       16       7        13      13      18        1        3      5        8      1        26       8      9
+                                                                                              AM PkHr. (starting)      8:15 AM     3:30       8        8       19       1        18      18      14        1        1      6        7      2        26       7      4
+                                                                                                     AM PkHr Vol =    146          3:45       9        9       13       6         9       9      11        2        4      2        6      1        18       6      9
+                                                                                                  AM PkHr Factor =     .89     Hr Tot        40       40       66      26        56      56      57        5       10     17       27      5        96      27     36
+                                                                                                         AM LOS=                  4:00        5        5       16      14        11      11       7        2        5      2        7      1        16       7     17
+                                                                                                         AMV / C=                 4:15        9        9       15       7        13      13      18        1        2      9       11               22      11      8
+                                                                                                 AM PkHr % OF24 =     8.4%        4:30        9        9       15       6        13      13      14        1        2      5        7      1        22       7      8
+                                                                                              PM PkHr (starting)       2:45 PM    4:45       18       18        9      21         6       6      23        2        3      5        8      1        24       8     24
+                                                                                                     PM PkHr Vol =    125      Hr T
+                                                                                                                                  ot         41       41       55      48        43      43      62        6       12     21       33      3        84      33     57
+                                                                                                  PM PkHr Factor =     .92        5:00       10       10       13        3       11      11      16                 2      6        8      1        21       8      4
+                                                                                                         PM LOS=                  5:15        8        8       18                15      15      10        1        3      2        5               23       5      1
+                                                                                                         PM V/ C=                 5:30       16       16       13      16         9       9      17        1        4      1        5      2        25       5     19
+                                                                                                PM PkHr % OF 24 =     7.2%        5:45       10       10       11       9         9       9      15        1        2      5        7      2        19       7     12
+                                                                                              file name        DISxx           Hr Tot        44       44       55      28        44      44      58        3       11     14       25      5        88      25     36
+                                                                                              3RDBATNW .T
+                                                                                                        7F        10 HOUR TOTAL             350      350     556      220       438    438     491        48      118    141     259      39      788     259     307
+                                                                                              zone(s)             A.M . PE
+                                                                                                                         AK HOUR             34       34        95     13        75      75        51      3       20     17       37      5       109      37     21
+                                                                                              5972                P. M. PE
+                                                                                                                         AK HOUR             40       40        67     26        58      58        58      3        9     18       27      5        98      27     34
+                                                                                                ---  ---          24 Hr (estimate)          583      583     927      367       730    730     818        80      197    235     432      65    1313     432      512
+                                                                                              LE G I.D. [#]                    HPMS#            10030154                           10030156                         11410029
+

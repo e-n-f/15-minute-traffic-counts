@@ -1,0 +1,136 @@
+                                                                                                                              10/2/2000                                         16TH         STREET             S/OF        ALASKA              AVENUE
+                                                                                                                            VEHICLE AND PEDESTRIAN COUNT            NW
+                                                                                                                            DISTRICT OF COLUMBIA                             [X]  16T H STR EET S/ OFA LA SK[X]  16T H STR EET S/ OFA LA SKA AV ENUE NW
+                                                                                                                            DEPARTMENT OF PUBLIC WORKS                       Moving north    [S LEG ]       Moving south    [N LE G]
+                                                                                                                            BUREAU OF TRAFFIC SERVICES                       Counted By   M ARTIN           Counted By   SHO R TER                 TO TALS
+                                                                                                                            C_C_C_C_.XRX (12/3/96)C_C_C_TF.XRX (10-2-00_          Thru     TOTAL                 Thru       TOTAL                    [X]
+                                                                                                                               moving to> leg &     LOS:am/pm        NHS?           N                 11           S                 11
+                                                                                                     CHKD BY                                DAY-    M OND AY            7:00         103         103                429         429                         532
+                                                                                                     _____
+                                                                                                         _____                         WEA THER-    CLE AR              7:15         101         101                590         590                         691
+                                                                                                                                    PO ST ED BY -   STAG GS             7:30          99          99                665         665                         764
+                                                                                                                            INTERSE CTION ID            10160690        7:45         106         106                599         599                         705
+                                                                                                                            CO NTRO LLEDB  Y                        Hr Tot           409         409               2283        2283                        2692
+                                                                                                                            SIGNA LS                                    8:00         127         127                 617        617                         744
+                                                                                                                                                                        8:15         119         119                 566        566                         685
+                                                                                                                                                                        8:30         116         116                 606        606                         722
+                                                                                                                                                                        8:45         121         121                 532        532                         653
+                                                                                                                                                                    Hr Tot           483         483               2321        2321                        2804
+                                                                                                                                                                        9:00         116         116                569         569                         685
+
+
+
+
+                                                                                                                        T
+                                                                                                                                                                        9:15         100         100                605         605                         705
+
+
+
+
+                                                                                                                     E
+
+
+
+
+                                                                                                                                            E
+                                                                                                                   E
+                                                                                                                                                                        9:30          98          98                511         511                         609
+
+
+
+
+                                                                                                                                        AV
+                                                                                                                R
+                                                                                                                                                                        9:45          91          91                279         279                         370
+
+
+
+
+                                                                                                              T
+
+
+
+
+                                                                                                                                    KA
+                                                                                                            S
+                                                                                                                                                                    Hr Tot           405         405               1964        1964                        2369
+
+
+
+
+                                                                                                                                AS
+                                                                                                                                                                       10:00         104         104                 234        234                         338
+
+
+
+
+                                                                                                                             AL
+                                                                                                                                                                       10:15         110         110                 211        211                         321
+                                                                                                                                                                       10:30         116         116                 188        188                         304
+                                                                                                                                                                       10:45         135         135                 169        169                         304
+                                                                                                                                                                    Hr Tot           465         465                 802        802                        1267
+                                                                                                                                                                       11:00         113         113                 176        176                         289
+                                                                                                                                                                       11:15         136         136                 252        252                         388
+                                                                                                                T H                                                    11:30         146         146                 184        184                         330
+                                                                                                                                    N
+                                                                                                            1 6
+                                                                                                                                                                       11:45         165         165                 227        227                         392
+                                                                                                                          1                                         Hr Tot           560         560                 839        839                        1399
+                                                                                                                   5
+
+                                                                                                                       9
+                                                                                                                4
+
+
+                                                                                                                                                                       12:00         166         166                 167        167                         333
+                                                                                                                     7
+                                                                                                             4
+
+                                                                                                                  8
+                                                                                                                                                                       12:15         151         151                 186        186                         337
+                                                                                                           2
+
+
+
+                                                                                                                                                                       12:30         176         176                 200        200                         376
+                                                                                                        1
+
+
+
+
+                                                                                                                                                                       12:45         187         187                 159        159                         346
+                                                                                                                                                                    Hr Tot           680         680                 712        712                        1392
+                                                                                                                            PE DESTR  NS (10hr)
+                                                                                                                                     IA                                 2:00         197         197                 167        167                         364
+                                                                                                                            10- HR FA C TORS         (default=.6)       2:15         210         210                 190        190                         400
+                                                                                                                                               X=    0.60               2:30         227         227                 226        226                         453
+                                                                                                                                               Y=    0.60               2:45         241         241                 195        195                         436
+                                                                                                                                               Z=    0.60           Hr Tot           875         875                 778        778                        1653
+                                                                                                                                               W=   0.60                3:00         300         300                 212        212                         512
+                                                                                                                            PE AK HO UR S SUM M ARY:                    3:15         330         330                 220        220                         550
+                                                                                                                            AM PkHr. (starting)            7:15 AM      3:30         359         359                 228        228                         587
+                                                                                                                                    A M PkHr V ol =      2904           3:45         385         385                 253        253                         638
+                                                                                                                                 AM PkHr Factor =         .95       Hr Tot          1374        1374                 913        913                        2287
+                                                                                                                                         AM LO S=                      4:00          376         376                 163        163                         539
+                                                                                                                                         AMV  / C=                     4:15          358         358                 184        184                         542
+                                                                                                                                AM PkHr % O  F24 =       8.2%          4:30          391         391                 236        236                         627
+                                                                                                                            PM PkHr (starting)            5:15 PM      4:45          406         406                 279        279                         685
+                                                                                                                                    PM PkHr V  ol =      3115       Hr Tot          1531        1531                 862        862                        2393
+                                                                                                                                 PM PkHr Factor =         .95           5:00         417         417                 216        216                         633
+                                                                                                                                         PM LO S=                       5:15         476         476                 266        266                         742
+                                                                                                                                         PM V / C=                      5:30         538         538                 246        246                         784
+                                                                                                                              PM PkHr % O   F 24 =       8.8%           5:45         578         578                 243        243                         821
+                                                                                                                            file name            DISxx              Hr Tot          2009        2009                 971        971                        2980
+                                                                                                                            16A LASNW .KO2          10 HO UR T O TAL                8791      8791                12445     12445                       21236
+                                                                                                                            zone(s)                 A.M . PE AK HO UR                 433        433               2471        2471                        2904
+                                                                                                                            5878                    P. M . PEAK HO UR               2138        2138                 977        977                        3115
+                                                                                                                              ---   ---             24 Hr (estimate)               14652     14652                20742     20742                       35393
+                                                                                                                            LE G I.D  . [#]                          HPMS#         10160689           7039         10160691          7039
+
+                                                                                                                                                                        6:00       546           546              222           222                         768
+                                                                                                                                                                        6:15       499           499              177           177                         676
+                                                                                                                                                                        6:30       537           537              242           242                         779
+                                                                                                                                                                        6:45       516           516              217           217                         733
+                                                                                                                                                                    Hr Tot          2098        2098                 858        858                        2956
+                                                                                                                                                    11   HOUR T O TAL            10889      10889                13303      13303                   24192
+

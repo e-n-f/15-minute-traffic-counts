@@ -1,0 +1,69 @@
+                                           4/13/2009                                  1ST     STREET,           SE    &   M    STREET
+                                          VEHICLE AND PEDESTRIAN COUNT      SE
+                                          DISTRICT OF COLUMBIA                      [X] 1ST STREET SE                                   [X] 1ST STREET SE                                  [Z] M STR EET SE                                   [Z] M STR EET SE
+                                          DISTRICT DEPT OF TRANSPORTATION           Moving north      G
+                                                                                                  [S LE]                                Moving south  [N LEG]                              Moving east  [WLE G]                               Moving west  [E LEG]
+                                          INFRASTRUCTURE PROJECT MGMT ADMIN         Counted By  JONES                 COUNT ER-         Counted By  MARTIN               COUNT ER-         Counted By  JONES                COUNT ER-         Counted By  MARTIN               COUNT ER-                    TOTALS
+                                          xruby08x.xls-1/26/95 C_C_C_C_.XRB (9/19/95)   Left   Thru   R ight  TOTAL    FLOW                 Left   Thru   R ight  TOTAL  FLOW                  Left   Thru   R ight  TOTAL  FLOW                  Left   Thru   R ight  TOTAL  FLOW                  [X]      [Z]
+                                            moving to> leg &   LOS:am/pm     NHS?        W      N       E                 S                  E       S      W                N                  N       E      S                W                  S      W       N                E
+                      CHKD                              DAY-   MON
+                                   14- Apr         W EATHER-   CLEAR
+                                                 PO STED BY -  STAGGS
+                                          INTERSECTION ID          30010120
+                                          CONT ROLLEDB Y
+                                          SIGNALS
+
+
+
+                                                   STREET
+                                                      458
+                                                478
+
+
+                                                                   N
+
+                              1576                                  1447
+                      M                                        STREET
+                              2391                                  1843
+                                                1206
+
+                                                      767
+                                                   1ST
+
+
+
+
+                      NATIONALS GAMED AY                                       1:00       16      15     25        56       94                  7     26      13      46       37                 8     113      44     165      127                24      98      14     136      145                102      301
+                                                                               1:15        8       6     12        26      114                  6     27      14      47       35                14     112      64     190      136                23     114      15     152      130                 73      342
+                                                                               1:30       25      21     24        70      127                  9     21      18      48       42                13     112      78     203      181                28     138       8     174      145                118      377
+                                                                               1:45       23      21     19        63      148                  6     28      19      53       42                14     127      92     233      131                28      89       7     124      152                116      357
+                                                                            Hr Tot        72      63     80       215      483                 28    102      64     194      156                49     464     278     791      575               103     439      44     586      572                409     1377
+                                          PEDESTRIANS (10hr)                   2:00       17      28     21        66      112                  4     21      14      39       46                 9     104      63     176      127                28      96       9     133      129                105      309
+                                          10- HR FACTORS       (default=.6)    2:15       19      27     14        60       67                  2     15      11      28       38                 6     140      41     187      116                11      86       5     102      156                 88      289
+                                                           X=  0.60            2:30       14      31     28        73      112                  1     31      16      48       51                16     154      65     235      116                16      86       4     106      183                121      341
+                                                           Y=  0.60            2:45       25      31     28        84      125                  1     26       4      31       54                18     142      86     246      110                13      81       5      99      171                115      345
+                                                           Z=  0.60         Hr Tot        75     117     91       283      416                  8     93      45     146      189                49     540     255     844      469                68     349      23     440      639                429     1284
+                                                          W= 0.60              3:00       30      25     26        81      103                  5     23       7      35       35                 7     141      71     219      116                 9      79       3      91      172                116      310
+                                          PEAK HO URS SUMM ARY:                3:15       34      16     24        74       70                  8     24       9      41       30                11     150      42     203      116                 4      73       3      80      182                115      283
+                                          AM PkHr. (starting)                  3:30       36      13     25        74       66                  4     16      11      31       25                10     105      43     158      159                 7     112       2     121      134                105      279
+                                                 AM PkHr Vol =                 3:45       16      11     13        40       68                  2     16      13      31       23                 7     129      40     176      141                12     112       5     129      144                 71      305
+                                              AM PkHr Factor =    #DIV
+                                                                     / 0!   Hr Tot       116      65     88       269      307                 19     79      40     138      113                35     525     196     756      532                32     376      13     421      632                407     1177
+                                                     AM LO S=
+                                                     AMV / C=
+                                             AM PkHr % OF24 =
+                                          PM PkHr (starting)        1:15 PM
+                                                 PM PkHr Vol =     1786
+                                              PM PkHr Factor =      .90
+                                                     PM LO S=
+                                                     PM V/ C=
+                                            PM PkHr % O F 24 =     21.1%
+                                          file name         DISxx
+                                          1STMSTSE.T4D         3 HOUR TO T
+                                                                         AL              263     245    259      767     1206                  55    274     149    478      458                133    1529     729   2391     1576                203    1164      80   1447     1843               1245     3838
+                                          zone(s)
+                                          5968                 P. M. PE
+                                                                      AK HO UR            73      76     76       225       501                25     97      65     187       165               50     455    297      802       575              107     437     39      583       556                412    1385
+                                            ---  ---           24 Hr (estimate)          438     408    432     1278     2010                  92    457     248    797      763                222    2548   1215    3985     2627                338    1940    133    2412     3072               2075    6397
+                                          LE G I.D. [#]                     HPMS#                    30110121                                            30110119                                           35785009                                           35785011
+

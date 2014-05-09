@@ -1,0 +1,113 @@
+                                                                                   2/25/2008                                ECKINGTON               PLACE,         NE    &   R   STREET                 (3  AXLES         TRUCKS           ONLY)
+                                                                                  VEHICLE AND PEDESTRIAN COUNT     NE
+                                                                                  DISTRICT OF COLUMBIA                    [X]  ECKINGO
+                                                                                                                                     T N PLACE NE                    [Z] R STREET NE                           [Z] R STREET NE
+                                                                                  DISTRICT DEPT OF TRANSPORTATION         M oving north     G
+                                                                                                                                        [S LE]                       Moving east [WLE G]                       Moving west [E LEG]
+                                                                                  INFRASTRUCTURE PROJECT MGMT ADMIN       C ounted By SHORTER       C OUNTER-        Counted By SHOR E
+                                                                                                                                                                                     TR       COUNTER-         Counted By SHOR T
+                                                                                                                                                                                                                               ER       COUNTER-                   TOTALS
+                                                                                  xruby08x.xls-1/26/95 C_C_C_C_.XRB (9/19/95) Left   Right  TOTAL   FLO W                T
+                                                                                                                                                                         hru   R ight  TOTAL   O
+                                                                                                                                                                                              FL W                 Left   Thru   TOTAL  FL
+                                                                                                                                                                                                                                         O W                 [X]     [Z]    Peds
+                                                                                    moving to> leg &  LOS:am/pm     NHS?       W       E                S                 E      S               W                  S      W               E
+                                                               CHKD                            DAY-   WED             7:00        2                2       1                        1       1       2                                                            2       1
+                                                                           10- Mar         WEATHER-   CLEAR           7:15                                                                          1                         1       1                                  1
+                                                                                         POSTED BY -  STAGGS          7:30
+                                                                                  INTERSECT N ID
+                                                                                           IO                         7:45                                 1                        1       1                                                                            1
+                                                                                  CONTR OLL
+                                                                                          EDB  Y                   Hr T
+                                                                                                                      ot          2                2       2                        2       2        3                        1       1                          2       3
+                                                                                  ALL WA   O
+                                                                                        Y ST P SIG
+                                                                                                 NS                   8:00
+                                                                                                                      8:15
+                                                                                                                      8:30                                                                           1                        1       1                                  1
+                                                                                                                      8:45                                 1                        1       1                                                                            1
+                                                                        26                                18       Hr Tot                                  1                        1       1        1                        1       1                                  2
+                                                                R                                    STREET
+
+
+
+
+                                                                                       B
+                                                                         6
+
+
+
+
+                                                                                              A
+                                                                                                          2           9:00                                 1                        1       1                                                                            1
+                                                                                        C
+
+
+
+
+                                                                                                                PL
+                                                                                                                      9:15                                                                           1                        1       1                                  1
+                                                                                                                      9:30
+
+
+
+
+                                                                                          ECKINGTON
+                                                                                                                      9:45
+                                                                                                                   Hr Tot                                  1                        1       1        1                        1       1                                  2
+                                                                                                        N            10:00                                 1                        1       1                                                                            1
+
+
+
+
+                                                                                       6
+                                                                                                                     10:15                                                                           3                        3       3                                  3
+
+
+
+
+                                                                                             4
+                                                                                                                     10:30                                                                           1                        1       1                                  1
+                                                                                                                     10:45                                                                           4                        4       4                                  4
+                                                                                                                   Hr Tot                                  1                        1       1        8                        8       8                                  9
+                                                                                                                     11:00                                                                           2                        2       2                                  2
+                                                                                                                     11:15                                                                           2                        2       2                                  2
+                                                                                                                     11:30               1        1                                                  1                        1       1        1                 1       1
+                                                                                                                     11:45
+                                                                                                                   Hr Tot                1        1                                                  5                        5       5        1                 1       5
+                                                                                                                     12:00
+                                                                                                                     12:15
+                                                                                                                     12:30
+                                                                                                                     12:45
+                                                                                                                   Hr Tot
+                                                                                  PEDESTRIANS (10hr)                  2:00               1        1                                                                                            1                 1
+                                                                                  10- HR FA
+                                                                                          C O
+                                                                                            T RS      (default=.6)    2:15
+                                                                                                  X=  0.60            2:30
+                                                                                                  Y=  0.60            2:45                                                                           1                        1       1                                  1
+                                                                                                  Z=  0.60         Hr Tot                1        1                                                  1                        1       1        1                 1       1
+                                                                                                  W= 0.60             3:00                                                                           1                        1       1                                  1
+                                                                                  PEAK HOUR S SUMMARY:                3:15
+                                                                                  AM PkHr. (starting)     10:15 AM    3:30
+                                                                                         AM PkHr Vol =     10         3:45
+                                                                                      AM PkHr Factor =     .63     HrTot                                                                             1                        1       1                                  1
+                                                                                             AM LOS=                  4:00
+                                                                                             AMV / C=                 4:15
+                                                                                     AM PkHr % OF24 =     21.4%       4:30
+                                                                                  PM PkHr (starting)       2:00 PM    4:45
+                                                                                         PM PkHr Vol =      2      Hr Tot
+                                                                                      PM PkHr Factor =     .50        5:00                                 1                        1       1                                                                            1
+                                                                                             PM LOS=                  5:15
+                                                                                             PM V/ C=                 5:30
+                                                                                    PM PkHr % OF 24 =     4.3%        5:45
+                                                                                  file name        DISxx           Hr Tot                                  1                        1       1                                                                            1
+                                                                                  RSTECKPLNE.3A.T
+                                                                                                2P    10 HOUR TOTAL               2      2        4       6                         6       6      20                        18     18        2                  4      24
+                                                                                  zone(s)             A.M . PE
+                                                                                                             AK HOUR                                                                                 10                      10      10                                 10
+                                                                                  5972                P. M. PE
+                                                                                                             AK HOUR                     1        1                                                   1                       1       1         1                1       1
+                                                                                    ---  ---          24 Hr (estimate)            3      3        7      10                        10     10       33                        30     30        3                 7      40
+                                                                                  LE G I.D. [#]                    HPMS#               23217169                5104               27416014                                  27416016
+
