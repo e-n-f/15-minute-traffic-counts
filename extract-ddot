@@ -1,0 +1,95 @@
+#!/usr/bin/perl
+
+while (<>) {
+	chomp;
+	push @lines, $_;
+}
+
+$lines[0] =~ s/  */ /g;
+print "$ARGV $lines[0]\n";
+
+for ($i = 0; $i <= $#lines; $i++) {
+	#if ($lines[$i] =~ /2 *4 *H *r *\( *e *s *t *i *m *a *t *e *\)/) {
+	if ($lines[$i] =~ /H *O *U *R *T *O *T *A *L */) {
+		$l = $lines[$i];
+		$l =~ s/^(.*H *O *U *R *T *O *T *A *L *)//;
+		#$l =~ s/^(.*2 *4 *H *r *\( *e *s *t *i *m *a *t *e *\) *)//;
+		$x = length($1);
+
+		while ($l =~ s/([0-9]+ *)//) {
+			# print "onto est, $x\n";
+			push @est, $x;
+			$x += length($1);
+			push @val, $1;
+			$val[$#val] =~ s/ *//g;
+		}
+	}
+}
+
+LINE:
+for ($i = 0; $i <= $#lines; $i++) {
+	if ($lines[$i] =~ s/^(.*[^0-9]([0-9]+):([0-9][0-9]) +)//) {
+		$when = $2 * 60 + $3;
+		$x = length($1);
+
+		@rec = split(/ +/, $lines[$i]);
+
+		if ($#rec == $#est) {
+			for ($i = 0; $i <= $#rec; $i++) {
+				$field{$when}[$i] = $rec[$i];
+			}
+		} else {
+			# print "starting at $x and " . length($lines[$i]) . "\n";
+			for ($a = 0; $a <= $#rec; $a++) {
+				$lines[$i] =~ s/([0-9]+ *)//;
+				$nextx = $x + length($1);
+				# print "consumed " . length($1) . " with $1 \n";
+
+				$best = -1;
+				$bestd = 99999;
+				for ($j = 0; $j <= $#est; $j++) {
+					$d = abs($x + length($rec[$a]) - ($est[$j] + length($val[$a])));
+					if ($d < $bestd) {
+						$bestd = $d;
+						$best = $j;
+					}
+				}
+
+				# print "for $x, $est[$best] looks good\n";
+
+				if ($field{$when}[$best] ne "") {
+					if ($best > 0 && $field{$when}[$best - 1] eq "") {
+						$field{$when}[$best - 1] = $field{$when}[$best];
+						$field{$when}[$best] = "";
+					} else {
+						delete $field{$when};
+						print STDERR "$ARGV:" . ($i + 1) . " dup entry for column $best\n";
+						next LINE;
+					}
+				}
+				if ($best < 0) {
+					delete $field{$when};
+					print STDERR "$ARGV:" . ($i + 1) . " couldn't find anything for $val[$a]\n";
+					next LINE;
+				}
+
+				$field{$when}[$best] = $rec[$a];
+
+				$x = $nextx;
+			}
+		}
+	}
+}
+
+for $when (sort(keys(%field))) {
+	print "$when\t";
+	for ($i = 0; $i <= $#est; $i++) {
+		print "$field{$when}[$i]\t";
+	}
+	print "\n";
+}
+print "\t";
+for ($i = 0; $i <= $#est; $i++) {
+	print "$val[$i]\t";
+}
+print "\n";
