@@ -29,9 +29,14 @@ for ($i = 0; $i <= $#lines; $i++) {
 LINE:
 for ($i = 0; $i <= $#lines; $i++) {
 	if ($lines[$i] =~ s/^(.*[^0-9]([0-9]+):([0-9][0-9]) +)//) {
-		$when = $2 * 60 + $3;
-		$x = length($1);
+		$when = $2 * 60 + $3 + $pm;
+		if ($when < $owhen) {
+			$pm = 12 * 60;
+			$when += $pm;
+		}
+		$owhen = $when;
 
+		$x = length($1);
 		@rec = split(/ +/, $lines[$i]);
 
 		if ($#rec == $#est) {
@@ -81,7 +86,7 @@ for ($i = 0; $i <= $#lines; $i++) {
 	}
 }
 
-for $when (sort(keys(%field))) {
+for $when (sort {$a <=> $b} (keys(%field))) {
 	print "$when\t";
 	for ($i = 0; $i <= $#est; $i++) {
 		print "$field{$when}[$i]\t";
