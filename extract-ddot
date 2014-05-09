@@ -16,7 +16,7 @@ for ($i = 0; $i <= $#lines; $i++) {
 		#$l =~ s/^(.*2 *4 *H *r *\( *e *s *t *i *m *a *t *e *\) *)//;
 		$x = length($1);
 
-		while ($l =~ s/([0-9]+ *)//) {
+		while ($l =~ s/([0-9#]+ *)//) {
 			# print "onto est, $x\n";
 			push @est, $x;
 			$x += length($1);
@@ -46,7 +46,7 @@ for ($i = 0; $i <= $#lines; $i++) {
 		} else {
 			# print "starting at $x and " . length($lines[$i]) . "\n";
 			for ($a = 0; $a <= $#rec; $a++) {
-				$lines[$i] =~ s/([0-9]+ *)//;
+				$lines[$i] =~ s/([0-9#]+ *)//;
 				$nextx = $x + length($1);
 				# print "consumed " . length($1) . " with $1 \n";
 
