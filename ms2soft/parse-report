@@ -40,7 +40,8 @@ for ($i = 0; $i <= $#lines; $i++) {
 	while (s/<td class="sm_cell" [^>]*nowrap>([^<]*)//) {
 		$time[$row] = $1;
 
-		if ($time[$row] =~ /^(\d+):(\d+) 00/) {
+		if ($time[$row] =~ /^(\d+):(\d+) 00/ ||
+		    $time[$row] =~ /^(\d+):(\d+) 13/) {
 			$time[$row] = sprintf("%02d:%02d AM", $1, $2);
 		}
 
