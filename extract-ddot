@@ -23,6 +23,8 @@ for ($i = 0; $i <= $#lines; $i++) {
 			push @val, $1;
 			$val[$#val] =~ s/ *//g;
 		}
+
+		last;
 	}
 }
 
