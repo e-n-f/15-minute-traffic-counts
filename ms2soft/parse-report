@@ -54,7 +54,7 @@ for ($i = 0; $i <= $#lines; $i++) {
 
 			$when = $hour * 60 + $min;
 			$when2 = $when + 15;
-			$time[$row] = sprintf("%02d:%02d - %02d:%02d", $when / 60, $when % 60, $when2 / 60, $when2 % 60);
+			$time[$row] = sprintf("%02d:%02d-%02d:%02d", $when / 60, $when % 60, $when2 / 60, $when2 % 60);
 		}
 	}
 	while (s/<td class="sm_cell"[^>]*>([^<]*)//) {
