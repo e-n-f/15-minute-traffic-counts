@@ -13,6 +13,9 @@ while (<>) {
 
 for $name (keys(%walk)) {
 	if ($walk{$name}{0} ne "") {
+		@l = keys(%{$walk{$name}});
+		next unless $#l == 95;
+
 		for $time (keys(%{$walk{$name}})) {
 			$sum{$time} += $walk{$name}{$time};
 		}
