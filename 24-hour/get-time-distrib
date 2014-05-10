@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+while (<>) {
+	($id, $name, $id2, $date, $time, @fields) = split(/,/);
+
+	if ($time =~ /(..):(..) *- *(..):(..)/) {
+		$time = $1 + $2 / 60;
+	}
+
+        $walk = $fields[12] + $fields[13] + $fields[14] + $fields[15];
+	$walk{$name}{$time} = $walk;
+}
+
+for $name (keys(%walk)) {
+	if ($walk{$name}{0} ne "") {
+		for $time (keys(%{$walk{$name}})) {
+			$sum{$time} += $walk{$name}{$time};
+		}
+	}
+}
+
+for $time (sort {$a <=> $b} (keys(%sum))) {
+	print "$time $sum{$time}\n";
+}
