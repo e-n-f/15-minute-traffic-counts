@@ -110,6 +110,8 @@ if ($#est == 26) {
 		$fname = $ARGV;
 		$fname =~ s/,/ /g;
 
+		next if $field{$when}[26] != $field{$when}[23] + $field{$when}[5] + $field{$when}[17] + $field{$when}[11];
+
 		if ($when == 0) {
 			print "file,name,id,date,time,";
 		} else {
