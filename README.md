@@ -10,6 +10,10 @@ from these sources:
   * Phoenix, AZ
   * Virginia Beach, VA
 
+Additional PDF counts from
+
+  * Washington, DC
+
 Plus a reformatting of CSV data from:
 
   * Montreal, QC
