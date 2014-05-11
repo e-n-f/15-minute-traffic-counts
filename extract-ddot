@@ -5,8 +5,6 @@ while (<>) {
 	push @lines, $_;
 }
 
-$lines[0] =~ s/  */ /g;
-print "$ARGV $lines[0]\n";
 
 for ($i = 0; $i <= $#lines; $i++) {
 	#if ($lines[$i] =~ /2 *4 *H *r *\( *e *s *t *i *m *a *t *e *\)/) {
@@ -96,15 +94,72 @@ for ($i = 0; $i <= $#lines; $i++) {
 	}
 }
 
-for $when (sort {$a <=> $b} (keys(%field))) {
-	print "$when\t";
+if ($#est == 26) {
+	for ($i = 0; $i <= $#lines; $i++) {
+		if ($lines[$i] =~ /(\d+\/\d+\/\d+) *(.*)/) {
+			$date = $1;
+			$name = $2;
+
+			$name =~ s/,/ /g;
+			$name =~ s/ +/ /g;
+			last;
+		}
+	}
+
+	for $when (sort {$a <=> $b} (keys(%field))) {
+		$fname = $ARGV;
+		$fname =~ s/,/ /g;
+
+		if ($when == 0) {
+			print "file,name,id,date,time,";
+		} else {
+			print "$fname,$name,x,$date,";
+			printf("%02d:%02d-%02d:%02d,", $when / 60, $when % 60,
+				($when + 15) / 60, ($when + 15) % 60);
+		}
+
+		#            23
+		#          8 7 6
+		#
+		#      12           20
+		#  11  13           19  5
+		#      14           18
+		#
+		#          0 1 2
+		#            17
+
+		#  0 1 2    5   6 7 8   11   12 13 14    17    18 19 20    23
+
+		print "$field{$when}[8],$field{$when}[7],$field{$when}[6],";
+		print "$field{$when}[20],$field{$when}[19],$field{$when}[18],";
+		print "$field{$when}[2],$field{$when}[1],$field{$when}[0],";
+		print "$field{$when}[14],$field{$when}[13],$field{$when}[12],";
+
+		# Pedestrian counts are *parallel* to the traffic, not crossing it
+
+		print "$field{$when}[23],";
+		print "$field{$when}[5],";
+		print "$field{$when}[17],";
+		print "$field{$when}[11],";
+
+		print ",,,,";
+
+		print "\n";
+	}
+} elsif (0) {
+	$lines[0] =~ s/  */ /g;
+	print "$ARGV $lines[0]\n";
+
+	for $when (sort {$a <=> $b} (keys(%field))) {
+		print "$when\t";
+		for ($i = 0; $i <= $#est; $i++) {
+			print "$field{$when}[$i]\t";
+		}
+		print "\n";
+	}
+	print "\t";
 	for ($i = 0; $i <= $#est; $i++) {
-		print "$field{$when}[$i]\t";
+		print "$val[$i]\t";
 	}
 	print "\n";
 }
-print "\t";
-for ($i = 0; $i <= $#est; $i++) {
-	print "$val[$i]\t";
-}
-print "\n";
