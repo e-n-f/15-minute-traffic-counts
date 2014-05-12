@@ -3,6 +3,8 @@
 while (<>) {
 	chomp;
 	push @lines, $_;
+
+	last if /\014/;  # XXX fix multipage!
 }
 
 
@@ -28,6 +30,23 @@ for ($i = 0; $i <= $#lines; $i++) {
 
 LINE:
 for ($i = 0; $i <= $#lines; $i++) {
+	if ($lines[$i] =~ /\[.\] *Peds/) {
+		$lines[$i] =~ s/.*xls//;
+		$lines[$i] =~ s/ //g;
+		$lines[$i] =~ s/.*\/\d+\)*//;
+		$lines[$i] =~ s/Left/ Left /g;
+		$lines[$i] =~ s/Thru/ Thru /g;
+		$lines[$i] =~ s/Right/ Right /g;
+		$lines[$i] =~ s/FLOW/ FLOW /g;
+		$lines[$i] =~ s/TOTAL/ TOTAL /g;
+		$lines[$i] =~ s/(\[.\])/ \1 /g;
+		$lines[$i] =~ s/^ *//;
+		$lines[$i] =~ s/ *$//;
+		$lines[$i] =~ s/ +/ /g;
+
+		@headers = split(/ /, $lines[$i]);
+	}
+
 	if (($lines[$i] =~ s/^(.*[^0-9]([0-9]+):([0-9][0-9]) +)// && ($mode = 1)) ||
 	    ($lines[$i] =~ /Left *Thru/ && ($mode = 2))) {
 		$when = $2 * 60 + $3 + $pm;
@@ -94,7 +113,90 @@ for ($i = 0; $i <= $#lines; $i++) {
 	}
 }
 
-if ($#est == 26) {
+if ($#est == $#headers) {
+	for ($i = 0; $i <= $#lines; $i++) {
+		if ($lines[$i] =~ /(\d+\/\d+\/\d+) *(.*)/) {
+			$date = $1;
+			$name = $2;
+
+			$name =~ s/,/ /g;
+			$name =~ s/ +/ /g;
+			last;
+		}
+	}
+
+	for $when (sort {$a <=> $b} (keys(%field))) {
+		$fname = $ARGV;
+		$fname =~ s/,/ /g;
+
+		# next if $field{$when}[26] != $field{$when}[23] + $field{$when}[5] + $field{$when}[17] + $field{$when}[11];
+
+		if ($when == 0) {
+			print "file,name,id,date,time,Right,Thru,Left,Right,Thru,Left,Right,Thru,Left,Right,Thru,Left,D,A,C,B,,,,,\n";
+			next;
+		} else {
+			print "$fname,$name,x,$date,";
+			printf("%02d:%02d-%02d:%02d,", $when / 60, $when % 60,
+				($when + 15) / 60, ($when + 15) % 60);
+		}
+
+		@fields = @{$field{$when}};
+		%v = ();
+		%letter = ();
+
+		$state = 0;
+		$direction = 0;
+		for ($i = 0; $i <= $#fields; $i++) {
+			if ($headers[$i] eq "Left" ||
+			    $headers[$i] eq "Right" ||
+			    $headers[$i] eq "Thru") {
+				if ($state != 0) {
+					$state = 0;
+					$direction++;
+				}
+			} elsif ($headers[$i] eq "FLOW" ||
+				 $headers[$i] eq "TOTAL") {
+				if ($state == 2) {
+					$direction++;
+				}
+
+				$state = 1;
+			} elsif ($headers[$i] =~ /^[A-Z]$/) {
+				$state = 3;
+				$letter{$direction} = $headers[$i];
+			} elsif ($headers[$i] =~ /\[.\]/ ||
+			         $headers[$i] eq "Peds") {
+				$state = 4;
+			}
+
+			$v{$direction}{$headers[$i]} = $fields[$i];
+		}
+
+		for $i (1, 3, 0, 2) {
+			print "$v{$i}{'Right'},";
+			print "$v{$i}{'Thru'},";
+			print "$v{$i}{'Left'},";
+		}
+
+		for $i (3, 0, 2, 1) {
+			print "$v{$i}{$letter{$i}},";
+		}
+
+		print ",,,,";
+
+		if ($direction > 3) {
+			print ",,";
+
+			for ($i = 4; $i <= $direction; $i++) {
+				for $turn ('Right', 'Thru', 'Left', $letter{$direction}) {
+					print "$i:$turn:$v{$i}{$turn},";
+				}
+			}
+		}
+
+		print "\n";
+	}
+} elsif ($#est == 26) {
 	for ($i = 0; $i <= $#lines; $i++) {
 		if ($lines[$i] =~ /(\d+\/\d+\/\d+) *(.*)/) {
 			$date = $1;
