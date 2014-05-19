@@ -9,6 +9,10 @@ while (<>) {
 
         $walk = $fields[12] + $fields[13] + $fields[14] + $fields[15];
 	$walk{$name}{$time} = $walk;
+
+	for ($i = 0; $i < 12; $i++) {
+		$drive{$name}{$time} += $fields[$i];
+	}
 }
 
 for $name (keys(%walk)) {
@@ -18,10 +22,11 @@ for $name (keys(%walk)) {
 
 		for $time (keys(%{$walk{$name}})) {
 			$sum{$time} += $walk{$name}{$time};
+			$drivesum{$time} += $drive{$name}{$time};
 		}
 	}
 }
 
 for $time (sort {$a <=> $b} (keys(%sum))) {
-	print "$time $sum{$time}\n";
+	print "$time $sum{$time} $drivesum{$time}\n";
 }
