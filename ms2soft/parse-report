@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+$prefix = $ARGV[0];
+shift @ARGV;
+
 while (<>) {
 	chomp;
 	push @lines, $_;
@@ -99,7 +102,7 @@ for ($i = 0; $i <= $#count; $i++) {
 	}
 	next unless $any;
 
-	print "$val{'INT ID'},";
+	print "$prefix/$val{'INT ID'},";
 	print "$val{'ROAD 1'}";
 
 	for $x ('ROAD 2', 'ROAD 3', 'ROAD 4', 'COMMUNITY') {

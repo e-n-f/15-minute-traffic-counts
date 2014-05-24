@@ -3,7 +3,7 @@
 for i in buffalo dc minneapolis phoenix virginia-beach
 do
 	echo $i
-	find $i/report -name '*.html' -print | sort | xargs -L1 ./ms2soft/parse-report > counts-$i.csv
+	find $i/report -name '*.html' -print | sort | xargs -L1 ./ms2soft/parse-report $i > counts-$i.csv
 done
 
 find hutrc -name '*.txt' -print | sort | tr '\012' '\0' | xargs -0 -L1 ./extract-ddot > counts-ddot.csv
