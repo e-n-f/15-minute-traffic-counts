@@ -160,15 +160,14 @@ if ($#est == $#headers) {
 		if ($when == 0) {
 			print "file,name,id,date,time,Right,Thru,Left,Right,Thru,Left,Right,Thru,Left,Right,Thru,Left,D,A,C,B,,,,,\n";
 			next;
-		} else {
-			print "$fname,$name,x,$date,";
-			printf("%02d:%02d-%02d:%02d,", $when / 60, $when % 60,
-				($when + 15) / 60, ($when + 15) % 60);
 		}
 
 		@fields = @{$field{$when}};
 		%v = ();
 		%letter = ();
+
+		$total = 0;
+		$total2 = 0;
 
 		$state = 0;
 		$direction = 0;
@@ -195,8 +194,22 @@ if ($#est == $#headers) {
 				$state = 4;
 			}
 
+			if ($headers[$i] eq "TOTAL") {
+				$total += $fields[$i];
+			} elsif ($headers[$i] =~ /\[.\]/) {
+				$total2 += $fields[$i];
+			}
+
 			$v{$direction}{$headers[$i]} = $fields[$i];
 		}
+
+		if ($total != $total2) {
+			next;
+		}
+
+		print "$fname,$name,x,$date,";
+		printf("%02d:%02d-%02d:%02d,", $when / 60, $when % 60,
+			($when + 15) / 60, ($when + 15) % 60);
 
 		for $i (1, 3, 0, 2) {
 			print "$v{$i}{'Right'},";
