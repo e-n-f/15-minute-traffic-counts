@@ -9,6 +9,7 @@ from these sources:
   * Minneapolis, MN
   * Phoenix, AZ
   * Virginia Beach, VA
+  * Columbus, OH (morpc)
 
 Additional PDF counts from
 
