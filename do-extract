@@ -7,3 +7,6 @@ do
 done
 
 find hutrc -name '*.txt' -print | sort | tr '\012' '\0' | xargs -0 -L1 ./extract-ddot >> counts-dc.csv
+
+cat counts-dc.csv | (cd ../rtc-traffic-counts; ./extract-report-addresses) > /tmp/$$
+mv /tmp/$$ counts-dc.csv
