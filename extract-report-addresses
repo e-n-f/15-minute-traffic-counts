@@ -152,6 +152,7 @@ sub geocode {
 	s/\bPENN\b/PENNSYLVANIA/g;
 	s/\bMLK\b/MARTIN LUTHER KING/g;
 	s/\bNH BURROUGHS\b/NANNIE HELEN BURROUGHS/g;
+	s/NICOLLET MALL/NICOLLET AV/g;
 
 	s/(\/ )([NSEW]?)([NSEW]) (.*)$/$1$4 $2$3/;
 	s/^([NSEW]?)([NSEW] )(.* )(\/)/$3$1$2$4/;
@@ -230,6 +231,8 @@ while (<>) {
 		$out .= "$fields[$i],";
 	}
 
+	$out =~ s/,$//;
+
 	$where = geocode($name);
 
 	if ($where eq ",") {
@@ -237,8 +240,8 @@ while (<>) {
 	}
 
 	if ($where eq ",") {
-		print "$out,\n";
+		print "$out\n";
 	} else {
-		print "$out$where\n";
+		print "$out,$where\n";
 	}
 }
