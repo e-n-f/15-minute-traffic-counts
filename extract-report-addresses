@@ -172,6 +172,7 @@ sub geocode {
 
 	# s/([A-Z0-9])\//\1 \//g;
 
+	$ret = "";
 	if ($quad eq "") {
 		for $q ("NE", "NW", "SE", "SW", "N", "S", "E", "W") {
 			if ($lat{$q}{$_} ne "") {
