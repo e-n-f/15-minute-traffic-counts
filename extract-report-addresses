@@ -148,6 +148,9 @@ sub geocode {
 	s/\bMLK\b/MARTIN LUTHER KING/g;
 	s/\bNH BURROUGHS\b/NANNIE HELEN BURROUGHS/g;
 
+	s/(\/ [^\/]*)\/.*/$1/;
+	s/ $//;
+
 	$quad = "x";
 	if (0) {
 		while (s/ *\b([NSEW][NSEW]) *\b//) {
@@ -171,7 +174,7 @@ sub geocode {
 	}
 
 	if ($ret eq "," && $_ ne "") {
-		# print "\n\nfail $quad $_    $orig\n\n";
+		print "\n\nfail $quad $_    $orig\n\n";
 	}
 
 	return $ret;
