@@ -48,6 +48,11 @@ while (<IN>) {
 	$name =~ s/\bDRIVE\b/DR/g;
 	$name =~ s/\bCIRCLE\b/CIR/g;
 
+	$name =~ s/(\/ )([NSEW]?)([NSEW]) (.*)$/$1$4 $2$3/;
+	$name =~ s/^([NSEW]?)([NSEW] )(.* )(\/)/$3$1$2$4/;
+
+	# print "$name\n";
+
 	$quad = "x";
 	if (0) {
 		while ($name =~ s/\b *([NSEW]) *\b//) {
@@ -148,6 +153,9 @@ sub geocode {
 	s/\bMLK\b/MARTIN LUTHER KING/g;
 	s/\bNH BURROUGHS\b/NANNIE HELEN BURROUGHS/g;
 
+	s/(\/ )([NSEW]?)([NSEW]) (.*)$/$1$4 $2$3/;
+	s/^([NSEW]?)([NSEW] )(.* )(\/)/$3$1$2$4/;
+
 	s/(\/ [^\/]*)\/.*/$1/;
 	s/ $//;
 
@@ -174,7 +182,7 @@ sub geocode {
 	}
 
 	if ($ret eq "," && $_ ne "") {
-		print "\n\nfail $quad $_    $orig\n\n";
+		# print "\n\nfail $quad $_    $orig\n\n";
 	}
 
 	return $ret;
