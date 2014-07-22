@@ -1,0 +1,75 @@
+#!/usr/bin/perl
+
+# cat ../../*/counts*csv | grep -v extrap | ./make-time-distrib-table > distrib-table
+
+$baseline = 16.75;  # 16:45-17:00
+$morning = 10.5;    # 10:30-10:45
+
+while (<>) {
+	($id, $name, $id2, $date, $time, @fields) = split(/,/);
+
+	$key = "$id,$name,$id2,$date";
+
+	if ($key ne $okey) {
+		if ($walk{$baseline} != 0 && $walk{$morning} != 0) {
+			$walkbasesum += $walk{$baseline};
+			$walkbasecount++;
+
+			for $n (sort { $a <=> $b } keys(%walk)) {
+				$walksum{$n} += $walk{$n};
+				$walkcount{$n} += $walk{$baseline};
+			}
+		}
+
+		if ($drive{$baseline} != 0 && $drive{$morning} != 0) {
+			$drivebasesum += $drive{$baseline};
+			$drivebasecount++;
+
+			for $n (sort { $a <=> $b } keys(%drive)) {
+				$drivesum{$n} += $drive{$n};
+				$drivecount{$n} += $drive{$baseline};
+			}
+		}
+
+		%walk = ();
+		%drive = ();
+		$okey = $key;
+	}
+
+	if ($time =~ /(..):(..) *- *(..):(..)/) {
+		$time = $1 + $2 / 60;
+		$time2 = $3 + $4 / 60;
+	}
+
+	if ($time2 == $time + .25) {
+		$walk = $fields[12] + $fields[13] + $fields[14] + $fields[15];
+		$walk{$time} = $walk;
+
+		for ($i = 0; $i < 12; $i++) {
+			$drive{$time} += $fields[$i];
+		}
+	}
+}
+
+print "Walking\tDriving\n";
+
+print "\t:00\t:15:\t:30:\t45\t\t";
+print "\t:00\t:15:\t:30:\t45\n";
+
+for ($i = 0; $i < 24; $i++) {
+	printf("%02d:00\t", $i);
+
+	for ($j = $i; $j < $i + 1; $j += .25) {
+		$walk = $walksum{$j} / $walkcount{$j};
+		printf("%.4f\t", $walk);
+	}
+
+	printf("\t%d:00\t", $i);
+
+	for ($j = $i; $j < $i + 1; $j += .25) {
+		$drive = $drivesum{$j} / $drivecount{$j};
+		printf("%.4f\t", $drive);
+	}
+
+	print "\n";
+}
