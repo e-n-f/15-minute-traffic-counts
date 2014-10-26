@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-for ($i = 2011; $i <= 2013; $i++) {
-	system "curl -o hutrc/contractor-$i.html 'http://www.hutrc.howard.edu/data/TMC_Contractor/search.php' -H 'Cookie: d949e3cd8d1fe760c0accdfe1a293b60=htirqmlt29lprc8pg0ed3dpph4; ja_ores_tpl=ja_ores' -H 'Origin: http://www.hutrc.howard.edu' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Cache-Control: max-age=0' -H 'Referer: http://www.hutrc.howard.edu/data/TMC_Contractor/search.php' -H 'Connection: keep-alive' --data 'DDOT_Archives_year=${i}&DDOT_Archives_month=Full_Year&submit_update=Submit' --compressed";
+for ($i = 2014; $i <= 2014; $i++) {
+	system "curl -o hutrc/contractor-$i.html 'http://www.hutrc.howard.edu/Data/TMC_Contractor/search.php' -H 'Cookie: 007fb829ddbdd2a87668c06531fcc371=c04j3lsr0gtbc4orca5v4cs0d3' -H 'Origin: http://www.hutrc.howard.edu' -H 'Accept-Encoding: gzip,deflate' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Cache-Control: max-age=0' -H 'Referer: http://www.hutrc.howard.edu/Data/TMC_Contractor/search.php' -H 'Connection: keep-alive' --data 'DDOT_Archives_year=${i}&submit_update=Submit&streetA=&streetB=' --compressed";
 
 	$text = "";
 	open(IN, "hutrc/contractor-$i.html");
@@ -13,7 +13,8 @@ for ($i = 2011; $i <= 2013; $i++) {
 	while ($text =~ s/href *= *'([^']*\.pdf)'//) {
 		$url = $1;
 		$url =~ s/ /%20/g;
-		$url = "http://www.hutrc.howard.edu/data/TMC_Contractor/$url";
+		$url =~ s/,/%2C/g;
+		$url = "http://www.hutrc.howard.edu/Data/TMC_Contractor/$url";
 
 		$fname = $url;
 		$fname =~ s/http:\/\///;
@@ -22,6 +23,7 @@ for ($i = 2011; $i <= 2013; $i++) {
 		$dir =~ s/\/[^\/]*$//;
 
 		system "mkdir -p 'hutrc/$dir'";
+		print "$url\n";
 		system "curl -o 'hutrc/$fname' '$url'";
 	}
 	
