@@ -1,16 +1,59 @@
 #!/usr/bin/perl
 
+$city = "dc";
+
+# minneapolis.ms2soft.com
+# enable developer tools
+# TMC
+# from, to, SEARCH
+# List View
+# 1
+# TMC
+# find the tmcdata.asp?... URL
+
+$index = "curl 'http://dc.ms2soft.com/tcds/tmcdata.asp?offset=0&id=1&a=193' -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://dc.ms2soft.com/tcds/tdetail_tmc.asp?offset=0&sort_fld=INTID&sort_dir=ASC' -H 'Cookie: ASPSESSIONIDACRDDRSD=CCEHBGBAAHMFFMIIOJCLMCNF; ASP.NET_SessionId=0yb4gk4p2hepfvzwthceta34; __utma=233346690.2027105761.1423089027.1423089027.1423089027.1; __utmc=233346690; __utmz=233346690.1423089027.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ASPSESSIONIDQQACCCAQ=CLBMBICBKKIDIHNKFMJLLBIE; ASPSESSIONIDQSDADDAR=BBBMGMKAGHBMMALCCLLGMIDJ; __utmt=1; __utma=1.1979095538.1420845983.1420845983.1423092474.2; __utmb=1.28.10.1423092474; __utmc=1; __utmz=1.1420845983.1.1.utmcsr=hutrc.howard.edu|utmccn=(referral)|utmcmd=referral|utmcct=/' -H 'Connection: keep-alive' --compressed";
+
+$index =~ s/^curl //;
+
+mkdir "index";
+mkdir "report";
+mkdir "report-bikes";
+
 for ($i = 1; $i < 71; $i++) {
 	print "\n$i\n";
 
-	system "curl -o 'index/$i.html' 'http://dc.ms2soft.com/tcds/tmcdata.asp?offset=&id=$i&a=193' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Connection: keep-alive' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Cookie: __utma=233346690.1708018771.1395988809.1395988809.1395988809.1; __utmc=233346690; __utmz=233346690.1395988809.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ASPSESSIONIDCAAACSTD=HEHOPCECJHPDOBMHOPHFNIAG; ASP.NET_SessionId=rb2aazoppu1q0ydrsm5xo1cv; __utma=1.1992255864.1396029913.1396029913.1396029913.1; __utmb=1.56.10.1396029913; __utmc=1; __utmz=1.1396029913.1.1.utmcsr=gbnrtc.org|utmccn=(referral)|utmcmd=referral|utmcct=/index.php/resources/data/traffic-count-database-system/' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' --compressed";
+	$index =~ s/id=[0-9]+/id=$i/;
+	system "curl -o index/$i.html $index";
+
+	$rest = $index;
+	$rest =~ s/'http[^']*' //;
+
+	$vehicle = "";
+	$combined = "";
+	$bikes = "";
 
 	open(IN, "index/$i.html");
 	while (<IN>) {
 		if (/href="(rpt_tmc-cars_and_trucks.asp?[^"]*)"/) {
-			$url = $1;
-
-			system "curl -o 'report/$i.html' 'http://dc.ms2soft.com/tcds/$url' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://dc.ms2soft.com/tcds/tmcdata.asp?offset=9&id=10&a=193' -H 'Cookie: __utma=233346690.1708018771.1395988809.1396034178.1396036089.3; __utmb=233346690.1.10.1396036089; __utmc=233346690; __utmz=233346690.1395988809.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ASPSESSIONIDCAAACSTD=CEIOPCECGPKLDBOEAPAIPLPG; ASP.NET_SessionId=1oklbq23mc4hnao53am330bp; __utma=1.1611933542.1396036289.1396036289.1396036289.1; __utmb=1.19.10.1396036289; __utmc=1; __utmz=1.1396036289.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' --compressed";
+			$vehicle = $1;
 		}
+
+		if (/href="(rpt_tmc-cars-trucks.asp?[^"]*)"/) {
+			$combined = $1;
+		}
+
+		if (/href="(rpt_tmc-bikes.asp?[^"]*)"/) {
+			$bikes= $1;
+		}
+	}
+
+	if ($vehicle ne "") {
+		system "curl -o 'report/$i.html' 'http://$city.ms2soft.com/tcds/$vehicle' $rest";
+	} elsif ($combined ne "") {
+		system "curl -o 'report/$i.html' 'http://$city.ms2soft.com/tcds/$combined' $rest";
+	}
+
+	if ($bikes ne "") {
+		system "curl -o 'report-bikes/$i.html' 'http://$city.ms2soft.com/tcds/$bikes' $rest";
 	}
 }

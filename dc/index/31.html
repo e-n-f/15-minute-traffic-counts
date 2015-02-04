@@ -10,8 +10,42 @@
 <link rel="stylesheet" href="styles_tmc.css" type="text/css">
 <script type="text/javascript" src="/tcds/js/global.js"></script>
 <script language="JavaScript">
-function MC_Refresh(curDate) {
-  window.location.href="tmcdata.asp?offset=&dir=&id=31&a=193&date=" + curDate;
+function MC_Refresh(curDate) {	
+	var diag = document.getElementById("IS_DIAGRAM_VISIBLE").value;			
+	var topTenRows = new Number(document.getElementById("TOP_TEN_ROWS").value);	
+  window.location.href="tmcdata.asp?offset=0&dir=&id=31&a=193&date=" + curDate + "&tmcrow=" + topTenRows + "&diag=" + diag;
+}
+function tmcPaging(dir) {
+	var diag = document.getElementById("IS_DIAGRAM_VISIBLE").value;	
+	var tmcPrevDate = document.getElementById("TMC_PREV_DATE").value;	
+	var tmcNextDate = document.getElementById("TMC_NEXT_DATE").value;	
+	var tmcFirstDate = document.getElementById("TMC_FIRST_DATE").value;	
+	var tmcLastDate = document.getElementById("TMC_LAST_DATE").value;	
+	var pageSize = 10;
+	var pageDate = "";
+	var topTenRows = new Number(document.getElementById("TOP_TEN_ROWS").value);	
+	var topTenRowsMax = new Number(document.getElementById("TOP_TEN_ROWS_MAX").value);	
+	if (dir == "next") {
+		topTenRows += pageSize;
+		pageDate = tmcNextDate;
+	} else if (dir == "prev"){
+		topTenRows -= pageSize;
+		pageDate = tmcPrevDate;
+	} else if (dir == "first") {
+		topTenRows = 0;
+		pageDate = tmcFirstDate;
+	} else if (dir == "last") {
+		topTenRows = topTenRowsMax;
+		pageDate = tmcLastDate;
+	}
+	//alert(topTenRows);			
+	//alert(tmcPrevDate);
+	//alert(tmcNextDate);
+	
+	if (topTenRows < 0) {
+		topTenRows = 0;		
+	}	
+  window.location.href="tmcdata.asp?offset=0&dir=&id=31&a=193&date=" + pageDate + "&tmcrow=" + topTenRows + "&diag=" + diag;		
 }
 function MC_PeakHour(corridor) {
   
@@ -23,12 +57,12 @@ function MC_PeakHour(corridor) {
       corr1 = "";
       corr2 = "";
 
-      window.location.href="peakhour.asp?offset=&dir=&id=31&a=193&date=&calc=" + calc + "&corridor=" + corr;
+      window.location.href="peakhour.asp?offset=0&dir=&id=31&a=193&date=&calc=" + calc + "&corridor=" + corr;
 
     //} else {
       //calc for intersection
       calc = "intersection";
-      window.location.href="peakhour.asp?offset=&dir=&id=31&a=193&date=&calc=" + calc + "&corridor=" + corr + "&corr1=" + corr1 + "&corr2=" + corr2;
+      window.location.href="peakhour.asp?offset=0&dir=&id=31&a=193&date=&calc=" + calc + "&corridor=" + corr + "&corr1=" + corr1 + "&corr2=" + corr2;
 
     //}
   
@@ -36,12 +70,12 @@ function MC_PeakHour(corridor) {
 
 function ConfirmDelete(intid, this_date) {
   if (confirm("Are you sure you wish to delete this TMC?\n    Date : " + this_date))
-    location.href = "frm_tmcdelete.asp?offset=&a=193&intid=" + intid + "&date=" + this_date;
+    location.href = "frm_tmcdelete.asp?offset=0&a=193&intid=" + intid + "&date=" + this_date;
 }
 
 function ConfirmDeleteNote(local_id, note_id) {
   if (confirm("Are you sure you wish to delete this Note?"))
-    location.href = "frm_notedelete.asp?offset=&local_id=" + local_id + "&apt=tmc2&note_id=" + note_id + "&a=193" + "&date=";
+    location.href = "frm_notedelete.asp?offset=0&local_id=" + local_id + "&apt=tmc2&note_id=" + note_id + "&a=193" + "&date=";
 }
 
 function Collapse(table) {
@@ -63,10 +97,77 @@ function Expand(table) {
       help.style.display = "";
     }
   }
+	
+	function getHref(dir, dt) {	
+		var diag = document.getElementById("IS_DIAGRAM_VISIBLE").value;	
+		var hrefUrl = "tmcdata.asp?corridor=&offset=0&dir=" + dir;
+		hrefUrl += "&id=31&a=193&date=";		
+		hrefUrl += dt.toString();
+		hrefUrl += "&diag=" + diag;		
+		//alert(hrefUrl);				
+		window.location.href = hrefUrl;
+						
+	}
+	
+	function ShowDiagram() {	
+
+  }
+		
+	function ShowDiag(period, ph, m, d, y) {
+    var btn = document.getElementById("diag_toggle");
+    var img = document.getElementById("img_diagram");
+    var pb1 = document.getElementById("pagebreak1");
+    var pb2 = document.getElementById("pagebreak2");
+    var diag = document.getElementById("DiagramDiv");    
+		var car = document.getElementById("CarCB");
+    var truck = document.getElementById("TruckCB");
+    var ped = document.getElementById("PedCB");
+		var bike = document.getElementById("BikeCB");		
+		var timeRangeStr = document.getElementById("TIME_RANGE_STR").value;
+		var intervalRows = document.getElementById("INTERVAL_ROWS").value;		
+		var imgFactor = document.getElementById("img_factordiagram");
+		
+    if (btn.value == "Show Diagram") {
+      img.src = "ph_diag.aspx?ts=42039.7822916667&ag=193&id=31&ph=" + ph + "&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET NW&r2=H STREET NW&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rng=" + timeRangeStr;
+      btn.value = "Hide Diagram";
+      diag.style.display = "";      
+			document.getElementById("IS_DIAGRAM_VISIBLE").value = "1";							
+			
+			if (intervalRows == 28 && "236" == "193") {
+				imgFactor.src = "ph_diag.aspx?ts=42039.7822916667&ag=193&id=31&ph=24&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET NW&r2=H STREET NW&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rows=" + intervalRows;
+			}
+			
+    } else {
+      img.src = "images/_spc.gif";
+			imgFactor.src = "images/_spc.gif";
+      btn.value = "Show Diagram";
+      diag.style.display = "none";      
+			document.getElementById("IS_DIAGRAM_VISIBLE").value = "";							
+    }		
+  }
+	
+	function ChangeImgSrc(period, ph, m, d, y) {	
+    var img = document.getElementById("img_diagram");
+    var car = document.getElementById("CarCB");
+    var truck = document.getElementById("TruckCB");
+    var ped = document.getElementById("PedCB");
+		var bike = document.getElementById("BikeCB");		
+		var timeRangeStr = document.getElementById("TIME_RANGE_STR").value;
+		var intervalRows = document.getElementById("INTERVAL_ROWS").value;
+		var imgFactor = document.getElementById("img_factordiagram");
+		    
+    img.src = "ph_diag.aspx?ts=42039.7822916667&ag=193&id=31&ph=" + ph + "&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET NW&r2=H STREET NW&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked+ "&bike=" + bike.checked + "&rng=" + timeRangeStr;
+		
+		if (intervalRows == 28 && "236" == "193") {
+			imgFactor.src = "ph_diag.aspx?ts=42039.7822916667&ag=193&id=31&ph=24&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET NW&r2=H STREET NW&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rows=" + intervalRows;
+		}
+		
+  }
+	
 </script>
 </head>
 
-<body bgcolor="#FFFFFF">
+<body bgcolor="#FFFFFF" onload="ShowDiagram();">
 
 <table cellspacing="0" cellpadding="0" border="0">
   <tr>
@@ -83,6 +184,7 @@ function Expand(table) {
 <script type="text/javascript" src="/tcds/js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="/tcds/js/jquery-qHelp.js"></script>
 <link type="text/css" href="/tcds/css/jquery-qHelp.css" rel="stylesheet" />
+<link type="text/css" href="/tcds/assets/style_sheets/nn.css" rel="stylesheet" />
 
 <style type="text/css">
     DIV.banner_icon {float: right; font-size: 9px; text-align: center; margin: 0 2px 0 0;}
@@ -112,20 +214,22 @@ function Expand(table) {
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF">
 	<tr>
-    <td rowspan="2" height="35" align="left" valign="top"><a href="http://www.gbnrtc.org" target="_agency_home"><img src="assets/images/logo-Gbnrtc.gif" border="0" alt="Gbnrtc Homepage"></a></td>
+    <td rowspan="2" height="35" align="left" valign="top"><a href="http://ddot.dc.gov" target="_agency_home"><img src="assets/images/logo-Dc.gif" border="0" alt="Dc Homepage"></a></td>
     <td valign="top" align="left">
-<h1 style="font-size:13px;" class="title"></h1>
+        <h1 style="font-size:13px;" class="title">DDOT-Howard University Traffic Data Center</h1>
     </td>
     <td valign="middle" align="right" width="55%" nowrap>
-<div class="banner_icon"><a href="http://www.ms2soft.com" target="MS2"><img src="images/ms2_logo.gif" border="0" alt="Click for technical assistance" hspace="2" width="70" height="34"></a></div>
+        <div class="banner_icon"><a href="http://www.ms2soft.com" target="MS2"><img src="images/Ms2Logo.gif" border="0" alt="Click for technical assistance" class='bannerIconImage_ms2Logo'></a></div>
 
-        <!-- These are the links on the banner page. Some Agencies are unique.-->
-     
-        <div class="banner_icon noPrint"><a href="javascript:jsHelp()"><img src="images/_b_help.gif" border="0" alt="TCDS Help" hspace="2" width="25" height="25"><br>Help</a></b></div>
-        <div class="banner_icon noPrint"><a href="javascript:window.external.addFavorite('http://dc.ms2soft.com/tcds/default.asp?loc=Gbnrtc','Traffic Count Database System (TCDS) - Gbnrtc');"><img src="images/_b_bookmark.gif" border="0" hspace="2" alt="Add to Favorites"><br>Bookmark</a></div>
-        <div class="banner_icon noPrint"><a href="javascript:location.reload()"><img src="images/_i_refresh.gif" border="0" alt="Refresh View" hspace="2" width="21" height="25"><br>Refresh</a></div>
-  
-    </td>
+         
+
+        <div class="banner_icon noPrint"><a href="javascript:location.reload()"><img src="images/icnRefresh.gif" border="0" alt="Refresh View" class='bannerIconImage'><br>Refresh</a></div>
+        <div class="banner_icon noPrint"><a href="javascript:jsHelp()"><img src="images/icnHelp.gif" border="0" alt="TCDS Help" class='bannerIconImage'><br>Help</a></b></div>        
+        
+        
+                <div class="banner_icon noPrint"><a href="nethelp/TSMS Quick Reference Guide_generic.pdf" target="TSMS Walkthrough"><img src="images/pdficon.png" border="0" alt="TSMS Help" class='bannerIconImage'><br>TSMS</a></div>
+               
+     </td>
   </tr>
   <tr>
     <td colspan="2" style="font-size:12px" align="right" valign="middle">
@@ -144,7 +248,7 @@ function Expand(table) {
     <td valign="middle" width="99%" nowrap>
 <a class="nav2" href="search_tmc.asp">Search</a> |
 
-<a class="nav2" href="tdetail_tmc.asp?offset=&a=193">Back</a> |
+<a class="nav2" href="tdetail_tmc.asp?offset=0&a=193">Back</a> |
 
 <a class="nav2" href="rpt_tmc-cars.asp?date=5/24/2011&id=31&a=193" target="_new">Cars</a> |
 
@@ -173,15 +277,15 @@ function Expand(table) {
 <!--
 
 -->
-<input type="radio" name="rdoCalc" onClick="window.location.href='admin/SessionTransfer.asp?dir=2aspx&url=../phf_new2.aspx?user_id=,intid=31,a=193,calc=intersection'"> Intersection
+<input type="radio" name="rdoCalc" onClick="window.location.href='admin/SessionTransfer.asp?dir=2aspx&url=../phf_new2.aspx?user_id=,intid=31,frommap=,tmcrow=,date=,a=193,calc=intersection'"> Intersection
 <!--
 <input type="radio" name="rdoCalc" onClick="window.location.href='phf_new2.aspx?user_id=&intid=31&a=193&calc=intersection'"> Intersection
-<input type="radio" name="rdoCalc" onClick="window.location.href='peakhour.asp?offset=&dir=&id=31&a=193&date=&calc=intersection'"> Intersection
+<input type="radio" name="rdoCalc" onClick="window.location.href='peakhour.asp?offset=0&dir=&id=31&a=193&date=&calc=intersection'"> Intersection
 -->
 
     <input type="radio" name="rdoCalc" onClick="window.location.href='phf_new.aspx?user_id=&intid=31&a=193&calc=corridor'"> Corridor: -
 <!--
-    <input type="radio" name="rdoCalc" onClick="window.location.href='peakhour.asp?offset=&dir=&id=31&a=193&date=&calc=corridor&corridor=-'"> Corridor: -
+    <input type="radio" name="rdoCalc" onClick="window.location.href='peakhour.asp?offset=0&dir=&id=31&a=193&date=&calc=corridor&corridor=-'"> Corridor: -
 -->
 
 <br />
@@ -246,7 +350,7 @@ function Expand(table) {
   </tr>
 
 <tr>
-<td class='sm_cell_no_top'><input type='radio' name='display' onClick=MC_Refresh('5/24/2011') checked>
+<td class='sm_cell_no_top'><input type='radio' name='display' onClick=MC_Refresh('2011-05-24') checked>
 </td>
 <td class="sm_cell_rt_btm_lines">Tuesday, May 24, 2011</td>
 <td class="sm_cell_rt_btm_lines">2667
@@ -270,6 +374,16 @@ function Expand(table) {
     </td>
   </tr>
 </table>
+
+<input type="button" class="FormButton" style="width:30px" style="width:40px;height:18px;" disabled name="a_first" value="|<<" Title="Most Recent" onclick="tmcPaging('first');">
+<input type="button" class="FormButton" style="width:20px" style="width:40px;height:18px;" disabled name="a_first" value="<" Title="More Recent" onclick="tmcPaging('prev');">
+<input type="button" class="FormButton" style="width:20px" style="width:40px;height:18px;" disabled name="a_first" value=">" Title="Older" onclick="tmcPaging('next');">
+<input type="button" class="FormButton" style="width:30px" style="width:40px;height:18px;" disabled name="a_first" value=">>|" Title="Oldest" onclick="tmcPaging('last');">
+
+1-1 of 1
+
+<br/><br/>
+
 <!--End table to hold signal and TMC Data-->
 
 <br />
@@ -308,10 +422,29 @@ Notes
     <td>
       <table height="22" cellpadding="0" cellspacing="0">
         <tr>
-<td width='42' height='22' background='assets/images/tab-on.gif'><div align='center'><b>NB</b></div></td><td width='42' height='22' background='assets/images/tab-off.gif'><div align='center'><a class='sm_tab' href='tmcdata.asp?corridor=&offset=&dir=EB&id=31&a=193&date=5/24/2011'>EB</a></div></td><td width='42' height='22' background='assets/images/tab-off.gif'><div align='center'><a class='sm_tab' href='tmcdata.asp?corridor=&offset=&dir=SB&id=31&a=193&date=5/24/2011'>SB</a></div></td><td width='42' height='22' background='assets/images/tab-off.gif'><div align='center'><a class='sm_tab' href='tmcdata.asp?corridor=&offset=&dir=WB&id=31&a=193&date=5/24/2011'>WB</a></div></td>
+<td width='42' height='22' background='assets/images/tab-on.gif'><div align='center'><b>NB</b></div></td>
+			<td width='42' height='22' background='assets/images/tab-off.gif'>
+			<div align='center'>						
+			<a class='sm_tab' href="#" onclick="getHref('EB','5/24/2011');return false;">EB</a>			
+			</div>
+			</td>
+			
+			<td width='42' height='22' background='assets/images/tab-off.gif'>
+			<div align='center'>						
+			<a class='sm_tab' href="#" onclick="getHref('SB','5/24/2011');return false;">SB</a>			
+			</div>
+			</td>
+			
+			<td width='42' height='22' background='assets/images/tab-off.gif'>
+			<div align='center'>						
+			<a class='sm_tab' href="#" onclick="getHref('WB','5/24/2011');return false;">WB</a>			
+			</div>
+			</td>
+			
 
           <td align="right" valign="top" width="495" background="assets/images/tmc-tab-spacer.gif">
-<input type="button" value="Glossary" class="button_sml" onclick="ShowHelp('TMC',true)">
+					<input type="button" value="Glossary" class="button_sml" onclick="ShowHelp('TMC',true)">
+					<input type="button" value="Show Diagram" class="button_sml" id="diag_toggle" onclick="ShowDiag('totals','totals',5,24,2011)">
           </td>
         </tr>
       </table>
@@ -427,6 +560,7 @@ Notes
 27.87
     </td>
   </tr>
+	
 </table>
                 </td>
               </tr>
@@ -572,6 +706,33 @@ Notes
 </ul>
 <div align="center"><input type="button" class="button" value="close" onclick="ShowHelp('TMC',false)"></div>
 </div>
+
+<br/>
+<div id="DiagramDiv" style="display:none;">
+<input type="checkbox" id="CarCB" checked="checked" style="margin-left:8px;" onclick="ChangeImgSrc('totals','totals',5,24,2011)"> 
+  Cars
+  <input type="checkbox" id="TruckCB" checked="checked" style="margin-left:8px;" onclick="ChangeImgSrc('totals','totals',5,24,2011)"> 
+  Trucks
+  <input type="checkbox" id="PedCB" checked="checked" style="margin-left:8px;" onclick="ChangeImgSrc('totals','totals',5,24,2011)"> 
+  Pedestrians
+	<input type="checkbox" id="BikeCB" checked="checked" style="margin-left:8px;" onclick="ChangeImgSrc('totals','totals',5,24,2011)"> 
+  Bikes
+</div>
+<img src="images/_spc.gif" id="img_diagram" />
+
+<br/>
+<br/>
+<img src="images/_spc.gif" id="img_factordiagram" />
+
+<input type="hidden" name="IS_DIAGRAM_VISIBLE" id="IS_DIAGRAM_VISIBLE">
+<input type="hidden" name="TOP_TEN_ROWS" id="TOP_TEN_ROWS"value="0">
+<input type="hidden" name="TOP_TEN_ROWS_MAX" id="TOP_TEN_ROWS_MAX"value="0">
+<input type="hidden" name="TMC_PREV_DATE" id="TMC_PREV_DATE"value="">
+<input type="hidden" name="TMC_NEXT_DATE" id="TMC_NEXT_DATE"value="">
+<input type="hidden" name="TMC_FIRST_DATE" id="TMC_FIRST_DATE"value="5/24/2011">
+<input type="hidden" name="TMC_LAST_DATE" id="TMC_LAST_DATE"value="5/24/2011">
+<input type="hidden" name="TIME_RANGE_STR" id="TIME_RANGE_STR" value="7:00 AM|6:30 PM">
+<input type="hidden" name="INTERVAL_ROWS" id="INTERVAL_ROWS" value="46">
 
 </body>
 </html>
