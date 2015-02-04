@@ -1,15 +1,59 @@
 #!/usr/bin/perl
 
+$city = "minneapolis";
+
+# minneapolis.ms2soft.com
+# enable developer tools
+# TMC
+# from, to, SEARCH
+# List View
+# 1
+# TMC
+# find the tmcdata.asp?... URL
+
+$index = "curl 'http://minneapolis.ms2soft.com/tcds/tmcdata.asp?offset=0&id=1&a=40' -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://minneapolis.ms2soft.com/tcds/tdetail_tmc.asp?offset=0&sort_fld=INTID&sort_dir=ASC' -H 'Cookie: ASPSESSIONIDQQACCCAQ=GFBMBICBMJFGPDGMJEIKCOIE; ASPSESSIONIDQSDADDAR=BKAMGMKAIIAFPHFAFGMALGDN; ASP.NET_SessionId=nk5suf2sqidv1fr52fsl0vrr; __utma=233346690.2027105761.1423089027.1423089027.1423089027.1; __utmc=233346690; __utmz=233346690.1423089027.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; __utma=1.1532340062.1423088240.1423088240.1423091290.2; __utmb=1.35.10.1423091290; __utmc=1; __utmz=1.1423088240.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)' -H 'Connection: keep-alive' --compressed";
+
+$index =~ s/^curl //;
+
+mkdir "index";
+mkdir "report";
+mkdir "report-bikes";
+
 for ($i = 1; $i < 1000; $i++) {
 	print "\n$i\n";
-	# system "curl -o index/$i.html 'http://minneapolis.ms2soft.com/tcds/tmcdata.asp?offset=&id=$i&a=40' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Cache-Control: max-age=0' -H 'Cookie: ASPSESSIONIDCAAACSTD=IPAOPCECAGFDJIOMJCFMHKOB; ASP.NET_SessionId=y5gohqfm43njtym5ikjl0yqn; __utma=233346690.1708018771.1395988809.1395988809.1395988809.1; __utmb=233346690.5.10.1395988809; __utmc=233346690; __utmz=233346690.1395988809.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utma=1.765693387.1395988308.1395988308.1395988308.1; __utmb=1.114.10.1395988308; __utmc=1; __utmz=1.1395988308.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)' -H 'Connection: keep-alive' --compressed";
+
+	$index =~ s/id=[0-9]+/id=$i/;
+	system "curl -o index/$i.html $index";
+
+	$rest = $index;
+	$rest =~ s/'http[^']*' //;
+
+	$vehicle = "";
+	$combined = "";
+	$bikes = "";
 
 	open(IN, "index/$i.html");
 	while (<IN>) {
 		if (/href="(rpt_tmc-cars_and_trucks.asp?[^"]*)"/) {
-			$url = $1;
-
-			system "curl -o 'report/$i.html' 'http://minneapolis.ms2soft.com/tcds/$url' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://minneapolis.ms2soft.com/tcds/tmcdata.asp?offset=&id=986&a=40' -H 'Cookie: ASPSESSIONIDCAAACSTD=IPAOPCECAGFDJIOMJCFMHKOB; ASP.NET_SessionId=y5gohqfm43njtym5ikjl0yqn; __utma=233346690.1708018771.1395988809.1395988809.1395988809.1; __utmc=233346690; __utmz=233346690.1395988809.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utma=1.765693387.1395988308.1395988308.1396026345.2; __utmb=1.49.10.1396026345; __utmc=1; __utmz=1.1395988308.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' --compressed"
+			$vehicle = $1;
 		}
+
+		if (/href="(rpt_tmc-cars-trucks.asp?[^"]*)"/) {
+			$combined = $1;
+		}
+
+		if (/href="(rpt_tmc-bikes.asp?[^"]*)"/) {
+			$bikes= $1;
+		}
+	}
+
+	if ($vehicle ne "") {
+		system "curl -o 'report/$i.html' 'http://$city.ms2soft.com/tcds/$vehicle' $rest";
+	} elsif ($combined ne "") {
+		system "curl -o 'report/$i.html' 'http://$city.ms2soft.com/tcds/$combined' $rest";
+	}
+
+	if ($bikes ne "") {
+		system "curl -o 'report-bikes/$i.html' 'http://$city.ms2soft.com/tcds/$bikes' $rest";
 	}
 }
