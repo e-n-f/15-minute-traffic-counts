@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+
+open(IN, "counts-minneapolis.csv");
+while (<IN>) {
+	chomp;
+	($id, $name, $id2, $date, $time, @rest) = split(/,/);
+	$walk = $rest[12] + $rest[13] + $rest[14] + $rest[15];
+
+	$walk{"$name $date"}{$time} = $walk;
+}
+
+for $where (keys(%walk)) {
+	%times = %{$walk{$where}};
+	@times = keys(%times);
+	$times = $#times + 1;
+
+	next if $times != 96;
+
+	for $t (@times) {
+		$daytotal{$where} += $times{$t};
+		$total{$t} += $times{$t};
+		$total += $times{$t};
+	}
+}
+
+for $where (keys(%daytotal)) {
+	%times = %{$walk{$where}};
+	@times = keys(%times);
+
+	next if $daytotal{$where} == 0;
+
+	if ($daytotal{$where} > $daytotal{$most}) {
+		$most = $where;
+	}
+
+	for $t (@times) {
+		if ($times{$t} != 0) {
+			push @{$timelist{$t}}, ($daytotal{$where} / $times{$t});
+		}
+	}
+}
+
+for $t (sort(keys(%total))) {
+	@l = sort { $a <=> $b } @{$timelist{$t}};
+
+	$sum = 0;
+	$count = 0;
+	for $i (@l) {
+		$sum += log($i);
+		$count++;
+	}
+	$geom = exp($sum / $count);
+	$scale{$t} = $geom;
+	$scale{$t} = $l[$#l / 2];
+}
+
+@daytotal = sort { $daytotal{$b} <=> $daytotal{$a} } keys(%daytotal);
+
+for $d (@daytotal) {
+	$sum = 0;
+	$count = 0;
+
+	for $t ("10:00-10:15", "10:15-10:30", "10:30-10:45", "10:45-11:00") {
+	#for $t ("16:00-16:15", "16:15-16:30", "16:30-16:45", "16:45-17:00") {
+	#for $t ("08:45-09:00", "16:45-17:00", "16:30-16:45") {
+	#for $t (sort(keys(%total))) {
+		if ($daytotal{$d} != 0) {
+			if (1 || $walk{$d}{$t} > 0) {
+				$sum += $walk{$d}{$t} * $scale{$t};
+				$count++;
+			}
+		}
+	}
+
+	if ($count != 0 && $sum != 0) {
+		printf("%.6f ", ($sum / $count) / $daytotal{$d});
+	}
+
+	print "\n";
+	#printf("%.6f %.6f %s %s\n", $walk{$most}{$t} * $scale{$t}, $daytotal{$most}, $t, $most);
+}
