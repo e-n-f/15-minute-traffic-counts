@@ -74,12 +74,14 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 
 				if (1) { # $walk{$d}{$t} != 0) {
 					$sum += $walk{$d}{$t} * $scale{$t};
-					$count++;
+					$count += 1;
 				}
 			}
 
 			if ($count != 0 && $sum != 0) {
 				push @deviations, log((($sum / $count)) / $daytotal{$d});
+
+				# printf("%.6f %d\n", $sum / $count / $daytotal{$d}, $daytotal{$d});
 			}
 		}
 
@@ -89,7 +91,7 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 		}
 
 		$sum = 0;
-		$count++;
+		$count = 0;
 		for $d (@deviations) {
 			$sum += $d;
 			$count++;
