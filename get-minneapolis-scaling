@@ -55,27 +55,53 @@ for $t (sort(keys(%total))) {
 }
 
 @daytotal = sort { $daytotal{$b} <=> $daytotal{$a} } keys(%daytotal);
+@daytimes = sort(keys(%total));
 
-for $d (@daytotal) {
-	$sum = 0;
-	$count = 0;
+for ($start = 0; $start <= $#daytimes; $start++) {
+	print "$daytimes[$start] ";
+	for ($duration = 0; $duration <= 8 * 4; $duration++) {
+	#for ($duration = 0; $duration <= $#daytimes; $duration++) {
+		@deviations = ();
 
-	for $t ("10:00-10:15", "10:15-10:30", "10:30-10:45", "10:45-11:00") {
-	#for $t ("16:00-16:15", "16:15-16:30", "16:30-16:45", "16:45-17:00") {
-	#for $t ("08:45-09:00", "16:45-17:00", "16:30-16:45") {
-	#for $t (sort(keys(%total))) {
-		if ($daytotal{$d} != 0) {
-			if (1 || $walk{$d}{$t} > 0) {
-				$sum += $walk{$d}{$t} * $scale{$t};
-				$count++;
+		for $d (@daytotal) {
+			next if ($daytotal{$d} == 0);
+
+			$sum = 0;
+			$count = 0;
+
+			for ($tt = $start; $tt < $start + $duration + 1; $tt++) {
+				$t = $daytimes[$tt % ($#daytimes + 1)];
+
+				if (1) { # $walk{$d}{$t} != 0) {
+					$sum += $walk{$d}{$t} * $scale{$t};
+					$count++;
+				}
+			}
+
+			if ($count != 0 && $sum != 0) {
+				push @deviations, log((($sum / $count)) / $daytotal{$d});
 			}
 		}
-	}
 
-	if ($count != 0 && $sum != 0) {
-		printf("%.6f ", ($sum / $count) / $daytotal{$d});
-	}
+		if ($#deviations < 0) {
+			print "-- ";
+			next;
+		}
 
+		$sum = 0;
+		$count++;
+		for $d (@deviations) {
+			$sum += $d;
+			$count++;
+		}
+		$mean = $sum / $count;
+		$variance = 0;
+		for $d (@deviations) {
+			$variance += ($d - $mean) * ($d - $mean);
+		}
+		$variance /= $count;
+		$stddev = sqrt($variance);
+		printf("%.3f ", exp($stddev));
+	}
 	print "\n";
-	#printf("%.6f %.6f %s %s\n", $walk{$most}{$t} * $scale{$t}, $daytotal{$most}, $t, $most);
 }
