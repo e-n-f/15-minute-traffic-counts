@@ -67,19 +67,21 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 			next if ($daytotal{$d} == 0);
 
 			$sum = 0;
+			$mult = 0;
 			$count = 0;
 
 			for ($tt = $start; $tt < $start + $duration + 1; $tt++) {
 				$t = $daytimes[$tt % ($#daytimes + 1)];
 
 				if (1) { # $walk{$d}{$t} != 0) {
-					$sum += $walk{$d}{$t} * $scale{$t};
+					$sum += $walk{$d}{$t};
+					$mult += $scale{$t};
 					$count += 1;
 				}
 			}
 
 			if ($count != 0 && $sum != 0) {
-				push @deviations, log((($sum / $count)) / $daytotal{$d});
+				push @deviations, log((($sum * $mult / $count)) / $daytotal{$d});
 
 				# printf("%.6f %d\n", $sum / $count / $daytotal{$d}, $daytotal{$d});
 			}
