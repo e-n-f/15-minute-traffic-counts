@@ -58,6 +58,26 @@ for $t (sort(keys(%total))) {
 	$median{$t} = $l[$#l / 2];
 }
 
+sub walkscale {
+	my $x = $_[0];
+
+	my $a               = 0.952203;
+	my $u               = 15.1218;
+	my $o               = 4.43061;
+	my $a1              = -0.0507668;
+	my $u1              = 14.3222;
+	my $o1              = 0.982951;
+	my $a2              = 0.0958098;
+	my $u2              = 7.88115;
+	my $o2              = 1.17773;
+
+	return (
+		$a  * exp(- pow($x - $u,  2) / (2 * $o  * $o ))/($o  * sqrt(2 * $pi)) +
+		$a1 * exp(- pow($x - $u1, 2) / (2 * $o1 * $o1))/($o1 * sqrt(2 * $pi)) +
+		$a2 * exp(- pow($x - $u2, 2) / (2 * $o2 * $o2))/($o2 * sqrt(2 * $pi))
+	) / 4;
+}
+
 %scale = ();
 for ($h = 0; $h < 24; $h += .25) {
 	$h1 = int($h);
@@ -71,21 +91,7 @@ for ($h = 0; $h < 24; $h += .25) {
 
 	if ($x < 4) { $x += 24; }
 
-	$a               = 0.953471;
-	$u               = 15.1301;
-	$o               = 4.46831;
-	$a1              = -0.0481375;
-	$u1              = 14.3139;
-	$o1              = 0.955437;
-	$a2              = 0.0954886;
-	$u2              = 7.87567;
-	$o2              = 1.18437;
-
-	$scale{$key} = (
-		$a  * exp(- pow($x - $u,  2) / (2 * $o  * $o ))/($o  * sqrt(2 * $pi)) +
-		$a1 * exp(- pow($x - $u1, 2) / (2 * $o1 * $o1))/($o1 * sqrt(2 * $pi)) +
-		$a2 * exp(- pow($x - $u2, 2) / (2 * $o2 * $o2))/($o2 * sqrt(2 * $pi))
-	) / 4;
+	$scale{$key} = &walkscale($x) + &walkscale($x - 24) + &walkscale($x + 24);
 }
 
 @daytotal = sort { $daytotal{$b} <=> $daytotal{$a} } keys(%daytotal);
