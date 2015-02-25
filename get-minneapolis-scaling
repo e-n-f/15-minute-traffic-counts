@@ -91,7 +91,7 @@ for ($h = 0; $h < 24; $h += .25) {
 
 	if ($x < 4) { $x += 24; }
 
-	$scale{$key} = &walkscale($x) + &walkscale($x - 24) + &walkscale($x + 24);
+	$scale{$key} = 1 / (&walkscale($x) + &walkscale($x - 24) + &walkscale($x + 24));
 }
 
 @daytotal = sort { $daytotal{$b} <=> $daytotal{$a} } keys(%daytotal);
@@ -99,6 +99,8 @@ for ($h = 0; $h < 24; $h += .25) {
 
 for ($start = 0; $start <= $#daytimes; $start++) {
 	print "$daytimes[$start] $scale{$daytimes[$start]} $median{$daytimes[$start]} ";
+
+	#for $duration (0) {
 	for ($duration = 0; $duration <= 8 * 4; $duration++) {
 	#for ($duration = 0; $duration <= $#daytimes; $duration++) {
 		@deviations = ();
@@ -107,15 +109,13 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 			next if ($daytotal{$d} == 0);
 
 			$sum = 0;
-			$mult = 0;
 			$count = 0;
 
 			for ($tt = $start; $tt < $start + $duration + 1; $tt++) {
 				$t = $daytimes[$tt % ($#daytimes + 1)];
 
-				if (1) { # $walk{$d}{$t} != 0) {
-					$sum += $walk{$d}{$t};
-					$mult += $scale{$t};
+				if ($walk{$d}{$t} != 0) {
+					$sum += log($walk{$d}{$t} * $scale{$t});
 					$count += 1;
 				}
 
@@ -125,7 +125,9 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 			}
 
 			if ($count != 0 && $sum != 0) {
-				push @deviations, log((($sum * $mult / $count)) / $daytotal{$d});
+				push @deviations, log((exp($sum / $count)) / $daytotal{$d});
+				#print "$deviations[$#deviations] ";
+				#printf("%s %.6f %f %f\n", $daytimes[$start], (exp($sum / $count)) / $daytotal{$d}, (exp($sum / $count)), $daytotal{$d});
 
 				# printf("%.6f %d\n", $sum / $count / $daytotal{$d}, $daytotal{$d});
 			}
@@ -143,10 +145,13 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 			$count++;
 		}
 		$mean = $sum / $count;
+		$mean = 0;  # because we want to compare to correctness, even if they are all skewed one way or the other
+
 		$variance = 0;
 		for $d (@deviations) {
 			$variance += ($d - $mean) * ($d - $mean);
 		}
+		#print "mean $mean variance $variance\n";
 		$variance /= $count;
 		$stddev = sqrt($variance);
 		printf("%.3f ", exp($stddev));
