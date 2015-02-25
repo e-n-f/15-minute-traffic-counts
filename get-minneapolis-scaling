@@ -109,7 +109,6 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 
 			$sum = 0;
 			$mult = 0;
-			$count = 0;
 
 			for ($tt = $start; $tt < $start + $duration + 1; $tt++) {
 				$t = $daytimes[$tt % ($#daytimes + 1)];
@@ -119,12 +118,11 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 				}
 
 				$sum += $walk{$d}{$t};
-				$mult += log($scale{$t});
-				$count++;
+				$mult += 1 / $scale{$t};
 			}
 
 			if ($count != 0 && $sum != 0) {
-				push @deviations, log(($sum / $count) * (exp($mult / $count)) / $daytotal{$d});
+				push @deviations, log($sum / $mult / $daytotal{$d});
 			}
 		}
 
