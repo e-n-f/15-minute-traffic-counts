@@ -108,6 +108,7 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 			next if ($daytotal{$d} == 0);
 
 			$sum = 0;
+			$mult = 0;
 			$count = 0;
 
 			for ($tt = $start; $tt < $start + $duration + 1; $tt++) {
@@ -117,15 +118,13 @@ for ($start = 0; $start <= $#daytimes; $start++) {
 					die "no scaling for $t\n";
 				}
 
-				if ($walk{$d}{$t} != 0) {
-					$sum += log($walk{$d}{$t} * $scale{$t});
-					$count++;
-				}
+				$sum += $walk{$d}{$t};
+				$mult += log($scale{$t});
+				$count++;
 			}
 
-			if ($count != 0) {
-				push @deviations, log(exp($sum / $count) / $daytotal{$d});
-				#printf("%.6f\n", exp($sum / $count) / $daytotal{$d});
+			if ($count != 0 && $sum != 0) {
+				push @deviations, log(($sum / $count) * (exp($mult / $count)) / $daytotal{$d});
 			}
 		}
 
