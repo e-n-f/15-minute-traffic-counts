@@ -2,6 +2,62 @@
 
 use POSIX;
 
+sub erf {
+	my $x = $_[0];
+
+	my $t = 1 / (1 + 0.5 * abs($x));
+	my $tau = $t * exp(-POSIX::pow($x, 2) -
+		1.26551223 +
+		1.00002368 * $t +
+		0.37409196 * POSIX::pow($t, 2) +
+		0.09678418 * POSIX::pow($t, 3) -
+		0.18628806 * POSIX::pow($t, 4) +
+		0.27886807 * POSIX::pow($t, 5) -
+		1.13520398 * POSIX::pow($t, 6) +
+		1.48851587 * POSIX::pow($t, 7) -
+		0.82215223 * POSIX::pow($t, 8) +
+		0.17087277 * POSIX::pow($t, 9));
+	if ($x >= 0) {
+		return 1 - $tau;
+	} else {
+		return $tau - 1;
+	}
+}
+
+sub gaussian_cdf {
+	my ($x, $u, $o) = @_;
+	return .5 * (.5 + erf(($x - $u) / ($o * sqrt(2))));
+}
+
+sub drive { return
+	     0.702862036738917 * gaussian_cdf($_[0], 15.9297900074372, 4.18930162517776) +
+	     0.182966045800718 * gaussian_cdf($_[0], 7.90984034338895, 1.19773575210496) +
+	     0.0572745443397448 * gaussian_cdf($_[0], 11.302377250832, 1.29227842534305) +
+	     0.0568973731206275 * gaussian_cdf($_[0], 17.2900891364536, 0.941603076119222);
+}
+
+sub walk { return
+	     0.607594243462025 * gaussian_cdf($_[0], 16.1793882392213, 4.88055064811325) +
+	     0.162751658533735 * gaussian_cdf($_[0], 8.34675513155887, 1.30243647688119) +
+	     0.0896832473037161 * gaussian_cdf($_[0], 12.2894632237202, 1.31262131757656) +
+	     0.1399708507219 * gaussian_cdf($_[0], 16.861759160285, 1.9671791363091);
+}
+
+sub bike { return
+	     0.0793791021429211 * gaussian_cdf($_[0], 22.0505104521932, 1.81613048490325) +
+	     0.294097569731473 * gaussian_cdf($_[0], 8.60637780138981, 1.62276042113877) +
+	     0.291321710097042 * gaussian_cdf($_[0], 13.4834420762478, 2.00256720065779) +
+	     0.335201618028565 * gaussian_cdf($_[0], 17.7702191345837, 1.6834315666608);
+}
+
+sub walk2 { return walk($_[0] - 24) + walk($_[0]) + walk($_[0] + 24) };
+sub drive2 { return drive($_[0] - 24) + drive($_[0]) + drive($_[0] + 24) };
+sub bike2 { return bike($_[0] - 24) + bike($_[0]) + bike($_[0] + 24) };
+
+sub walk3 { return $walk_cache{$_[0]} if $walk_cache{$_[0]} ne ""; return $walk_cache{$_[0]} = walk2($_[0]); }
+sub drive3 { return $drive_cache{$_[0]} if $drive_cache{$_[0]} ne ""; return $drive_cache{$_[0]} = drive2($_[0]); }
+sub bike3 { return $bike_cache{$_[0]} if $bike_cache{$_[0]} ne ""; return $bike_cache{$_[0]} = bike2($_[0]); }
+
 $pi = 4 * atan2(1, 1);
 
 open(IN, "counts-minneapolis.csv");
@@ -58,26 +114,6 @@ for $t (sort(keys(%total))) {
 	$median{$t} = $l[$#l / 2];
 }
 
-sub walkscale {
-	my $x = $_[0];
-
-	my $a               = 0.952203;
-	my $u               = 15.1218;
-	my $o               = 4.43061;
-	my $a1              = -0.0507668;
-	my $u1              = 14.3222;
-	my $o1              = 0.982951;
-	my $a2              = 0.0958098;
-	my $u2              = 7.88115;
-	my $o2              = 1.17773;
-
-	return (
-		$a  * exp(- pow($x - $u,  2) / (2 * $o  * $o ))/($o  * sqrt(2 * $pi)) +
-		$a1 * exp(- pow($x - $u1, 2) / (2 * $o1 * $o1))/($o1 * sqrt(2 * $pi)) +
-		$a2 * exp(- pow($x - $u2, 2) / (2 * $o2 * $o2))/($o2 * sqrt(2 * $pi))
-	) / 4;
-}
-
 %scale = ();
 for ($h = 0; $h < 24; $h += .25) {
 	$h1 = int($h);
@@ -89,9 +125,7 @@ for ($h = 0; $h < 24; $h += .25) {
 	$key = sprintf("%02d:%02d-%02d:%02d", $h1, $m1, $h2, $m2);
 	$x = $h + $m / 60;
 
-	if ($x < 4) { $x += 24; }
-
-	$scale{$key} = 1 / (&walkscale($x) + &walkscale($x - 24) + &walkscale($x + 24));
+	$scale{$key} = 1 / (walk3($x + .25) - walk3($x));
 }
 
 @daytotal = sort { $daytotal{$b} <=> $daytotal{$a} } keys(%daytotal);
