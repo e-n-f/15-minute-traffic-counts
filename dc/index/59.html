@@ -60,6 +60,10 @@ function ConfirmDelete(intid, this_date) {
     location.href = "frm_tmcdelete.asp?offset=0&a=193&intid=" + intid + "&date=" + this_date;
 }
 
+function PerformEdit(intid, this_date) {	
+	location.href = "tmcdata_edit.asp?corridor=&offset=0&a=193&id=" + intid + "&date=" + this_date;
+}
+
 function ConfirmDeleteNote(local_id, note_id) {
   if (confirm("Are you sure you wish to delete this Note?"))
     location.href = "frm_notedelete.asp?offset=0&local_id=" + local_id + "&apt=tmc2&note_id=" + note_id + "&a=193" + "&date=";
@@ -97,6 +101,11 @@ function Expand(table) {
 	}
 	
 	function ShowDiagram() {	
+		
+	var showDiagram = "1";	
+	if (showDiagram == "1") {
+		ShowDiag('totals', 'totals', '8', '9', '2012');	
+	}	
 
   }
 		
@@ -115,13 +124,13 @@ function Expand(table) {
 		var imgFactor = document.getElementById("img_factordiagram");
 		
     if (btn.value == "Show Diagram") {
-      img.src = "ph_diag.aspx?ts=42039.7827199074&ag=193&id=59&ph=" + ph + "&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rng=" + timeRangeStr;
+      img.src = "ph_diag.aspx?ts=42186.836712963&ag=193&id=59&ph=" + ph + "&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rng=" + timeRangeStr;
       btn.value = "Hide Diagram";
       diag.style.display = "";      
 			document.getElementById("IS_DIAGRAM_VISIBLE").value = "1";							
 			
 			if (intervalRows == 28 && "236" == "193") {
-				imgFactor.src = "ph_diag.aspx?ts=42039.7827199074&ag=193&id=59&ph=24&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rows=" + intervalRows;
+				imgFactor.src = "ph_diag.aspx?ts=42186.836712963&ag=193&id=59&ph=24&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rows=" + intervalRows;
 			}
 			
     } else {
@@ -143,10 +152,10 @@ function Expand(table) {
 		var intervalRows = document.getElementById("INTERVAL_ROWS").value;
 		var imgFactor = document.getElementById("img_factordiagram");
 		    
-    img.src = "ph_diag.aspx?ts=42039.7827199074&ag=193&id=59&ph=" + ph + "&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked+ "&bike=" + bike.checked + "&rng=" + timeRangeStr;
+    img.src = "ph_diag.aspx?ts=42186.836712963&ag=193&id=59&ph=" + ph + "&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked+ "&bike=" + bike.checked + "&rng=" + timeRangeStr;
 		
 		if (intervalRows == 28 && "236" == "193") {
-			imgFactor.src = "ph_diag.aspx?ts=42039.7827199074&ag=193&id=59&ph=24&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rows=" + intervalRows;
+			imgFactor.src = "ph_diag.aspx?ts=42186.836712963&ag=193&id=59&ph=24&m=" + m + "&d=" + d + "&y=" + y + "&r1=17TH STREET SE&r2=INDEPENDENCE AVENUE SE&import=&car=" + car.checked + "&truck=" + truck.checked + "&ped=" + ped.checked + "&bike=" + bike.checked + "&rows=" + intervalRows;
 		}
 		
   }
@@ -278,7 +287,7 @@ function Expand(table) {
 <h3>Turning Movement Count Data - 59</h3>
 
 <!--Begin Table to hold Signal Data and TMC Data-->
-<table cellpadding="5" cellspacing="0" border="0" width="500">
+<table cellpadding="5" cellspacing="0" border="0" width="520">
   <tr>
     <td valign="top">
   <!--Begin Table to hold Signal Data-->

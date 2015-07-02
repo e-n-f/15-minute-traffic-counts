@@ -10,10 +10,12 @@ while (<>) {
 
 for ($i = 0; $i <= $#lines; $i++) {
 	$_ = $lines[$i];
+	s/'/"/g;
 
-	if (/<td class="label_access_ctr"><strong>([^<]*)/) {
+	while (s/<td class="label_access_ctr"><strong>([^<]*)//) {
 		push @id, $1;
-	} elsif (/<td class="label_access_ctr">([^<]*)/) {
+	}
+	while (s/<td class="label_access_ctr">([^<]*)//) {
 		$n = $1;
 		$n =~ s/&nbsp;/ /g;
 		$n =~ s/,//g;
