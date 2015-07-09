@@ -3,6 +3,21 @@
 $prefix = $ARGV[0];
 shift @ARGV;
 
+$locations = $ARGV[0];
+$locations =~ s/report\/(.*).html//;
+$id = $1;
+open(IN, "$locations/tmc_export.csv");
+while (<IN>) {
+	chomp;
+	s/\015//g;
+	@fields = split(/,/);
+	if ($#fields == 9) {
+		$lat{$fields[0]} = $fields[8];
+		$lon{$fields[0]} = $fields[9];
+	}
+}
+close(IN);
+
 while (<>) {
 	chomp;
 	push @lines, $_;
@@ -89,7 +104,7 @@ for $direction ("SB", "WB", "NB", "EB") {
 	}
 }
 
-print ",,,"; # should be bike counts
+print ",,,,lat,lon"; # should be bike counts
 print "\n";
 
 for ($i = 0; $i <= $#count; $i++) {
@@ -129,6 +144,7 @@ for ($i = 0; $i <= $#count; $i++) {
 		print "$count[$i]{$direction}{'Ped'},";
 	}
 
-	print ",,,"; # missing bike counts
+	print ",,,,"; # missing bike counts
+	print "$lat{$val{'INT ID'}},$lon{$val{'INT ID'}}";
 	print "\n";
 }

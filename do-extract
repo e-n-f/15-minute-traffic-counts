@@ -6,10 +6,4 @@ do
 	find $i/report -name '*.html' -print | sort | xargs -L1 ./ms2soft/parse-report $i > counts-$i.csv
 done
 
-find hutrc -name '*.txt' -print | sort | tr '\012' '\0' | xargs -0 -L1 ./extract-ddot >> counts-dc.csv
-
-cat counts-dc.csv | (cd ../rtc-traffic-counts; ./extract-report-addresses) > /tmp/$$
-mv /tmp/$$ counts-dc.csv
-
-cat counts-minneapolis.csv | ./extract-report-addresses > /tmp/$$
-mv /tmp/$$ counts-minneapolis.csv
+find hutrc -name '*.txt' -print | sort | tr '\012' '\0' | xargs -0 -L1 ./extract-ddot | (cd ../rtc-traffic-counts; ./extract-report-addresses) >> counts-dc.csv

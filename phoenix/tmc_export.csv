@@ -1,0 +1,567 @@
+INTID,COUNTY,CITY1,ROAD1,ROAD2,ROAD3,ROAD4,LATEST_DATE,LATITUDE,LONGITUDE
+360,Maricopa,Avondale,99th Ave,McDowell Rd,,,3/25/2010,33.4648021,-112.2724376
+508,Maricopa,Avondale,107th Ave,I-10,,,3/25/2010,33.4606255000398,-112.289907932281
+509,Maricopa,Avondale,107th Ave,I-10,,,3/25/2010,33.4617711809947,-112.289843559265
+510,Maricopa,Avondale,99th Ave,I-10,,,3/25/2010,33.4607687109872,-112.272505760193
+511,Maricopa,Avondale,99th Ave,I-10,,,3/25/2010,33.4623261147641,-112.272527217865
+71,Maricopa,Chandler,Alma School Rd,Chandler Heights Rd,,,10/21/2008,33.2327917141091,-111.858394145966
+72,Maricopa,Chandler,Alma School Rd,Ocotillo Rd,,,10/23/2008,33.2471087876734,-111.865169405937
+73,Maricopa,Chandler,Alma School Rd,Queen Creek Rd,,,11/18/2008,33.2618989888543,-111.858565807343
+74,Maricopa,Chandler,Chandler Blvd,Dobson Rd,,,10/23/2008,33.3059653938753,-111.876335442066
+75,Maricopa,Chandler,Chandler Heights Rd,Arizona Ave,,,10/28/2008,33.2330497203522,-111.841295063496
+76,Maricopa,Chandler,Chandler Heights Rd,Lindsay Rd,,,11/5/2008,33.2337339940927,-111.77272439003
+77,Maricopa,Chandler,Dobson Rd,Ocotillo Rd,,,11/13/2008,33.2437170511337,-111.87727689743
+78,Maricopa,Chandler,Chandler Heights Rd,Cooper Rd,,,10/29/2008,33.2335634870386,-111.806552410126
+79,Maricopa,Chandler,Dobson Rd,Queen Creek Rd,,,11/5/2008,33.2615491131007,-111.881042718887
+80,Maricopa,Chandler,Germann Rd,Arizona Ave,,,10/14/2008,33.276610444254,-111.841603517532
+81,Maricopa,Chandler,McQueen Rd,Germann Rd,,,10/14/2008,33.2770678948999,-111.806885004044
+82,Maricopa,Chandler,McQueen Rd,Germann Rd,,,10/21/2008,33.2768167458225,-111.824104785919
+83,Maricopa,Chandler,Ocotillo Rd,Arizona Ave,,,10/21/2008,33.2475977970326,-111.841238737106
+84,Maricopa,Chandler,Ocotillo Rd,Cooper Rd,,,10/22/2008,33.2480823173688,-111.806691884995
+85,Maricopa,Chandler,Ocotillo Rd,McQueen Rd,,,10/23/2008,33.2485758075427,-111.772617101669
+86,Maricopa,Chandler,Pecos Rd,Cooper Rd,,,10/23/2006,33.2917812786149,-111.806986927986
+87,Maricopa,Chandler,Ocotillo Rd,McQueen Rd,,,10/23/2006,33.247786221927,-111.824061870575
+88,Maricopa,Chandler,Price Rd,Queen Creek Rd,,,10/23/2008,33.261432487538,-111.888799667358
+89,Maricopa,Chandler,Queen Creek Rd,Arizona Ave,,,11/19/2008,33.2621053251803,-111.841335296631
+90,Maricopa,Chandler,Queen Creek Rd,Cooper Rd,,,11/18/2008,33.2625718229033,-111.806788444519
+91,Maricopa,Chandler,ray rd,Dobson Rd,,,10/23/2008,33.3204968432844,-111.876375675201
+92,Maricopa,Chandler,Ray Rd,McQueen Rd,,,10/21/2008,33.3206402852844,-111.824126243591
+93,Maricopa,Chandler,Riggs Rd,Cooper Rd,,,10/15/2008,33.2190153190318,-111.806530952454
+95,Maricopa,Chandler,Warner Rd,McQueen Rd,,,10/14/2008,33.3351536020374,-111.824276447296
+96,Maricopa,Chandler,Chandler Heights Rd,Gilbert Rd,,,9/16/2008,33.2336891238475,-111.789364814758
+97,Maricopa,Chandler,Chandler Heights Rd,McQueen Rd,,,9/16/2008,33.2332493942264,-111.823986768723
+98,Maricopa,Chandler,Ocotillo Rd,Gilbert Rd,,,9/16/2008,33.2482797137728,-111.789450645447
+140,Maricopa,Chandler,Alma School Rd,Queen Creek Rd,,,4/6/2010,33.2619976715059,-111.858576536179
+141,Maricopa,Chandler,Cooper Rd,Riggs Rd,,,4/6/2010,33.2191679033668,-111.806573867798
+161,Maricopa,Chandler,Gilbert Rd,Riggs Rd,,,3/30/2010,33.2192576587337,-111.789300441742
+164,Maricopa,Chandler,Arizona Ave,Riggs Rd,,,4/6/2010,33.2185934668385,-111.841260194778
+167,Maricopa,Chandler,McQueen Rd,Warner Rd,,,4/6/2010,33.3352522018505,-111.824276447296
+168,Maricopa,Chandler,McQueen Rd,Chandler Blvd,,,4/6/2010,33.3061962842104,-111.824136972427
+169,Maricopa,Chandler,Arizona Ave,Ray Rd,,,4/6/2010,33.3206413,-111.8416091
+204,Maricopa,Chandler,Dobson Rd,Warner Rd,,,4/6/2010,33.3351446384124,-111.876440048218
+205,Maricopa,Chandler,Alma School Rd,Chandler Blvd,,,4/6/2010,33.3060348852055,-111.859102249146
+227,Maricopa,Chandler,Arizona Ave,Pecos Rd,,,4/6/2010,33.2915705283629,-111.841700077057
+229,Maricopa,Chandler,Cooper Rd,Chandler Blvd,,,4/6/2010,33.306411482419,-111.806938648224
+234,Maricopa,Chandler,Kyrene Rd,Ray Rd,,,4/14/2010,33.3198423861638,-111.945544481277
+235,Maricopa,Chandler,Kyrene Rd,Chandler Blvd,,,4/14/2010,,
+265,Maricopa,Chandler,Lindsay Rd,Riggs Rd,,,3/30/2010,33.2191589278251,-111.77267074585
+278,Maricopa,Chandler,McQueen Rd,Chandler Heights Rd,,,4/6/2010,33.2333122128791,-111.823997497559
+280,Maricopa,Chandler,Dobson Rd,Elliot Rd,,,4/6/2010,33.3495569554486,-111.876440048218
+282,Maricopa,Chandler,Alma School Rd,Elliot Rd,,,4/6/2010,33.3497362,-111.8591101
+283,Maricopa,Chandler,Alma School Rd,Pecos Rd,,,4/6/2010,33.2915346559288,-111.858952045441
+286,Maricopa,Chandler,Arizona Ave,Warner Rd,,,4/6/2010,33.3351446384124,-111.841721534729
+287,Maricopa,Chandler,Arizona Ave,Germann Rd,,,4/15/2010,33.2766732317395,-111.841603517532
+369,Maricopa,Chandler,Arizona Ave,Ocotillo Rd,,,4/6/2010,33.2475494,-111.8413075
+370,Maricopa,Chandler,56th St,Chandler Blvd,,,4/14/2010,33.3051896,-111.9631245
+409,Maricopa,Chandler,Arizona Ave,Elliot Rd,,,6/29/2010,33.3496355,-111.8417728
+410,Maricopa,Chandler,Gilbert Rd,Queen Creek Rd,,,6/29/2010,33.2628532,-111.7894324
+420,Maricopa,Chandler,McClintock Dr,Chandler Blvd,,,6/24/2010,33.3053147,-111.9110922
+421,Maricopa,Chandler,Priest Dr,Ray Rd,,,6/24/2010,33.3197798,-111.9631485
+460,Maricopa,Chandler,Chandler Blvd,Loop 101,,,4/6/2010,33.3058914191726,-111.894979476929
+461,Maricopa,Chandler,Chandler Blvd,Loop 101,,,4/6/2010,33.3058914191726,-111.893563270569
+546,Maricopa,Chandler,Chandler Blvd,I-10 Fwy,,,6/30/2010,33.3053892861986,-111.973085403442
+547,Maricopa,Chandler,Chandler Blvd,I-10 Fwy,,,6/30/2010,33.3053444527568,-111.971272230148
+555,Maricopa,Chandler,Arizona Ave,Loop 202,,,6/30/2010,33.2867545221819,-111.841464042664
+556,Maricopa,Chandler,Arizona Ave,Loop 202,,,6/30/2010,33.2878576532111,-111.841485500336
+565,Maricopa,Chandler,Ray Rd,Loop 101,,,4/6/2010,33.3203085753012,-111.894829273224
+566,Maricopa,Chandler,Ray Rd,loop 101,,,4/6/2010,33.3203265056028,-111.893434524536
+571,Maricopa,Chandler,Ray Rd,I-10 Fwy,,,4/14/2010,33.3198423861638,-111.973493099213
+572,Maricopa,Chandler,Ray Rd,I-10 Fwy,,,4/14/2010,33.3199320381147,-111.971272230148
+154,Maricopa,El Mirage,Dysart Rd,Northern Ave,,,4/13/2010,33.5511709,-112.3416724
+188,Maricopa,El Mirage,Dysart Rd,Cactus Rd,,,4/13/2010,33.5945584217616,-112.341856956482
+253,Maricopa,El Mirage,Dysart Rd,Waddell Rd,,,4/13/2010,33.6090795629747,-112.341985702515
+94,Maricopa,Gilbert,Riggs Rd,Val Vista Dr,,,10/15/2008,33.2191768789077,-111.75546169281
+100,Maricopa,Gilbert,Lindsay Rd,Pecos Rd,,,3/30/2010,33.292023416574,-111.774317622185
+101,Maricopa,Gilbert,Lindsay Rd,Queen Creek Rd,,,3/30/2010,33.2630517746912,-111.772660017014
+102,Maricopa,Gilbert,Val Vista Dr,Guadalupe Rd,,,3/30/2010,33.3647195790527,-111.756105422974
+103,Maricopa,Gilbert,Val Vista Dr,Ray Rd,,,3/30/2010,33.3212095683941,-111.755601167679
+104,Maricopa,Gilbert,Val Vista Dr,Williams Field Rd,,,3/30/2010,33.3067253121879,-111.755590438843
+105,Maricopa,Gilbert,Val Vista Dr,Pecos Rd,,,3/30/2010,33.2954939868103,-111.755558252335
+107,Maricopa,Gilbert,Greenfield Rd,Guadalupe Rd,,,3/30/2010,33.3647733425212,-111.738815903664
+108,Maricopa,Gilbert,Greenfield Rd,Warner Rd,,,3/30/2010,33.3357541628054,-111.738161444664
+111,Maricopa,Gilbert,Higley Rd,Baseline Rd,,,3/30/2010,33.3792793044718,-111.722432971001
+134,Maricopa,Gilbert,Higley Rd,Guadalupe Rd,,,3/30/2010,33.3648719087938,-111.721762418747
+135,Maricopa,Gilbert,Higley Rd,Elliot Rd,,,3/30/2010,33.3503545824354,-111.721408367157
+136,Maricopa,Gilbert,Higley Rd,Germann Rd,,,3/30/2010,33.2776957644326,-111.720657348633
+137,Maricopa,Gilbert,Higley Rd,Chandler Heights Rd,,,3/30/2010,33.2338416825872,-111.720507144928
+138,Maricopa,Gilbert,Cooper Rd,Guadalupe Rd,,,4/6/2010,33.3643309,-111.8070892
+139,Maricopa,Gilbert,McQueen Rd,Guadalupe Rd,,,4/6/2010,33.3642625882294,-111.824426651001
+158,Maricopa,Gilbert,Gilbert Rd,Elliot Rd,,,3/30/2010,33.349996,-111.7895798
+159,Maricopa,Gilbert,Gilbert Rd,Warner Rd,,,3/30/2010,33.3353776923604,-111.78998708725
+160,Maricopa,Gilbert,Gilbert Rd,Ray Rd,,,3/30/2010,33.3209540638363,-111.789793968201
+163,Maricopa,Gilbert,Lindsay Rd,Elliot Rd,,,3/30/2010,,
+166,Maricopa,Gilbert,McQueen Rd,Elliot Rd,,,4/6/2010,33.3497899708296,-111.824373006821
+195,Maricopa,Gilbert,Val Vista Dr,Chandler Heights Rd,,,3/30/2010,33.23382,-111.755397
+196,Maricopa,Gilbert,Higley Rd,Riggs Rd,,,3/30/2010,33.2192486832012,-111.720442771912
+198,Maricopa,Gilbert,Gilbert Rd,Baseline Rd,,,3/30/2010,33.3790194907303,-111.788388490677
+264,Maricopa,Gilbert,Lindsay Rd,Germann Rd,,,3/30/2010,33.2775589,-111.7727553
+266,Maricopa,Gilbert,Higley Rd,Warner Rd,,,3/30/2010,33.335847,-111.7213064
+273,Maricopa,Gilbert,Greenfield Rd,Pecos Rd,,,3/30/2010,33.2922341657322,-111.738252639771
+18,Maricopa,Glendale,59th Ave,Bell Rd,,,6/28/2007,33.6386683104106,-112.186417579651
+19,Maricopa,Glendale,59th Ave,Glendale Ave,,,6/12/2007,33.5385330716233,-112.18620300293
+20,Maricopa,Glendale,59th Ave,Olive Ave,,,5/3/2007,33.5674308505693,-112.186245918274
+21,Maricopa,Glendale,67th Ave,Bell Rd,,,6/13/2007,33.6381323727575,-112.202897071838
+22,Maricopa,Glendale,67th Ave,Glendale Ave,,,6/19/2007,33.5383184480022,-112.203068733215
+23,Maricopa,Glendale,67th Ave,Olive Ave,,,5/1/2007,33.567162660684,-112.202939987183
+24,Maricopa,Glendale,75th Ave,Bell Rd,,,6/14/2007,33.6382395605549,-112.220299243927
+25,Maricopa,Glendale,75th Ave,Glendale Ave,,,6/14/2007,33.5378713137466,-112.220470905304
+26,Maricopa,Glendale,83rd Ave,Bell Rd,,,6/19/2007,33.6381323727575,-112.233452796936
+27,Maricopa,Glendale,83rd Ave,Glendale Ave,,,6/28/2007,33.5377461157405,-112.237787246704
+28,Maricopa,Glendale,59th Ave,Bethany Home Rd,,,6/27/2007,33.5240179488276,-112.186224460602
+29,Maricopa,Glendale,67th Ave,Bethany Home Rd,,,6/28/2007,33.5238122333357,-112.203079462051
+31,Maricopa,Glendale,59th Ave,Camelback Rd,,,6/20/2007,33.5096256284124,-112.186331748962
+32,Maricopa,Glendale,67th Ave,Camelback Rd,,,6/21/2007,33.5093393678006,-112.203154563904
+155,Maricopa,Glendale,Dysart Rd,Glendale Ave,,,4/13/2010,33.536713,-112.3410059
+177,Maricopa,Glendale,75th Ave,Union Hills Dr,,,3/24/2010,33.6526551034456,-112.220374345779
+178,Maricopa,Glendale,67th Ave,Greenway Rd,,,3/24/2010,33.6250812615031,-112.202478647232
+179,Maricopa,Glendale,59th Ave,Greenway Rd,,,4/14/2010,33.6252063328701,-112.185666561127
+184,Maricopa,Glendale,51st Ave,Peoria Ave,,,4/13/2010,33.5819273,-112.1688473
+187,Maricopa,Glendale,75th Ave,Bethany Home Rd,,,4/13/2010,33.5234412,-112.2204753
+220,Maricopa,Glendale,51st Ave,Camelback Rd,,,3/25/2010,33.5094068,-112.1687578
+254,Maricopa,Glendale,59th Ave,Cactus Rd,,,4/13/2010,33.596390454358,-112.186009883881
+342,Maricopa,Glendale,Litchfield Rd,Northern Ave,,,4/13/2010,33.5513051,-112.3589183
+347,Maricopa,Glendale,59th Ave,Peoria Ave,,,4/13/2010,33.5819386817046,-112.186106443405
+348,Maricopa,Glendale,59th Ave,Northern Ave,,,4/13/2010,33.5530894,-112.1861825
+349,Maricopa,Glendale,51st Ave,Olive Ave,,,4/13/2010,33.5675037,-112.1689815
+350,Maricopa,Glendale,51st Ave,Northern Ave,,,6/23/2010,33.5530982,-112.168873
+361,Maricopa,Glendale,59th Ave,Camelback Rd,,,3/25/2010,33.5095059,-112.1864145
+396,Maricopa,Glendale,59th Ave,Thunderbird Rd,,,6/23/2010,33.6107561,-112.1857891
+397,Maricopa,Glendale,59th Ave,Bethany Home Rd,,,6/23/2010,33.5240179488276,-112.186299562454
+399,Maricopa,Glendale,59th Ave,Bell Rd,,,6/22/2010,33.638786,-112.1865395
+406,Maricopa,Glendale,83rd Ave,Bethany Home Rd,,,6/24/2010,33.5223388,-112.2376566
+453,Maricopa,Glendale,Loop 101,Camelback Rd,,,3/25/2010,33.5084090142723,-112.269244194031
+488,Maricopa,Glendale,Union Hills Dr,Loop 101 Fwy,,,3/24/2010,33.6527265499385,-112.233045101166
+489,Maricopa,Glendale,Union Hills Dr,Loop 101,,,3/24/2010,33.6526997575106,-112.231661081314
+490,Maricopa,Glendale,67th Ave,Loop 101,,,3/24/2010,33.6673896871037,-112.203047275543
+491,Maricopa,Glendale,67th Ave,Loop 101,,,3/24/2010,33.6685326281233,-112.203025817871
+522,Maricopa,Glendale,75th Ave,Loop 101,,,6/22/2010,33.6672468184084,-112.220320701599
+123,Maricopa,Goodyear,Litchfield Rd,Indian School Rd,,,3/25/2010,33.4858180350085,-112.362568974495
+124,Maricopa,Goodyear,Litchfield Rd,Van Buren St,,,3/25/2010,33.4498213421646,-112.358229160309
+359,Maricopa,Goodyear,Dysart Rd,McDowell Rd,,,3/25/2010,33.4643353,-112.3410329
+345,Maricopa,Maricopa,99th Ave,Grand Ave,,,4/13/2010,33.5974032,-112.2721253
+106,Maricopa,Mesa,Greenfield Rd,McKellips Rd,,,3/30/2010,33.4518354753329,-111.736039817333
+109,Maricopa,Mesa,Higley Rd,Brown Rd,,,3/30/2010,33.4373505787318,-111.719010472298
+110,Maricopa,Mesa,Higley Rd,University Dr,,,3/30/2010,33.422787149678,-111.719096302986
+162,Maricopa,Mesa,Lindsay Rd,Brown Rd,,,3/30/2010,33.4372634,-111.7709036
+165,Maricopa,Mesa,Mesa Dr,McKellips Rd,,,4/6/2010,33.451492,-111.822416
+197,Maricopa,Mesa,Gilbert Rd,McKellips Rd,,,3/30/2010,33.4517817657222,-111.787616014481
+199,Maricopa,Mesa,Lindsay Rd,Main St,,,3/30/2010,33.4154664586221,-111.771082878113
+200,Maricopa,Mesa,Val Vista Dr,University Dr,,,3/30/2010,33.4227723,-111.753638
+201,Maricopa,Mesa,Val Vista Dr,Southern Ave,,,3/30/2010,33.3937049,-111.753797
+202,Maricopa,Mesa,Higley Rd,Main St,,,3/30/2010,33.4155470567461,-111.719101667404
+203,Maricopa,Mesa,Dobson Rd,Main St,,,4/6/2010,33.4148843588394,-111.874498128891
+206,Maricopa,Mesa,Country Club Dr,Main St,,,4/6/2010,33.415108243833,-111.839886903763
+207,Maricopa,Mesa,Mesa Dr,Brown Rd,,,4/6/2010,33.435566,-111.822667
+208,Maricopa,Mesa,Stapley Rd,Brown Rd,,,4/6/2010,33.437033,-111.80528
+209,Maricopa,Mesa,Stapley Dr,Main St,,,4/6/2010,33.4151142,-111.8053012
+223,Maricopa,Mesa,Dobson Rd,Baseline Rd,,,4/6/2010,33.3785446567143,-111.877738237381
+224,Maricopa,Mesa,Alma School Rd,Baseline Rd,,,4/6/2010,33.3787327988043,-111.859756708145
+225,Maricopa,Mesa,Country Club Dr,McKellips Rd,,,4/6/2010,33.4514684589964,-111.839725971222
+226,Maricopa,Mesa,Country Club Dr,Southern Ave,,,4/6/2010,33.3933349666281,-111.840069293976
+228,Maricopa,Mesa,Mesa Dr,Southern Ave,,,4/6/2010,33.393338,-111.822935
+263,Maricopa,Mesa,Gilbert Rd,University Dr,,,3/30/2010,33.4226477,-111.7881375
+267,Maricopa,Mesa,Power Rd,Elliot Rd,,,3/30/2010,33.3505582,-111.687429
+269,Maricopa,Mesa,Gilbert Rd,Brown Rd,,,3/30/2010,33.4371976,-111.787881
+270,Maricopa,Mesa,Lindsay Rd,University Dr,,,3/30/2010,33.422686,-111.7710213
+271,Maricopa,Mesa,Lindsay Rd,Southern Ave,,,3/30/2010,33.3936304,-111.771205
+272,Maricopa,Mesa,Val Vista Dr,Main St,,,3/30/2010,33.4154451,-111.7536936
+275,Maricopa,Mesa,Power Rd,Southern Ave,,,3/30/2010,33.3939888713646,-111.684737205505
+276,Maricopa,Mesa,Power Rd,Williams Field Rd,,,3/30/2010,33.307188,-111.6886816
+279,Maricopa,Mesa,Dobson Rd,Broadway Rd,,,4/6/2010,33.4076033042784,-111.874562501907
+281,Maricopa,Mesa,Alma School Rd,University Dr,,,4/6/2010,33.422159,-111.856442
+284,Maricopa,Mesa,Country Club Dr,University Dr,,,4/6/2010,33.4223707599532,-111.839962005615
+285,Maricopa,Mesa,Country Club Dr,Baseline Rd,,,4/6/2010,33.3787775944801,-111.84112071991
+288,Maricopa,Mesa,Mesa Dr,Broadway Rd,,,4/6/2010,33.4077739,-111.822964
+366,Maricopa,Mesa,Power Rd,Brown Rd,,,3/30/2010,33.4371672,-111.6842088
+367,Maricopa,Mesa,Power Rd,Guadalupe Rd,,,3/30/2010,33.3650289,-111.6876731
+368,Maricopa,Mesa,Country Club Dr,Guadalupe Rd,,,4/6/2010,33.3642175,-111.8418607
+430,Maricopa,Mesa,Stapley Dr,Baseline Rd,,,6/29/2010,33.3790081,-111.8071656
+454,Maricopa,Mesa,US 60 Fwy,Gilbert Rd,,,3/30/2010,33.3857296036542,-111.788313388824
+455,Maricopa,Mesa,US 60 Fwy,Gilbert Rd,,,3/30/2010,33.3868941900078,-111.788334846497
+456,Maricopa,Mesa,Val Vista Dr,US 60 Fwy,,,3/30/2010,33.3858550213957,-111.753884553909
+457,Maricopa,Mesa,Val Vista Dr,US 60 Fwy,,,3/30/2010,33.3870375226347,-111.753852367401
+458,Maricopa,Mesa,Power Rd,US 60 Fwy,,,3/30/2010,33.3860789811983,-111.684801578522
+459,Maricopa,Mesa,Power Rd,US 60 Fwy,,,3/30/2010,33.3871987715575,-111.68478012085
+466,Maricopa,Mesa,Country Club Dr,Loop 202 Fwy,,,4/6/2010,33.4547088910139,-111.839715242386
+467,Maricopa,Mesa,Country Club Dr,Loop 202 Fwy,,,4/6/2010,33.4557651382657,-111.839640140533
+468,Maricopa,Mesa,Alma School Rd,Loop 202 Fwy,,,4/6/2010,33.4448977086139,-111.856344938278
+469,Maricopa,Mesa,Alma School Rd,Loop 202 Fwy,,,4/6/2010,33.4459093143192,-111.856377124786
+470,Maricopa,Mesa,Alma School Rd,US 60 Fwy,,,4/6/2010,33.3852458478138,-111.857364177704
+471,Maricopa,Mesa,Alma School Rd,US 60 Fwy,,,4/6/2010,33.3863746072544,-111.857342720032
+557,Maricopa,Mesa,Country Club Dr,US 60 Fwy,,,6/29/2010,33.3854429338515,-111.840090751648
+558,Maricopa,Mesa,Country Club Dr,US 60 Fwy,,,6/29/2010,33.3866343990193,-111.840080022812
+559,Maricopa,Mesa,Stapley Dr,US 60 Fwy,,,6/29/2010,33.3855146013908,-111.805543899536
+560,Maricopa,Mesa,Stapley Dr,US 60 Fwy,,,6/29/2010,33.3867508571446,-111.805511713028
+567,Maricopa,Mesa,Dobson Rd,US 60 Fwy,,,4/6/2010,33.3852816816721,-111.874680519104
+568,Maricopa,Mesa,Dobson Rd,US 60 Fwy,,,4/6/2010,33.3863477321999,-111.874648332596
+569,Maricopa,Mesa,Mesa Dr,US 60 Fwy,,,4/6/2010,33.3854966845115,-111.822924613953
+570,Maricopa,Mesa,Mesa Dr,US 60 Fwy,,,4/6/2010,33.3866164823707,-111.822924613953
+33,Maricopa,Peoria,75th Ave,Cactus Rd,,,10/1/2008,33.5958363803117,-112.220234870911
+34,Maricopa,Peoria,75th Ave,Greenway Rd,,,10/1/2008,33.6247998502636,-112.220004200935
+35,Maricopa,Peoria,75th Ave,Northern Ave,,,10/7/2008,33.552410934242,-112.220299243927
+36,Maricopa,Peoria,75th Ave,Peoria Ave,,,10/2/2008,33.5813666384266,-112.220256328583
+37,Maricopa,Peoria,75th Ave,Thunderbird Rd,,,10/9/2008,33.6103126303121,-112.220020294189
+38,Maricopa,Peoria,83rd Ave,Cactus Rd,,,10/7/2008,33.5954699745517,-112.237776517868
+39,Maricopa,Peoria,83rd Ave,Deer Valley Rd,,,10/7/2008,33.6815325132498,-112.237819433212
+40,Maricopa,Peoria,83rd Ave,Olive Ave,,,10/9/2008,33.5664743028321,-112.237733602524
+41,Maricopa,Peoria,Thunderbird Rd,83rd Ave,,,10/9/2008,33.6099641565482,-112.237551212311
+43,Maricopa,Peoria,91st Ave,Beardsley Rd,,,10/30/2008,33.6672111011975,-112.255039215088
+44,Maricopa,Peoria,91st Ave,Bell Rd,,,3/24/2010,33.6380609141517,-112.252850532532
+45,Maricopa,Peoria,91st Ave,Olive Ave,,,10/15/2008,33.5662776281522,-112.255092859268
+46,Maricopa,Peoria,91st Ave,Peoria Ave,,,10/15/2008,33.5808392826706,-112.25500702858
+47,Maricopa,Peoria,91st Ave,Thunderbird Rd,,,10/21/2008,33.6097229046556,-112.254910469055
+48,Maricopa,Peoria,91st Ave,Union Hills Dr,,,10/16/2008,33.6526015185371,-112.254996299744
+49,Maricopa,Peoria,83rd Ave,Northern Ave,,,10/16/2008,33.5519594022726,-112.23777115345
+50,Maricopa,Peoria,91st Ave,Northern Ave,,,10/14/2008,33.5517135175344,-112.254985570908
+51,Maricopa,Peoria,83rd Ave,Beardsley Rd,,,10/22/2008,33.6671485960428,-112.237736284733
+52,Maricopa,Peoria,91st Ave,Lake Pleasant Pkwy,,,10/28/2008,33.6744613909217,-112.254996299744
+53,Maricopa,Peoria,91st Ave,Cactus Rd,,,10/28/2008,33.595362733547,-112.255103588104
+54,Maricopa,Peoria,Lake Pleasant Rd,Beardsley Rd,,,3/10/2006,33.6672289598049,-112.279962301254
+55,Maricopa,Peoria,107th Ave,Beardsley Rd,,,10/30/2008,33.6672512830588,-112.290009856224
+56,Maricopa,Peoria,Lake Pleasant Pkwy,Pinnacle Peak Rd,,,10/29/2008,33.6962509923453,-112.275222837925
+57,Maricopa,Peoria,107th Ave,Northern Ave,,,11/6/2008,33.5510160951968,-112.289736270905
+59,Maricopa,Peoria,91st Ave,Deer Valley Rd,,,11/20/2008,33.6817199972156,-112.254958748817
+60,Maricopa,Peoria,99th Ave,Northern Ave,,,11/5/2008,33.5513558657568,-112.272505760193
+61,Maricopa,Peoria,Lake Pleasant Pkwy,Deer Valley Rd,,,11/4/2008,33.6818003473615,-112.279812097549
+64,Maricopa,Peoria,91st Ave,Grand Ave,,,10/30/2008,33.5925833576684,-112.255100905895
+65,Maricopa,Peoria,Loop 101 Fwy,Northern Ave,,,11/4/2008,33.5515168092399,-112.266626358032
+66,Maricopa,Peoria,Loop 101 Fwy,Olive Ave,,,11/5/2008,33.5662239895254,-112.257227897644
+67,Maricopa,Peoria,Loop 101 Fwy,Peoria Ave,,,11/6/2008,33.5806962703848,-112.2594165802
+68,Maricopa,Peoria,Loop 101 Fwy,Grand Ave,,,11/5/2008,33.5939507145496,-112.260360717773
+69,Maricopa,Peoria,67th Ave,Happy Valley Rd,,,1/7/2009,33.7122030209719,-112.203133106232
+70,Maricopa,Peoria,Loop 101 Fwy,Union Hills Dr,,,2/10/2009,33.6527176191301,-112.23237991333
+156,Maricopa,Peoria,107th Ave,Northern Ave,,,4/13/2010,33.5510442,-112.289715
+183,Maricopa,Peoria,91st Ave,Northern Ave,,,4/13/2010,33.551792,-112.2550123
+185,Maricopa,Peoria,83rd Ave,Northern Ave,,,4/13/2010,33.551969,-112.2377927
+186,Maricopa,Peoria,75th Ave,Northern Ave,,,4/13/2010,33.5523930518327,-112.220299243927
+333,Maricopa,Peoria,83rd Ave,Union Hills Dr,,,3/24/2010,33.6527154,-112.2377658
+344,Maricopa,Peoria,Litchfield Rd,Peoria Ave,,,4/13/2010,33.5802304,-112.3590389
+346,Maricopa,Peoria,83rd Ave,Thunderbird Rd,,,4/13/2010,33.6099291,-112.2375705
+405,Maricopa,Peoria,83rd Ave,Bell Rd,,,6/17/2010,33.6380596,-112.2333075
+440,Maricopa,Peoria,Loop 101 Fwy,Bell Rd,,,6/22/2010,33.638141305079,-112.237712144852
+502,Maricopa,Peoria,Northern Ave,Loop 101,,,4/13/2010,33.55144527884,-112.267870903015
+503,Maricopa,Peoria,Northern Ave,Loop 101 Fwy,,,4/13/2010,33.5515346918307,-112.265017032623
+113,Maricopa,Phoenix,32nd St,Thunderbird Rd,,,3/24/2010,33.6115412124722,-112.013275623322
+114,Maricopa,Phoenix,40th St,Bell Rd,,,3/24/2010,33.6406780469023,-111.996147036552
+115,Maricopa,Phoenix,40th St,Greenway Rd,,,3/24/2010,33.6263945018004,-111.996039748192
+116,Maricopa,Phoenix,40th St,Thunderbird Rd,,,3/24/2010,33.61186734225,-111.995921730995
+125,Maricopa,Phoenix,99th Ave,Camelback Rd,,,3/25/2010,33.5083150837928,-112.272500395775
+126,Maricopa,Phoenix,99th Ave,Indian School Rd,,,3/25/2010,33.4937904159972,-112.272441387177
+127,Maricopa,Phoenix,99th Ave,Thomas Rd,,,3/25/2010,33.4792677856536,-112.272473573685
+128,Maricopa,Phoenix,91st Ave,Camelback Rd,,,3/25/2010,33.5087936808862,-112.25500702858
+129,Maricopa,Phoenix,91st Ave,Indian School Rd,,,3/25/2010,33.49425119897,-112.255103588104
+130,Maricopa,Phoenix,91st Ave,Buckeye Rd,,,3/25/2010,33.4357792965296,-112.25514113903
+131,Maricopa,Phoenix,83rd Ave,Camelback Rd,,,3/25/2010,33.5088026266011,-112.237722873688
+132,Maricopa,Phoenix,75th Ave,Camelback Rd,,,3/25/2010,33.5089904863996,-112.220470905304
+133,Maricopa,Phoenix,19th Ave,Deer Valley Rd,,,3/24/2010,33.6837198007437,-112.099878787994
+143,Maricopa,Phoenix,32nd St,Baseline Rd,,,4/14/2010,33.3780837,-112.0127855
+144,Maricopa,Phoenix,48th St,Elliot Rd,,,4/14/2010,33.3489406,-111.9803846
+145,Maricopa,Phoenix,48th St,Warner rd,,,4/14/2010,33.3308244,-111.9808499
+150,Maricopa,Phoenix,7th St,Bethany Home Rd,,,4/8/2010,33.523739,-112.064989
+151,Maricopa,Phoenix,7th St,Jefferson St,,,4/8/2010,33.4471894709995,-112.065074443817
+152,Maricopa,Phoenix,7th St,Baseline Rd,,,4/8/2010,33.3776881,-112.0646302
+153,Maricopa,Phoenix,24th St,Baseline Rd,,,4/8/2010,33.3777741658131,-112.03032374382
+170,Maricopa,Phoenix,Tatum Blvd,Greenway Rd,,,4/7/2010,33.6260996944966,-111.977806091309
+171,Maricopa,Phoenix,56th St,Bell Rd,,,4/7/2010,33.6404547451641,-111.960017681122
+172,Maricopa,Phoenix,56th St,Thunderbird Rd,,,4/7/2010,33.6115687,-111.960538
+173,Maricopa,Phoenix,56th St,Shea Blvd,,,4/7/2010,33.5825791,-111.9605713
+174,Maricopa,Phoenix,7th Ave,Dunlap Ave,,,4/8/2010,33.5675567,-112.0825361
+175,Maricopa,Phoenix,7th Ave,Buckeye Rd,,,4/8/2010,33.4368401,-112.0825247
+176,Maricopa,Phoenix,Central Ave,Dunlap Ave,,,4/8/2010,33.567734798099,-112.073882818222
+180,Maricopa,Phoenix,51st Ave,Greenway Rd,,,3/24/2010,33.6251616645456,-112.168350219727
+181,Maricopa,Phoenix,7th St,Deer Valley Rd,,,3/24/2010,33.6838537144966,-112.065643072128
+182,Maricopa,Phoenix,32nd St,Greenway Rd,,,3/24/2010,33.6263409005475,-112.013339996338
+189,Maricopa,Phoenix,75th Ave,Buckeye Rd,,,3/25/2010,33.4371536104429,-112.220975160599
+190,Maricopa,Phoenix,67th Ave,Van Buren St,,,3/25/2010,33.4515822,-112.2034433
+191,Maricopa,Phoenix,59th Ave,Van Buren St,,,4/13/2010,33.4515490236911,-112.186567783356
+192,Maricopa,Phoenix,59th Ave,Buckeye Rd,,,3/25/2010,33.4370306,-112.1865582
+193,Maricopa,Phoenix,27th Ave,Van Buren St,,,3/25/2010,33.4510867,-112.117523
+194,Maricopa,Phoenix,19th Ave,Buckeye Rd,,,3/25/2010,33.4367369,-112.1000119
+212,Maricopa,Phoenix,Central Ave,Glendale Ave,,,4/8/2010,33.5383159,-112.073749
+213,Maricopa,Phoenix,7th St,Glendale Ave,,,4/8/2010,33.5382739,-112.065055
+214,Maricopa,Phoenix,7th St,Indian School Rd,,,4/8/2010,33.4947397,-112.0650417
+215,Maricopa,Phoenix,7th St,Thomas Rd,,,4/8/2010,33.480207,-112.0650688
+216,Maricopa,Phoenix,16th St,Glendale Ave,,,4/8/2010,33.5382435,-112.0474853
+218,Maricopa,Phoenix,91st Ave,Thomas Rd,,,3/25/2010,33.4796754,-112.2551754
+219,Maricopa,Phoenix,83rd Ave,Indian School Rd,,,3/25/2010,33.4942813,-112.2377713
+221,Maricopa,Phoenix,35th Ave,Thomas Rd,,,3/25/2010,33.4804613,-112.1343436
+222,Maricopa,Phoenix,19th Ave,Indian School Rd,,,3/25/2010,33.495014,-112.0999086
+245,Maricopa,Phoenix,24th St,Jefferson St,,,4/7/2010,33.4472431834542,-112.030162811279
+246,Maricopa,Phoenix,7th ave,McDowell Rd,,,4/8/2010,33.4658154,-112.082637
+247,Maricopa,Phoenix,7th Ave,Van Buren St,,,4/8/2010,33.4514216,-112.0825586
+248,Maricopa,Phoenix,Central Ave,Broadway Rd,,,4/8/2010,33.4067255959648,-112.073335647583
+249,Maricopa,Phoenix,7th St,Northern Ave,,,4/8/2010,33.5527194,-112.0652179
+250,Maricopa,Phoenix,16th St,Van Buren St,,,4/8/2010,33.4514247,-112.0477094
+251,Maricopa,Phoenix,16th St,Washington St,,,4/8/2010,33.448308473601,-112.047768831253
+252,Maricopa,Phoenix,19th Ave,Cactus Rd,,,4/13/2010,33.596559,-112.0996066
+255,Maricopa,Phoenix,51st Ave,Cactus Rd,,,4/13/2010,33.5963332,-112.1686526
+256,Maricopa,Phoenix,43rd Ave,Peoria Ave,,,4/13/2010,33.5819477,-112.1515509
+257,Maricopa,Phoenix,35th Ave,Dunlap Ave,,,4/13/2010,33.5675361,-112.1341652
+258,Maricopa,Phoenix,59th Ave,Lower Buckeye Rd,,,3/25/2010,33.4225281,-112.1864915
+259,Maricopa,Phoenix,75th Ave,McDowell Rd,,,3/25/2010,33.4656824932921,-112.220546007156
+260,Maricopa,Phoenix,51st Ave,Thomas Rd,,,3/25/2010,33.4804828,-112.1689848
+261,Maricopa,Phoenix,27th Ave,Thomas Rd,,,3/25/2010,33.4804237,-112.117074
+262,Maricopa,Phoenix,19th Ave,Jefferson St,,,3/25/2010,33.4469902,-112.1000927
+289,Maricopa,Phoenix,32nd St,Washington St,,,4/14/2010,33.4481339,-112.0129031
+290,Maricopa,Phoenix,32nd St,Broadway Rd,,,4/14/2010,33.4070527,-112.0125867
+291,Maricopa,Phoenix,32nd St,Southern Ave,,,4/14/2010,33.3925481,-112.0125499
+292,Maricopa,Phoenix,40th St,McDowell Rd,,,4/14/2010,33.4656576,-111.9955877
+293,Maricopa,Phoenix,44th St,Thomas Rd,,,4/14/2010,33.4802431957011,-111.987000703812
+294,Maricopa,Phoenix,44th St,McDowell Rd,,,4/14/2010,33.4657093437963,-111.98714017868
+295,Maricopa,Phoenix,44th St,Van Buren St,,,4/14/2010,33.4511874,-111.9872065
+296,Maricopa,Phoenix,48th St,Broadway Rd,,,4/14/2010,33.4073854,-111.9783229
+298,Maricopa,Phoenix,48th St,Baseline Rd,,,4/14/2010,33.3782417,-111.9784046
+299,Maricopa,Phoenix,48th St,Chandler Blvd,,,4/14/2010,33.3053695,-111.9803383
+304,Maricopa,Phoenix,44th St,Camelback Rd,,,4/7/2010,33.5096086,-111.9867899
+305,Maricopa,Phoenix,Tatum Blvd,Bell Rd,,,4/7/2010,33.6405887262765,-111.977559328079
+307,Maricopa,Phoenix,Scottsdale Rd,Thunderbird Rd,,,4/7/2010,33.6112486,-111.9257425
+317,Maricopa,Phoenix,Central Ave,Baseline Rd,,,4/8/2010,33.3777831250489,-112.073271274567
+318,Maricopa,Phoenix,7th ave,Northern Ave,,,4/8/2010,33.5528936,-112.0825788
+319,Maricopa,Phoenix,7th Ave,Bethany Home Rd,,,4/8/2010,33.523854,-112.082412
+320,Maricopa,Phoenix,7th ave,Camelback Rd,,,4/8/2010,33.5093214764809,-112.082508802414
+321,Maricopa,Phoenix,7th Ave,Indian School Rd,,,4/8/2010,33.4948735,-112.0834535
+322,Maricopa,Phoenix,Central Ave,Camelback Rd,,,4/8/2010,33.5092864,-112.0738164
+323,Maricopa,Phoenix,Central Ave,Indian School Rd,,,4/8/2010,33.4948014511521,-112.073796987534
+324,Maricopa,Phoenix,Central Ave,Thomas Rd,,,4/8/2010,33.4802521443663,-112.073764801025
+325,Maricopa,Phoenix,Central Ave,Van Buren St,,,4/8/2010,33.4514003,-112.0738321
+326,Maricopa,Phoenix,7th St,Van Buren St,,,4/8/2010,33.4514275,-112.065132
+327,Maricopa,Phoenix,7th St,Washington St,,,4/8/2010,33.448335329486,-112.065106630325
+328,Maricopa,Phoenix,7th St,Buckeye Rd,,,4/8/2010,33.4368262,-112.0652077
+329,Maricopa,Phoenix,16th St,Buckeye Rd,,,4/8/2010,33.4367125,-112.0477493
+330,Maricopa,Phoenix,16th St,Southern Ave,,,4/8/2010,33.3927512,-112.0473645
+331,Maricopa,Phoenix,24th St,Camelback Rd,,,4/8/2010,33.5093393678006,-112.030227184296
+335,Maricopa,Phoenix,51st Ave,Union Hills Dr,,,6/22/2010,33.654434,-112.168843
+336,Maricopa,Phoenix,43rd Ave,Union Hills Dr,,,3/24/2010,33.654583,-112.1519658
+337,Maricopa,Phoenix,35th Ave,Greenway Rd,,,3/24/2010,33.6252592,-112.1336415
+338,Maricopa,Phoenix,19th Ave,Greenway Rd,,,3/24/2010,33.6256623,-112.0996902
+339,Maricopa,Phoenix,7th St,Bell Rd,,,3/24/2010,,
+340,Maricopa,Phoenix,Cave Creek Rd,Union Hills Dr,,,3/24/2010,33.6550249,-112.0308602
+341,Maricopa,Phoenix,Cave Creek Rd,Bell Rd,,,3/24/2010,33.6404435,-112.0308551
+351,Maricopa,Phoenix,43rd Ave,Northern Ave,,,4/13/2010,33.5531261,-112.1515594
+352,Maricopa,Phoenix,43rd Ave,Glendale Ave,,,4/13/2010,33.538443,-112.1514361
+353,Maricopa,Phoenix,35th Ave,Northern Ave,,,4/13/2010,33.5531165,-112.134271
+354,Maricopa,Phoenix,27th Ave,Northern Ave,,,4/13/2010,33.5530923,-112.1169741
+355,Maricopa,Phoenix,27th Ave,Glendale Ave,,,4/13/2010,33.5385711,-112.116908
+356,Maricopa,Phoenix,19th Ave,Thunderbird Rd,,,4/13/2010,33.6110414,-112.0996489
+357,Maricopa,Phoenix,99th Ave,Lower Buckeye Rd,,,3/25/2010,33.4211260561806,-112.272634506226
+358,Maricopa,Phoenix,83rd Ave,Lower Buckeye Rd,,,3/25/2010,33.4229815,-112.2386603
+362,Maricopa,Phoenix,59th Ave,Indian School Rd,,,3/25/2010,33.4950738,-112.1864472
+363,Maricopa,Phoenix,43rd Ave,Indian School Rd,,,3/25/2010,33.494959,-112.151688
+364,Maricopa,Phoenix,35th Ave,Camelback Rd,,,3/25/2010,33.5094432,-112.1341847
+365,Maricopa,Phoenix,19th Ave,Camelback Rd,,,3/25/2010,33.5096714,-112.0999308
+371,Maricopa,Phoenix,48th St,Ray Rd,,,4/14/2010,33.3199269,-111.9804324
+372,Maricopa,Phoenix,64th St,Greenway Rd,,,4/7/2010,33.6259567572589,-111.942958831787
+373,Maricopa,Phoenix,16th St,Northern Ave,,,4/8/2010,33.5541728,-112.0486388
+374,Maricopa,Phoenix,16th St,Bethany Home Rd,,,4/8/2010,33.5237112,-112.0474915
+375,Maricopa,Phoenix,32nd St,Union Hills Dr,,,3/24/2010,33.6551267,-112.01362
+376,Maricopa,Phoenix,40th St,Union Hills Dr,,,3/24/2010,33.6552378,-111.9962588
+377,Maricopa,Phoenix,19th Ave,Peoria Ave,,,4/13/2010,33.582102,-112.0996366
+378,Maricopa,Phoenix,19th Ave,Northern Ave,,,4/13/2010,33.5530882,-112.0996891
+379,Maricopa,Phoenix,51st Ave,Lower Buckeye Rd,,,3/25/2010,33.4222483,-112.1693876
+380,Maricopa,Phoenix,35th Ave,Lower Buckeye Rd,,,3/25/2010,33.4224793,-112.134533
+381,Maricopa,Phoenix,16th St,Camelback Rd,,,6/16/2010,33.5092195,-112.0475167
+382,Maricopa,Phoenix,16th St,Thomas Rd,,,6/16/2010,33.4802044,-112.0476511
+383,Maricopa,Phoenix,19th Ave,Bethany Home Rd,,,6/17/2010,33.5241121,-112.0996842
+384,Maricopa,Phoenix,19th Ave,Thomas Rd,,,6/16/2010,33.480606,-112.0999908
+385,Maricopa,Phoenix,24th St,Washington St,,,6/15/2010,33.4483201,-112.0301145
+386,Maricopa,Phoenix,24th St,Van Buren St,,,7/8/2010,33.451352,-112.030157
+387,Maricopa,Phoenix,24th St,Buckeye Rd,,,6/16/2010,33.4367075,-112.0347458
+388,Maricopa,Phoenix,35th Ave,Thunderbird Rd,,,6/17/2010,33.6107582,-112.1337748
+389,Maricopa,Phoenix,35th Ave,Peoria Ave,,,6/17/2010,33.5820418,-112.1340241
+390,Maricopa,Phoenix,35th Ave,McDowell Rd,,,6/15/2010,33.465952,-112.1344777
+391,Maricopa,Phoenix,35th Ave,Bell Rd,,,6/17/2010,33.6396645,-112.1343703
+392,Maricopa,Phoenix,51st Ave,Thunderbird Rd,,,6/23/2010,33.6108058,-112.1684868
+393,Maricopa,Phoenix,51st Ave,Bell Rd,,,6/17/2010,33.6389469,-112.1690788
+398,Maricopa,Phoenix,59th Ave,McDowell Rd,,,6/24/2010,33.4659766,-112.1865219
+400,Maricopa,Phoenix,67th Ave,Lower Buckeye Rd,,,6/24/2010,33.4228111,-112.2039561
+401,Maricopa,Phoenix,7th Ave,Jefferson St,,,6/15/2010,33.4470842,-112.0826102
+402,Maricopa,Phoenix,7th Ave,Broadway Rd,,,6/15/2010,33.4067234,-112.081937
+403,Maricopa,Phoenix,7th Ave,Union Hills Dr,,,6/22/2010,33.654647,-112.082799
+404,Maricopa,Phoenix,7th St,Thunderbird Rd,,,6/22/2010,33.6075553,-112.0652434
+431,Maricopa,Phoenix,Tatum Blvd,Cactus Rd,,,6/23/2010,33.5987803,-111.9804965
+432,Maricopa,Phoenix,Tatum Blvd,Shea Blvd,,,6/23/2010,33.5827629,-111.9777847
+434,Maricopa,Phoenix,Loop 101 Fwy,Tatum Blvd,,,4/7/2010,33.6729970959481,-111.97741985321
+436,Maricopa,Phoenix,7th Ave,I-10 Fwy,,,4/8/2010,33.4610014282721,-112.082669734955
+437,Maricopa,Phoenix,7th St,I-10 Fwy,,,6/16/2010,33.462165005326,-112.065181732178
+438,Maricopa,Phoenix,SR 51 Fwy,Bell Rd,,,3/24/2010,33.6406959110163,-112.002890110016
+439,Maricopa,Phoenix,I-17 Fwy,Northern Ave,,,7/7/2010,33.5531083453198,-112.11238861084
+441,Maricopa,Phoenix,I-17 Fwy,Camelback Rd,,,6/22/2010,33.5095182807939,-112.11238861084
+442,Maricopa,Phoenix,I-17 Fwy,Dunlap Ave,,,6/17/2010,33.5675560055641,-112.117313146591
+443,Maricopa,Phoenix,I-17 Fwy,Glendale Ave,,,6/16/2010,33.5386403832341,-112.112302780151
+444,Maricopa,Phoenix,SR 51 Fwy,Glendale Ave,,,6/30/2010,33.5383184480022,-112.041535377502
+447,Maricopa,Phoenix,Loop 101 Fwy,Cave Creek Rd,,,6/22/2010,33.6722470815497,-112.031064033508
+449,Maricopa,Phoenix,SR 51 Fwy,Indian School Rd,,,4/8/2010,33.4947030323194,-112.043874263763
+450,Maricopa,Phoenix,SR 51 Fwy,Thomas Rd,,,4/8/2010,33.4803237336545,-112.038434743881
+451,Maricopa,Phoenix,SR 51 Fwy,McDowell Rd,,,4/8/2010,33.4658346460394,-112.038080692291
+452,Maricopa,Phoenix,I-17 Fwy,Bethany Home Rd,,,4/13/2010,33.5241521108413,-112.112259864807
+474,Maricopa,Phoenix,University Dr,I-10 Fwy,,,4/14/2010,33.4114722801138,-112.010936737061
+475,Maricopa,Phoenix,University Dr,I-10 Fwy,,,4/14/2010,33.4125917432899,-112.010271549225
+476,Maricopa,Phoenix,40th St,I-10 Fwy,,,4/15/2010,33.4095557256607,-111.995422840118
+477,Maricopa,Phoenix,40th St,I-10 Fwy,,,4/15/2010,33.411499147399,-111.995401382446
+482,Maricopa,Phoenix,16th St,I-17 Fwy,,,4/8/2010,33.4268211015717,-112.047758102417
+483,Maricopa,Phoenix,16th St,I-17 Fwy,,,4/8/2010,33.4277523313147,-112.047843933105
+484,Maricopa,Phoenix,7th Ave,I-17 Fwy,,,6/15/2010,33.428826814758,-112.082476615906
+485,Maricopa,Phoenix,7th Ave,I-17 Fwy,,,6/15/2010,33.4296863919359,-112.082455158234
+486,Maricopa,Phoenix,19th Ave,Loop 101 Fwy,,,3/24/2010,33.6687647861621,-112.099814414978
+487,Maricopa,Phoenix,19th Ave,Loop 101 Fwy,,,3/24/2010,33.6699523540213,-112.09983587265
+492,Maricopa,Phoenix,51st Ave,Loop 101 Fwy,,,3/24/2010,33.6678182917658,-112.169251441956
+493,Maricopa,Phoenix,51st Ave,Loop 101 Fwy,,,3/24/2010,33.6689433688425,-112.1692943573
+494,Maricopa,Phoenix,27th Ave,Loop 101 Fwy,,,3/24/2010,33.6678540087245,-112.117280960083
+495,Maricopa,Phoenix,27th Ave,I-17 Fwy,,,3/24/2010,33.6696755539557,-112.117205858231
+496,Maricopa,Phoenix,7th St,Loop 101 Fwy,,,3/24/2010,33.6682290358962,-112.065589427948
+497,Maricopa,Phoenix,7th St,Loop 101 Fwy,,,3/24/2010,33.6694166111525,-112.065546512604
+498,Maricopa,Phoenix,Deer Valley Rd,I-17 Fwy,,,3/24/2010,33.6837822938543,-112.114191055298
+499,Maricopa,Phoenix,Deer Valley Rd,I-17 Fwy,,,3/24/2010,33.6837912214379,-112.110714912415
+500,Maricopa,Phoenix,Greenway Rd,I-17 Fwy,,,3/24/2010,33.6252688684855,-112.117195129395
+501,Maricopa,Phoenix,Greenway Rd,I-17 Fwy,,,3/24/2010,33.6252867357958,-112.115972042084
+504,Maricopa,Phoenix,Thunderbird Rd,I-17 Fwy,,,4/16/2010,33.6108308707404,-112.117323875427
+505,Maricopa,Phoenix,Thunderbird Rd,I-17 Fwy,,,4/16/2010,33.6108755464935,-112.114952802658
+506,Maricopa,Phoenix,19th Ave,I-10 Fwy,,,4/22/2010,33.4609477243387,-112.099943161011
+507,Maricopa,Phoenix,19th Ave,I-10 Fwy,,,4/22/2010,33.4621471042589,-112.100007534027
+514,Maricopa,Phoenix,67th Ave,I-10 Fwy,,,3/25/2010,33.4620575988676,-112.203369140625
+515,Maricopa,Phoenix,67th Ave,I-10 Fwy,,,3/25/2010,33.4634359716457,-112.203390598297
+516,Maricopa,Phoenix,59th Ave,I-10 Fwy,,,3/25/2010,33.4622992632119,-112.186406850815
+517,Maricopa,Phoenix,59th Ave,I-10 Fwy,,,3/25/2010,33.4635791779503,-112.186363935471
+518,Maricopa,Phoenix,51st Ave,I-10 Fwy,,,3/25/2010,33.4622097579777,-112.169122695923
+519,Maricopa,Phoenix,51st Ave,I-10 Fwy,,,3/25/2010,33.4635612771751,-112.169111967087
+520,Maricopa,Phoenix,27th Ave,I-10 Fwy,,,3/25/2010,33.4612430955606,-112.117291688919
+521,Maricopa,Phoenix,27th Ave,I-10 Fwy,,,3/25/2010,33.4625051248997,-112.117270231247
+524,Maricopa,Phoenix,59th Ave,Loop 101 Fwy,,,6/22/2010,33.6675682726391,-112.186675071716
+525,Maricopa,Phoenix,59th Ave,Loop 101 Fwy,,,6/22/2010,33.6687469278737,-112.186717987061
+526,Maricopa,Phoenix,35th Ave,Loop 101 Fwy,,,6/22/2010,33.6685683447854,-112.134597301483
+527,Maricopa,Phoenix,35th Ave,Loop 101 Fwy,,,6/22/2010,33.669746986316,-112.134597301483
+528,Maricopa,Phoenix,Indian School Rd,I-17 Fwy,,,6/16/2010,33.4949714470541,-112.11350440979
+529,Maricopa,Phoenix,Indian School Rd,I-17 Fwy,,,6/16/2010,33.4949803941976,-112.112538814545
+530,Maricopa,Phoenix,Thomas Rd,I-17 Fwy,,,6/16/2010,33.4805295525287,-112.113718986511
+531,Maricopa,Phoenix,Thomas Rd,I-17 Fwy,,,6/16/2010,33.4805742956975,-112.112571001053
+532,Maricopa,Phoenix,McDowell Rd,I-17 Fwy,,,6/15/2010,33.4659420478178,-112.110478878021
+533,Maricopa,Phoenix,McDowell Rd,I-17 Fwy,,,6/15/2010,33.4658793967966,-112.109223604202
+534,Maricopa,Phoenix,Buckeye Rd,I-17 Fwy,,,6/15/2010,33.4367507193684,-112.108633518219
+535,Maricopa,Phoenix,Buckeye Rd,I-17 Fwy,,,6/15/2010,33.4367775788316,-112.107635736465
+536,Maricopa,Phoenix,19th Ave,I-17 Fwy,,,6/15/2010,33.4283970229767,-112.099900245667
+537,Maricopa,Phoenix,19th Ave,I-17 Fwy,,,6/15/2010,33.4292386965513,-112.099878787994
+538,Maricopa,Phoenix,7th St,I-17 Fwy,,,7/1/2010,33.4283791149397,-112.06520318985
+539,Maricopa,Phoenix,7th St,I-17 Fwy,,,7/1/2010,33.4293371897341,-112.06514954567
+540,Maricopa,Phoenix,Bell Rd,I-17 Fwy,,,6/17/2010,33.6398652257927,-112.117345333099
+541,Maricopa,Phoenix,Bell Rd,I-17 Fwy,,,6/17/2010,33.6399456150355,-112.113944292068
+542,Maricopa,Phoenix,Peoria Ave,I-17 Fwy,,,6/17/2010,33.5819654961402,-112.117559909821
+543,Maricopa,Phoenix,Peoria Ave,I-17 Fwy,,,6/17/2010,33.581983372426,-112.116358280182
+548,Maricopa,Phoenix,7th Ave,Loop 101 Fwy,,,6/22/2010,33.6681397438608,-112.082905769348
+549,Maricopa,Phoenix,7th Ave,Loop 101 Fwy,,,6/22/2010,33.6691755257728,-112.08287358284
+579,Maricopa,Phoenix,Cactus Rd,I-17 Fwy,,,4/13/2010,33.5963725810572,-112.117474079132
+580,Maricopa,Phoenix,Cactus Rd,I-17 Fwy,,,4/13/2010,33.596399391007,-112.116250991821
+581,Maricopa,Phoenix,McDowell Rd,Loop 101 Fwy,,,3/25/2010,33.4648680240447,-112.269405126572
+582,Maricopa,Phoenix,McDowell Rd,Loop 101 Fwy,,,3/25/2010,33.4648590737906,-112.267913818359
+583,Maricopa,Phoenix,Thomas Rd,Loop 101 Fwy,,,3/25/2010,33.4795004532678,-112.264630794525
+584,Maricopa,Phoenix,Thomas Rd,Loop 101 Fwy,,,3/25/2010,33.4794825557812,-112.263214588165
+268,Maricopa,Queen Creek,Power Rd,Chandler Heights Rd,,,3/30/2010,33.2344772,-111.6858457
+277,Maricopa,Queen Creek,Power Rd,Queen Creek Rd,,,3/30/2010,33.2663254,-111.686096
+146,Maricopa,Scottsdale,Hayden Rd,Thompson Peak Pkwy,,,4/7/2010,33.6717381394829,-111.907457113266
+147,Maricopa,Scottsdale,Pima Rd,Thompson Peak Pkwy,,,4/7/2010,33.6769345642251,-111.890602111816
+148,Maricopa,Scottsdale,Greenway Rd,Frank Lloyd Wright Blvd,,,4/7/2010,33.6345295,-111.9076587
+149,Maricopa,Scottsdale,Pima Rd,Happy Valley Rd,,,4/7/2010,33.7132204229165,-111.890612840652
+210,Maricopa,Scottsdale,96th St,Cactus Rd,,,4/7/2010,33.5970428273015,-111.873993873596
+211,Maricopa,Scottsdale,Scottsdale Rd,Shea Blvd,,,4/7/2010,33.5821710732031,-111.926028728485
+236,Maricopa,Scottsdale,Scottsdale Rd,Thomas Rd,,,4/14/2010,33.4803595282765,-111.926136016846
+237,Maricopa,Scottsdale,Scottsdale Rd,McDowell Rd,,,4/14/2010,33.4657182939625,-111.92623257637
+240,Maricopa,Scottsdale,Miller Rd,Pinnacle Peak Rd,,,4/7/2010,33.6986978,-111.9166584
+241,Maricopa,Scottsdale,64th St,Cactus Rd,,,4/7/2010,33.5967834,-111.9433117
+243,Maricopa,Scottsdale,Hayden Rd,Cactus Rd,,,4/7/2010,33.5966001,-111.9086111
+244,Maricopa,Scottsdale,Hayden Rd,Camelback Rd,,,4/7/2010,33.5021378127443,-111.908733844757
+303,Maricopa,Scottsdale,Scottsdale Rd,Pinnacle Peak Rd,,,4/7/2010,33.6987132,-111.9253182
+306,Maricopa,Scottsdale,Scottsdale Rd,Bell Rd,,,6/23/2010,33.6382412,-111.925472
+308,Maricopa,Scottsdale,Scottsdale Rd,Chaparral Rd,,,4/7/2010,33.5095422,-111.9261252
+309,Maricopa,Scottsdale,Scottsdale Rd,Camelback Rd,,,4/7/2010,33.5022308,-111.9262559
+310,Maricopa,Scottsdale,Hayden Rd,Shea Blvd,,,4/7/2010,33.5820727537993,-111.908744573593
+311,Maricopa,Scottsdale,Hayden Rd,Via De Ventura ,,,4/7/2010,33.554440563652,-111.898584365845
+312,Maricopa,Scottsdale,Hayden Rd,Indian School Rd,,,4/7/2010,33.4948551341046,-111.908851861954
+313,Maricopa,Scottsdale,Pima Rd,Chaparral Rd,,,4/7/2010,33.5093751504289,-111.891578435898
+314,Maricopa,Scottsdale,94th St,Cactus Rd,,,4/7/2010,33.5970070809666,-111.878349781036
+315,Maricopa,Scottsdale,Frank Lloyd Wright Blvd,Thunderbird Rd,,,4/7/2010,33.6137436813832,-111.868382692337
+316,Maricopa,Scottsdale,Thompson Peak Pkwy,Frank Lloyd Wright Blvd,,,4/7/2010,33.6219097483108,-111.875495910645
+407,Maricopa,Scottsdale,90th St,Shea Blvd,,,6/29/2010,33.5826181,-111.8860677
+408,Maricopa,Scottsdale,94th St,Thunderbird Rd,,,6/29/2010,33.611511,-111.8782825
+411,Maricopa,Scottsdale,Hayden Rd,Thomas Rd,,,6/30/2010,33.4803898,-111.9090254
+412,Maricopa,Scottsdale,Hayden Rd,McDowell Rd,,,6/30/2010,33.4658538,-111.9087884
+413,Maricopa,Scottsdale,Hayden Rd,McKellips Rd,,,6/30/2010,33.4513329,-111.909196
+414,Maricopa,Scottsdale,Hayden Rd,Frank Lloyd Wright Blvd,,,6/29/2010,33.6301306,-111.8932216
+415,Maricopa,Scottsdale,Hayden Rd,Indian Bend Rd,,,6/30/2010,33.538462,-111.9087327
+416,Maricopa,Scottsdale,Hayden Rd,McDonald Dr,,,6/29/2010,33.5238588,-111.908652
+428,Maricopa,Scottsdale,Scottsdale Rd,Doubletree Ranch Rd,,,6/23/2010,33.567526,-111.9259364
+429,Maricopa,Scottsdale,Scottsdale Rd,Indian School Rd,,,6/30/2010,33.4950371,-111.9260701
+435,Maricopa,Scottsdale,Loop 101 Fwy,Frank Lloyd Wright Blvd,,,4/7/2010,33.6297177143497,-111.890387535095
+445,Maricopa,Scottsdale,Loop 101,Cactus Rd,,,6/23/2010,33.5965334406309,-111.891503334045
+446,Maricopa,Scottsdale,Loop 101,Shea Blvd,,,6/23/2010,33.5822872687177,-111.891160011292
+448,Maricopa,Scottsdale,Loop 101,Raintree Dr,,,4/7/2010,33.6183003349391,-111.891331672668
+577,Maricopa,Scottsdale,Scottsdale Rd,Loop 101,,,4/7/2010,33.6576026329096,-111.925363540649
+578,Maricopa,Scottsdale,Scottsdale Rd,Loop 101,,,4/7/2010,33.6587814246837,-111.925288438797
+112,Maricopa,Sun City,99th Ave,Bell Rd,,,3/24/2010,33.6380564479868,-112.2741740942
+157,Maricopa,Sun City,99th Ave,Peoria Ave,,,4/13/2010,33.5803514,-112.2725728
+343,Maricopa,Sun City,107th Ave,Olive Ave,,,4/13/2010,33.5656348,-112.2898122
+118,Maricopa,Surprise,Grand Ave,Bell Rd,,,3/24/2010,33.6386593781437,-112.350391745567
+119,Maricopa,Surprise,R H Johnson Blvd,Bell Rd,,,3/24/2010,33.6384985971813,-112.334529161453
+120,Maricopa,Surprise,Bullard Ave,Waddell Rd,,,3/25/2010,33.6093520902451,-112.37652182579
+121,Maricopa,Surprise,Bullard Ave,Cactus Rd,,,3/25/2010,33.5948220581176,-112.376457452774
+122,Maricopa,Surprise,Sarival Ave,Bell Rd,,,3/24/2010,33.6388067604288,-112.409389615059
+217,Maricopa,Surprise,Loop 303 Fwy,Waddell Rd,,,3/24/2010,33.6097229046556,-112.41858959198
+332,Maricopa,Surprise,Loop 303 Fwy,Grand Ave,,,3/24/2010,33.679604083014,-112.4027967453
+3,Maricopa,Tempe,Mill Ave,University Dr,,,3/26/2009,33.4219319815231,-111.939997673035
+4,Maricopa,Tempe,Rural Rd,University Dr,,,3/26/2009,33.4220036189693,-111.926329135895
+5,Maricopa,Tempe,Broadway Rd,48th St,,,4/21/2009,33.4073167066205,-111.978278160095
+6,Maricopa,Tempe,Broadway Rd,48th St,,,4/22/2009,33.407424180853,-111.960779428482
+7,Maricopa,Tempe,Broadway Rd,Priest Dr,,,4/16/2009,33.4074958302675,-111.909077167511
+8,Maricopa,Tempe,Price Rd,Broadway Rd,,,4/16/2009,33.4074510493904,-111.891202926636
+9,Maricopa,Tempe,48th St,Southern Ave,,,3/25/2009,33.3927437608508,-111.978342533112
+10,Maricopa,Tempe,Priest Dr,Southern Ave,,,3/25/2009,33.3928333377422,-111.960747241974
+11,Maricopa,Tempe,Southern Ave,Mill Ave,,,4/23/2009,33.3928602107916,-111.939589977264
+12,Maricopa,Tempe,Rural Rd,Southern Ave,,,3/24/2009,33.3929408298901,-111.926318407059
+13,Maricopa,Tempe,McClintock Dr,Southern Ave,,,3/24/2009,33.3929408298901,-111.909109354019
+14,Maricopa,Tempe,Price Rd,Southern Ave,,,3/24/2009,33.3929139568655,-111.891170740128
+142,Maricopa,Tempe,Rural Rd,Warner Rd,,,4/14/2010,33.3346559,-111.928408
+230,Maricopa,Tempe,Mill Ave,Broadway Rd,,,4/14/2010,33.4074001,-111.9397998
+231,Maricopa,Tempe,Mill Ave,Southern Ave,,,4/14/2010,33.392867,-111.9395842
+232,Maricopa,Tempe,Kyrene Rd,Baseline Rd,,,4/14/2010,33.3781952488957,-111.94597363472
+233,Maricopa,Tempe,Kyrene Rd,Guadalupe Rd,,,4/14/2010,33.3636544,-111.9458821
+238,Maricopa,Tempe,Scottsdale Rd,Curry Rd,,,4/14/2010,33.4403471,-111.9262706
+239,Maricopa,Tempe,Rural Rd,University Dr,,,4/14/2010,33.4220394376702,-111.926307678223
+297,Maricopa,Tempe,48th St,Southern Ave,,,4/14/2010,33.3927744,-111.9783344
+300,Maricopa,Tempe,Rural Rd,Rio Salado Pkwy,,,4/14/2010,33.4288089068096,-111.926264762878
+301,Maricopa,Tempe,Priest Dr,Baseline Rd,,,4/14/2010,33.3783602,-111.9631464
+302,Maricopa,Tempe,Priest Dr,Elliot Rd,,,4/14/2010,33.3490998850053,-111.963139772415
+417,Maricopa,Tempe,McClintock Dr,Broadway Rd,,,7/1/2010,33.4074383,-111.9091063
+418,Maricopa,Tempe,McClintock Dr,Elliot Rd,,,7/7/2010,33.3490363,-111.9111662
+419,Maricopa,Tempe,McClintock Dr,Warner Rd,,,7/7/2010,33.334643,-111.91116
+422,Maricopa,Tempe,Rural Rd,University Dr,,,6/24/2010,33.4220282,-111.9263721
+423,Maricopa,Tempe,Rural Rd,Apache Blvd,,,7/1/2010,33.4147088,-111.9262826
+424,Maricopa,Tempe,Rural Rd,Broadway Rd,,,7/1/2010,33.4075556,-111.926262
+425,Maricopa,Tempe,Rural Rd,Southern Ave,,,7/1/2010,33.3929638,-111.9263181
+426,Maricopa,Tempe,Rural Rd,Baseline Rd,,,7/7/2010,33.3782493,-111.9286742
+427,Maricopa,Tempe,Rural Rd,Elliot Rd,,,7/7/2010,33.349254,-111.9284725
+433,Maricopa,Tempe,Loop 101,Guadalupe Rd,,,4/6/2010,33.3638683197081,-111.893992424011
+462,Maricopa,Tempe,Broadway Rd,Loop 101,,,4/6/2010,33.407468961744,-111.891996860504
+463,Maricopa,Tempe,Broadway Rd,Loop 101,,,4/6/2010,33.4074420932122,-111.890323162079
+464,Maricopa,Tempe,Warner Rd,Loop 101,,,4/6/2010,33.3348846928887,-111.893520355225
+465,Maricopa,Tempe,Warner Rd,Loop 101,,,4/6/2010,33.3349026201911,-111.892383098602
+472,Maricopa,Tempe,Apache Blvd,Loop 101,,,4/6/2010,33.4147858492594,-111.891943216324
+473,Maricopa,Tempe,Apache Blvd,Loop 101,,,4/6/2010,33.4147858492594,-111.890687942505
+478,Maricopa,Tempe,Baseline Rd,I-10 Fwy,,,4/14/2010,33.3782042080881,-111.968643665314
+479,Maricopa,Tempe,Baseline Rd,I-10 Fwy,,,4/14/2010,33.3782490040361,-111.967313289642
+480,Maricopa,Tempe,Elliot Rd,I-10 Fwy,,,4/14/2010,33.3490281874632,-111.972870826721
+481,Maricopa,Tempe,Elliot Rd,I-10 Fwy,,,4/14/2010,33.3490819606253,-111.970896720886
+544,Maricopa,Tempe,Warner Rd,I-10 Fwy,,,6/30/2010,33.3343647995141,-111.972978115082
+545,Maricopa,Tempe,Warner Rd,I-10 Fwy,,,6/30/2010,33.3343827269235,-111.971400976181
+550,Maricopa,Tempe,University Dr,Loop 101,,,6/24/2010,33.4220036189693,-111.891975402832
+551,Maricopa,Tempe,University Dr,Loop 101,,,6/24/2010,33.4219946642917,-111.890269517899
+552,Maricopa,Tempe,Elliot Rd,Loop 101,,,6/24/2010,33.349350825938,-111.894335746765
+553,Maricopa,Tempe,Elliot Rd,Loop 101,,,6/24/2010,33.3493777124236,-111.893155574799
+554,Maricopa,Tempe,Southern Ave,Loop 101,,,6/24/2010,33.3929677029062,-111.890408992767
+561,Maricopa,Tempe,Mill Ave,US 60 Fwy,,,6/24/2010,33.3850666783009,-111.939461231232
+562,Maricopa,Tempe,Mill Ave,US 60 Fwy,,,6/24/2010,33.3860252308983,-111.939471960068
+563,Maricopa,Tempe,Baseline Rd,Loop 101,,,4/6/2010,33.3784550650998,-111.893713474274
+564,Maricopa,Tempe,Baseline Rd,Loop 101,,,4/6/2010,33.3784281875974,-111.892468929291
+573,Maricopa,Tempe,Rural Rd,US 60 Fwy,,,4/14/2010,33.3850129273751,-111.926522254944
+574,Maricopa,Tempe,Rural Rd,US 60 Fwy,,,4/14/2010,33.3861506482133,-111.926457881927
+575,Maricopa,Tempe,McClintock Dr,US 60 Fwy,,,4/14/2010,33.3851383461504,-111.909162998199
+576,Maricopa,Tempe,McClintock Dr,US 60 Fwy,,,4/14/2010,33.386240231899,-111.909184455872
+512,Maricopa,Tolleson,91st Ave,I-10 Fwy,,,4/25/2010,33.4615921693435,-112.255253791809
+513,Maricopa,Tolleson,91st Ave,I-10 Fwy,,,4/25/2010,33.4629974008664,-112.255264520645
