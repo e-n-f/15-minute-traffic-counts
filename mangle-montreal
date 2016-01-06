@@ -1,0 +1,112 @@
+#!/usr/bin/perl
+
+# zcat comptageouptut.json.gz | ./mangle-montreal > counts-montreal-2015.csv
+# GeoJSON from http://donnees.ville.montreal.qc.ca/dataset/comptage-vehicules-pietons/resource/5f4d4da9-0725-400f-a07c-fc17dc3a7b1e
+
+while (<>) {
+	if (/{ "type": "Feature", "properties": { "IdReference": "([^"]*)", "IdCarrefour": "([^"]*)", "NomIntersection": "([^"]*)", "X": "([^"]*)", "Y": "([^"]*)", "date": "([^"]*)", "periode": "([^"]*)", "Heure": "([^"]*)", "Minute": "([^"]*)", "Seconde": "([^"]*)", "Code_Banque": "([^"]*)", "Nom_Banque": "([^"]*)", "NBLT": "([^"]*)", "NBT": "([^"]*)", "NBRT": "([^"]*)", "SBLT": "([^"]*)", "SBT": "([^"]*)", "SBRT": "([^"]*)", "EBLT": "([^"]*)", "EBT": "([^"]*)", "EBRT": "([^"]*)", "WBLT": "([^"]*)", "WBT": "([^"]*)", "WBRT": "([^"]*)", "approcheNord": "([^"]*)", "approcheSud": "([^"]*)", "approcheEst": "([^"]*)", "approcheOuest": "([^"]*)" }, "geometry": { "type": "Point", "coordinates": \[ ([0-9-.]+), ([0-9-.]+) \] } },/) {
+		$h = $8;
+		$m = $9;
+		$s = $10;
+
+		$when = $h * 3600 + $m * 60 + $s;
+		$when2 = $when + 15 * 60;
+
+		$time = sprintf("%02d:%02d-%02d:%02d",
+			$when / 3600, ($when / 60) % 60,
+			$when2 / 3600, ($when2 / 60) % 60);
+
+		$lon{$2}{$3}{$1}{$6}{$time} = $29;
+		$lat{$2}{$3}{$1}{$6}{$time} = $30;
+
+		if ($12 eq "Auto" || $12 eq "Camions" || $12 eq "Bus") {
+			if ($13 > 0 || $14 > 0 || $15 > 0 || $16 > 0 || $17 > 0 || $18 > 0 || $19 > 0 || $20 > 0 || $21 > 0 || $22 > 0 || $23 > 0 || $24 > 0) {
+				$nblt{$2}{$3}{$1}{$6}{$time} += $13;
+				$nbt{$2}{$3}{$1}{$6}{$time} += $14;
+				$nbrt{$2}{$3}{$1}{$6}{$time} += $15;
+
+				$sblt{$2}{$3}{$1}{$6}{$time} += $16;
+				$sbt{$2}{$3}{$1}{$6}{$time} += $17;
+				$sbrt{$2}{$3}{$1}{$6}{$time} += $18;
+
+				$eblt{$2}{$3}{$1}{$6}{$time} += $19;
+				$ebt{$2}{$3}{$1}{$6}{$time} += $20;
+				$ebrt{$2}{$3}{$1}{$6}{$time} += $21;
+
+				$wblt{$2}{$3}{$1}{$6}{$time} += $22;
+				$wbt{$2}{$3}{$1}{$6}{$time} += $23;
+				$wbrt{$2}{$3}{$1}{$6}{$time} += $24;
+
+				$xing{$2}{$3}{$1}{$6}{$time} = 1;
+			}
+		}
+
+		if ($12 eq "Piéton") {
+			if ($25 > 0 || $26 > 0 || $27 > 0 || $28 > 0) {
+				$np{$2}{$3}{$1}{$6}{$time} = $25;
+				$sp{$2}{$3}{$1}{$6}{$time} = $26;
+				$ep{$2}{$3}{$1}{$6}{$time} = $27;
+				$wp{$2}{$3}{$1}{$6}{$time} = $28;
+
+				$xing{$2}{$3}{$1}{$6}{$time} = 1;
+			}
+		}
+
+		if ($12 eq "Vélo") {
+			if ($25 > 0 || $26 > 0 || $27 > 0 || $28 > 0) {
+				$nb{$2}{$3}{$1}{$6}{$time} = $25;
+				$sb{$2}{$3}{$1}{$6}{$time} = $26;
+				$eb{$2}{$3}{$1}{$6}{$time} = $27;
+				$wb{$2}{$3}{$1}{$6}{$time} = $28;
+
+				$xing{$2}{$3}{$1}{$6}{$time} = 1;
+			}
+		}
+	}
+}
+
+for $id1 (sort {$a <=> $b} keys(%xing)) {
+	for $street (keys(%{$xing{$id1}})) {
+		for $id2 (sort {$a <=> $b} keys(%{$xing{$id1}{$street}})) {
+			for $date (sort(keys(%{$xing{$id1}{$street}{$id2}}))) {
+				for $time (sort(keys(%{$xing{$id1}{$street}{$id2}{$date}}))) {
+					$streeto = $street;
+					$streeto =~ s/\\\//\//g;
+
+					print "montreal/$id1,$streeto,$id2,$date,$time,";
+
+					print "$sbrt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$sbt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$sblt{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "$wbrt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$wbt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$wblt{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "$nbrt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$nbt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$nblt{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "$ebrt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$ebt{$id1}{$street}{$id2}{$date}{$time},";
+					print "$eblt{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "$np{$id1}{$street}{$id2}{$date}{$time},";
+					print "$ep{$id1}{$street}{$id2}{$date}{$time},";
+					print "$sp{$id1}{$street}{$id2}{$date}{$time},";
+					print "$wp{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "$nb{$id1}{$street}{$id2}{$date}{$time},";
+					print "$eb{$id1}{$street}{$id2}{$date}{$time},";
+					print "$sb{$id1}{$street}{$id2}{$date}{$time},";
+					print "$wb{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "$lat{$id1}{$street}{$id2}{$date}{$time},";
+					print "$lon{$id1}{$street}{$id2}{$date}{$time},";
+
+					print "\n";
+				}
+			}
+		}
+	}
+}
