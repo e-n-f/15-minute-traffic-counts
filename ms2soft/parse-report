@@ -6,14 +6,29 @@ shift @ARGV;
 $locations = $ARGV[0];
 $locations =~ s/report\/(.*).html//;
 $id = $1;
+$format = 1;
 open(IN, "$locations/tmc_export.csv");
 while (<IN>) {
+	if (/INTID,COUNTY,CITY1,ROAD1,ROAD2,ROAD3,ROAD4,LATEST_DATE,LATEST_TMC,LATITUDE,LONGITUDE/) {
+		$format = 2;
+	}
+	if (/INTID,COUNTY,CITY1,ROAD1,ROAD2,ROAD3,ROAD4,LATEST_DATE,LATITUDE,LONGITUDE/) {
+		$format = 1;
+	}
+
 	chomp;
 	s/\015//g;
 	@fields = split(/,/);
-	if ($#fields == 9) {
-		$lat{$fields[0]} = $fields[8];
-		$lon{$fields[0]} = $fields[9];
+	if ($format == 1) {
+		if ($#fields == 9) {
+			$lat{$fields[0]} = $fields[8];
+			$lon{$fields[0]} = $fields[9];
+		}
+	} else {
+		if ($#fields == 10) {
+			$lat{$fields[0]} = $fields[9];
+			$lon{$fields[0]} = $fields[10];
+		}
 	}
 }
 close(IN);

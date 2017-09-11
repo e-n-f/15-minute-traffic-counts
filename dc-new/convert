@@ -1,0 +1,52 @@
+#!/usr/bin/perl
+
+use strict;
+
+open(IN, "tmc_volume_9_11_2017_3_47_05_PM.csv");
+while (<IN>) {
+        my ($a, $b, $id, $date, $a, $a, $road1, $road2, $road3, $CITY1, $IS_SIGNALIZED, $ZONE, $TMC_DONE, $TMC_DATE, $LATITUDE, $LONGITUDE) = split(/,/);
+        $date =~ s/ .*//;
+	my $road = "$road1";
+	if ($road2 ne "") {
+		$road .= " / $road2";
+	}
+	if ($road3 ne "") {
+		$road .= " / $road3";
+	}
+        if ($LATITUDE eq "") {
+		# print "$id $date $road $LATITUDE $LONGITUDE\n";
+	}
+
+	open(IN2, "$id.txt");
+	while (<IN2>) {
+		chomp;
+		s/  */ /g;
+		s/^ //;
+
+		last if /TRUCKS/; # or should we add?
+
+		my @fields = split(/ /, $_);
+		if ($#fields == 22 && $fields[22] != 0) {
+			my ($h, $m) = split(/:/, $fields[0]);
+			if ($h == 12) {
+				$h = 0;
+			}
+			if ($fields[1] eq "PM") {
+				$h += 12;
+			}
+			my $when = $h * 60 + $m;
+			my $when2 = $when + 15;
+			my $time = sprintf("%02d:%02d-%02d:%02d", $when / 60, $when % 60, $when2 / 60, $when2 % 60);
+
+			print "dc/$id,$road / -,$id,$date,$time,";
+			print "$fields[14],$fields[13],$fields[12],";
+			print "$fields[19],$fields[18],$fields[17],";
+			print "$fields[4],$fields[3],$fields[2],";
+			print "$fields[9],$fields[8],$fields[7],";
+			print "$fields[15],$fields[20],$fields[5],$fields[10],";
+			print ",,,,";
+			print "$LATITUDE,$LONGITUDE\n";
+		}
+	}
+	close(IN2);
+}
